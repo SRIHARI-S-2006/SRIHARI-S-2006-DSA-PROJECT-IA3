@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCPRA — Customer Churn Prediction & Retention Analytics</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo-mark">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">CCPRA<span class="brand-accent">.ai</span></span>
+          <span class="brand-meta">Retention Intelligence</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-group-label">Intelligence Workspaces</div>
+        
+        <a href="#overview" class="nav-item active" data-section="overview">
+          <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>
+          </svg>
+          <span class="nav-text">Executive Overview</span>
+        </a>
+
+        <a href="#analytics" class="nav-item" data-section="analytics">
+          <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
+          </svg>
+          <span class="nav-text">Churn Analytics</span>
+        </a>
+
+        <a href="#segments" class="nav-item" data-section="segments">
+          <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
+          </svg>
+          <span class="nav-text">Customer Segments</span>
+        </a>
+
+        <a href="#revenue" class="nav-item" data-section="revenue">
+          <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/>
+          </svg>
+          <span class="nav-text">Revenue Intelligence</span>
+        </a>
+
+        <a href="#explorer" class="nav-item" data-section="explorer">
+          <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+          <span class="nav-text">Customer Explorer</span>
+        </a>
+
+        <a href="#predict" class="nav-item" data-section="predict">
+          <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+          <span class="nav-text">Prediction Lab</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-status-box">
+        <div class="status-indicator-row">
+          <span class="pulse-indicator"></span>
+          <span class="status-name">Pipeline Active</span>
+        </div>
+        <div class="status-model-detail">
+          <span class="model-name">Logistic Regression</span>
+          <span class="model-metric">84.21% Holdout AUC</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <div class="app-workspace">
+      <!-- Top Navigation Bar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button class="btn-sidebar-toggle" id="sidebar-toggle" title="Toggle Navigation">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="page-title-block">
+            <h1 class="page-main-title" id="page-title">Executive Overview</h1>
+            <p class="page-sub-title" id="page-subtitle">Subscriber portfolio health, churn velocity, and strategic risk distribution</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <div class="meta-tag meta-dataset">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
+            <span>7,043 Records</span>
+          </div>
+
+          <div class="meta-tag meta-status">
+            <span class="badge-dot-green"></span>
+            <span>Production Engine</span>
+          </div>
+
+          <button class="btn-refresh" id="btn-refresh-data" title="Reload System Metrics">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+            <span>Sync</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Scrollable Main Container -->
+      <main class="workspace-content">
+
+        <!-- =========================================================================
+             WORKSPACE 1: EXECUTIVE OVERVIEW
+             ========================================================================= -->
+        <section id="section-overview" class="content-section active">
+          <!-- KPI Cards Grid -->
+          <div class="metrics-kpi-grid">
+            <div class="kpi-panel">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">Total Customer Base</span>
+                <span class="kpi-icon-wrap icon-cyan">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </span>
+              </div>
+              <div class="kpi-metric-value" id="kpi-total-cust">7,043</div>
+              <div class="kpi-panel-footer">
+                <span class="indicator-positive">100% Unique Accounts</span>
+                <span class="meta-separator">•</span>
+                <span class="footer-meta">Full Portfolio</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">Actual Churn Rate</span>
+                <span class="kpi-icon-wrap icon-rose">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+                </span>
+              </div>
+              <div class="kpi-metric-value value-rose" id="kpi-churn-rate">26.54%</div>
+              <div class="kpi-panel-footer">
+                <span class="indicator-negative" id="kpi-churn-count">1,869 Churned</span>
+                <span class="meta-separator">•</span>
+                <span class="indicator-positive" id="kpi-retain-count">5,174 Retained</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel highlight-panel-red">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">High-Risk Customers</span>
+                <span class="status-pill pill-danger">Prob ≥ 60%</span>
+              </div>
+              <div class="kpi-metric-value value-danger" id="kpi-high-risk">1,039</div>
+              <div class="kpi-panel-footer">
+                <span class="indicator-danger" id="kpi-critical">49 Critical (≥80%)</span>
+                <span class="meta-separator">•</span>
+                <span class="footer-meta">14.75% of Base</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">Portfolio Monthly Charges</span>
+                <span class="kpi-icon-wrap icon-teal">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                </span>
+              </div>
+              <div class="kpi-metric-value text-teal" id="kpi-total-mrr">$456,116.60</div>
+              <div class="kpi-panel-footer">
+                <span class="footer-meta" id="kpi-avg-charges">Avg $64.76 / subscriber</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel highlight-panel-amber">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">High-Risk Monthly Charges</span>
+                <span class="status-pill pill-warning">At Risk</span>
+              </div>
+              <div class="kpi-metric-value value-amber" id="kpi-revenue-risk">$85,546.25</div>
+              <div class="kpi-panel-footer">
+                <span class="indicator-warning" id="kpi-revenue-share">18.76% of Monthly MRR</span>
+                <span class="meta-separator">•</span>
+                <span class="footer-meta" id="kpi-annual-risk">$1.03M / yr</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verified Key Insights Strip -->
+          <div class="insights-summary-strip">
+            <div class="insight-badge-card">
+              <div class="insight-icon-box text-cyan">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="insight-body">
+                <strong>100% Contract Concentration:</strong> All $85,546.25 in high-risk monthly revenue resides in Month-to-month contracts.
+              </div>
+            </div>
+
+            <div class="insight-badge-card">
+              <div class="insight-icon-box text-amber">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="insight-body">
+                <strong>Fiber Optic Friction:</strong> Fiber optic subscribers account for $83,164.25 (97.2%) of high-risk charges (churn rate: 41.89%).
+              </div>
+            </div>
+
+            <div class="insight-badge-card">
+              <div class="insight-icon-box text-rose">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+              </div>
+              <div class="insight-body">
+                <strong>Payment Channel Exposure:</strong> Electronic check billing represents $70,566.90 (82.5%) of high-risk monthly charges.
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview Charts Row -->
+          <div class="grid-layout-3col mt-3">
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Ground Truth Churn</h3>
+                  <span class="panel-subtitle">7,043 historical subscriber outcomes</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="overviewChurnChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained: <strong>5,174</strong> (73.5%)</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned: <strong>1,869</strong> (26.5%)</div>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Contract Churn Rate</h3>
+                  <span class="panel-subtitle">Churn rate comparison by commitment</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="overviewContractChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-cyan"></span> Month-to-month: <strong>42.7%</strong></div>
+                <div class="legend-chip"><span class="chip-dot dot-purple"></span> 1-Yr: <strong>11.3%</strong></div>
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> 2-Yr: <strong>2.8%</strong></div>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Monthly Revenue Exposure</h3>
+                  <span class="panel-subtitle">Portfolio MRR allocated across risk tiers</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="overviewRevenueRiskChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Low: <strong>$250.4K</strong></div>
+                <div class="legend-chip"><span class="chip-dot dot-amber"></span> Med: <strong>$120.2K</strong></div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> High: <strong>$85.5K</strong></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================================
+             WORKSPACE 2: CHURN ANALYTICS
+             ========================================================================= -->
+        <section id="section-analytics" class="content-section">
+          <!-- Interactive Analytics Toolbar -->
+          <div class="interactive-filter-strip">
+            <div class="filter-controls-group">
+              <div class="filter-chip-unit">
+                <label for="analytics-contract-filter">Contract:</label>
+                <select id="analytics-contract-filter" class="filter-dropdown-sm">
+                  <option value="All">All Contracts</option>
+                  <option value="Month-to-month">Month-to-month</option>
+                  <option value="One year">One year</option>
+                  <option value="Two year">Two year</option>
+                </select>
+              </div>
+
+              <div class="filter-chip-unit">
+                <label for="analytics-internet-filter">Internet:</label>
+                <select id="analytics-internet-filter" class="filter-dropdown-sm">
+                  <option value="All">All Internet</option>
+                  <option value="Fiber optic">Fiber optic</option>
+                  <option value="DSL">DSL</option>
+                  <option value="No">No Internet</option>
+                </select>
+              </div>
+
+              <div class="filter-chip-unit">
+                <label for="analytics-payment-filter">Payment:</label>
+                <select id="analytics-payment-filter" class="filter-dropdown-sm">
+                  <option value="All">All Payment</option>
+                  <option value="Electronic check">Electronic check</option>
+                  <option value="Mailed check">Mailed check</option>
+                  <option value="Bank transfer (automatic)">Bank transfer</option>
+                  <option value="Credit card (automatic)">Credit card</option>
+                </select>
+              </div>
+
+              <div class="filter-chip-unit">
+                <label for="analytics-tenure-filter">Tenure:</label>
+                <select id="analytics-tenure-filter" class="filter-dropdown-sm">
+                  <option value="All">All Tenure</option>
+                  <option value="0–12 Months">0–12 Months</option>
+                  <option value="13–24 Months">13–24 Months</option>
+                  <option value="25–48 Months">25–48 Months</option>
+                  <option value="49–72 Months">49–72 Months</option>
+                </select>
+              </div>
+
+              <button id="btn-reset-analytics-filters" class="btn-filter-reset">Reset</button>
+            </div>
+
+            <div class="analytics-view-toggle">
+              <span class="toggle-caption">Chart Metric:</span>
+              <button class="btn-toggle-metric active" data-metric="rate">Churn Rate (%)</button>
+              <button class="btn-toggle-metric" data-metric="count">Churn Count</button>
+              <button class="btn-toggle-metric" data-metric="stacked">Stacked Breakdown</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Filter Status Notification Bar -->
+          <div class="active-filter-indicator-bar" id="analytics-filter-indicator">
+            <div class="indicator-text">
+              <span>Cohort Base:</span> <strong id="analytics-cohort-count">7,043</strong> customers
+              <span class="cohort-sep">•</span>
+              <span id="analytics-cohort-label">Viewing entire subscriber portfolio</span>
+            </div>
+            <button class="btn-drilldown-action" id="btn-drilldown-to-explorer">
+              <span>View in Customer Explorer →</span>
+            </button>
+          </div>
+
+          
+          <!-- Ground Truth Churn Heatmap: Contract Type vs Internet Service -->
+          <div class="dashboard-panel mt-3">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Contract × Internet Service Ground Truth Churn Heatmap</h3>
+                <span class="panel-subtitle">Historical churn rate intensity across contract terms and internet infrastructure. Click any cell to drill down into Customer Explorer.</span>
+              </div>
+              <span class="status-pill pill-cyan">Interactive Heatmap</span>
+            </div>
+            <div class="heatmap-container" id="churn-heatmap-container">
+              <!-- Rendered dynamically via JS -->
+            </div>
+            <div class="heatmap-legend-bar">
+              <span class="heatmap-legend-label">Historical Churn Intensity:</span>
+              <div class="heatmap-gradient-swatch"></div>
+              <div class="heatmap-legend-ticks">
+                <span>Low (&lt;10%)</span>
+                <span>Moderate (20-30%)</span>
+                <span>Elevated (35-45%)</span>
+                <span>Severe (&gt;50%)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Row: Customer Scatter Plot & 100% Stacked Proportion -->
+          <div class="grid-layout-2col mt-3">
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Customer Scatter: Tenure vs. Monthly Charges</h3>
+                  <span class="panel-subtitle">Stratified 700-account sample distinguishing historical churners from retained subscribers</span>
+                </div>
+                <span class="status-pill pill-neutral">Stratified n=700</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="scatterTenureChargesChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained Subscriber</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned Subscriber</div>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">100% Stacked Churn Proportion</h3>
+                  <span class="panel-subtitle">Observed historical outcomes normalized to 100% of cohort</span>
+                </div>
+                <div class="btn-group-sm">
+                  <button class="btn-metric-pill active" id="btn-stacked-contract" onclick="switchStackedDim('contract')">Contract</button>
+                  <button class="btn-metric-pill" id="btn-stacked-payment" onclick="switchStackedDim('payment')">Payment</button>
+                  <button class="btn-metric-pill" id="btn-stacked-tech" onclick="switchStackedDim('tech')">Tech Support</button>
+                </div>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="stackedProportionChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained %</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned %</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Row: Distribution Histograms (Tenure & Monthly Charges) -->
+          <div class="grid-layout-2col mt-3">
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Tenure Distribution Histogram</h3>
+                  <span class="panel-subtitle">Explicit 12-month tenure bins split by historical churn status</span>
+                </div>
+                <span class="status-pill pill-cyan">Numeric Bins</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="tenureHistogramChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned</div>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Monthly Charges Distribution Histogram</h3>
+                  <span class="panel-subtitle">Explicit billing range bins ($) split by historical churn status</span>
+                </div>
+                <span class="status-pill pill-cyan">Numeric Bins</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="chargesHistogramChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 Deep-Dive Analytical Charts -->
+          <div class="grid-layout-3col mt-3">
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">1. Churn by Contract Term</h3>
+                  <span class="panel-subtitle">Contract duration vs retention friction</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="contractChart"></canvas>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">2. Churn by Tenure Cohort</h3>
+                  <span class="panel-subtitle">Account lifecycle vs subscriber attrition</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="tenureChart"></canvas>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">3. Churn by Internet Service</h3>
+                  <span class="panel-subtitle">Fiber optic vs DSL vs No internet</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="internetChart"></canvas>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">4. Churn by Payment Channel</h3>
+                  <span class="panel-subtitle">Electronic check vs automated payment channels</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="paymentChart"></canvas>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">5. Churn by Technical Support</h3>
+                  <span class="panel-subtitle">Impact of attached tech support service</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="techSupportChart"></canvas>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">6. Churn by Monthly Charges</h3>
+                  <span class="panel-subtitle">Distribution across billing tier ranges</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="chargesBinChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================================
+             WORKSPACE 3: CUSTOMER SEGMENTS
+             ========================================================================= -->
+        <section id="section-segments" class="content-section">
+          <!-- Section Heading Bar -->
+          <div class="workspace-header-bar">
+            <div>
+              <h2 class="workspace-title">Customer Segment Matrix & Behavioral Cohorts</h2>
+              <p class="workspace-subtitle">Cross-tabulated segment comparisons derived from real subscriber attributes. Click any segment to drill down into Customer Explorer.</p>
+            </div>
+          </div>
+
+          <!-- 2D Segment Cross-Tabulation Matrix (Contract x InternetService) -->
+          <div class="dashboard-panel">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Segment Comparison Matrix: Contract × Internet Service</h3>
+                <span class="panel-subtitle">Quantified across Customer Count, Actual Churn Rate, Average Charges, and Predicted Risk</span>
+              </div>
+              <span class="status-pill pill-cyan">Interactive Matrix</span>
+            </div>
+
+            <div class="table-responsive-box">
+              <table class="enterprise-table matrix-table" id="segment-matrix-table">
+                <thead>
+                  <tr>
+                    <th>Contract Term</th>
+                    <th>Internet Service</th>
+                    <th>Subscribers</th>
+                    <th>Actual Churn Rate</th>
+                    <th>Avg Tenure</th>
+                    <th>Avg Monthly $</th>
+                    <th>Avg Churn Risk</th>
+                    <th>High-Risk Base</th>
+                    <th>Drilldown</th>
+                  </tr>
+                </thead>
+                <tbody id="segment-matrix-tbody">
+                  <tr><td colspan="9" class="table-loading-cell">Loading segment data...</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          
+          <!-- Segment Bubble Chart: Charges vs Churn Rate (Size: Accounts) -->
+          <div class="dashboard-panel mt-3">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Multi-Segment Bubble Matrix: Charges vs Historical Churn</h3>
+                <span class="panel-subtitle">X: Avg Monthly Charges ($) • Y: Historical Churn Rate (%) • Bubble Radius: Subscriber Count. Click any bubble to explore.</span>
+              </div>
+              <span class="status-pill pill-cyan">9 Core Segments</span>
+            </div>
+            <div class="chart-box-medium">
+              <canvas id="segmentBubbleChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Interactive Segment Comparison Tool -->
+          <div class="dashboard-panel mt-4">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Interactive Segment Comparison Tool</h3>
+                <span class="panel-subtitle">Select any two customer segments to evaluate head-to-head operational metrics and risk disparities</span>
+              </div>
+              <span class="status-pill pill-purple">Cohort Benchmarking</span>
+            </div>
+
+            <div class="segment-compare-selectors">
+              <div class="compare-selector-box">
+                <label for="seg-compare-select-a">Segment A (Baseline):</label>
+                <select id="seg-compare-select-a" class="form-select"></select>
+              </div>
+              <div class="compare-vs-badge">VS</div>
+              <div class="compare-selector-box">
+                <label for="seg-compare-select-b">Segment B (Comparison):</label>
+                <select id="seg-compare-select-b" class="form-select"></select>
+              </div>
+            </div>
+
+            <div class="segment-compare-results-grid" id="segment-compare-grid">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <!-- Core Actionable Segments Grid -->
+          <div class="mt-4">
+            <h3 class="subsection-title">Core Operational Segments</h3>
+            <div class="segments-card-grid" id="core-segments-grid">
+              <!-- Dynamically populated from /api/segments -->
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================================
+             WORKSPACE 4: REVENUE INTELLIGENCE
+             ========================================================================= -->
+        <section id="section-revenue" class="content-section">
+          <div class="metrics-kpi-grid">
+            <div class="kpi-panel">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">Portfolio Monthly Charges</span>
+                <span class="status-pill pill-neutral">Base MRR</span>
+              </div>
+              <div class="kpi-metric-value text-teal" id="rev-total-mrr">$456,116.60</div>
+              <div class="kpi-panel-footer">
+                <span class="footer-meta">Sum of all 7,043 customer accounts</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel highlight-panel-red">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">High-Risk Monthly Charges</span>
+                <span class="status-pill pill-danger">Prob ≥ 60%</span>
+              </div>
+              <div class="kpi-metric-value value-danger" id="rev-high-risk-mrr">$85,546.25</div>
+              <div class="kpi-panel-footer">
+                <span class="indicator-danger">1,039 accounts (18.76% of MRR)</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel highlight-panel-amber">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">Expected Monthly Churn Loss</span>
+                <div class="tooltip-wrapper">
+                  <span class="tooltip-trigger">ⓘ</span>
+                  <div class="tooltip-box">
+                    <strong>Probability-Weighted Formula:</strong><br>
+                    E[Loss] = ∑ (P_i × MonthlyCharges_i)<br>
+                    Quantifies expected monthly revenue loss by weighting each subscriber's charges by their predicted churn probability.
+                  </div>
+                </div>
+              </div>
+              <div class="kpi-metric-value value-amber" id="rev-expected-loss">$139,980.72</div>
+              <div class="kpi-panel-footer">
+                <span class="indicator-warning">∑ (P_i × Charges_i) across portfolio</span>
+              </div>
+            </div>
+
+            <div class="kpi-panel">
+              <div class="kpi-panel-header">
+                <span class="kpi-label">Actual Lost Monthly Charges</span>
+                <span class="status-pill pill-neutral">Ground Truth</span>
+              </div>
+              <div class="kpi-metric-value text-purple" id="rev-actual-lost">$139,130.85</div>
+              <div class="kpi-panel-footer">
+                <span class="footer-meta">1,869 churned accounts historical MRR</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Revenue Risk Segmentation Breakdown & Charts -->
+          <div class="grid-layout-2col mt-3">
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Monthly Revenue Allocation by Risk Category</h3>
+                  <span class="panel-subtitle">Total portfolio MRR concentration</span>
+                </div>
+              </div>
+
+              <div class="revenue-tiers-breakdown">
+                <div class="tier-breakdown-row">
+                  <div class="tier-name-cell">
+                    <span class="tier-name text-danger">High Risk</span>
+                    <span class="tier-rule">Prob ≥ 60%</span>
+                  </div>
+                  <div class="tier-bar-cell">
+                    <div class="tier-progress-track">
+                      <div class="tier-progress-fill fill-danger" style="width: 18.76%;"></div>
+                    </div>
+                  </div>
+                  <div class="tier-metrics-cell">
+                    <span class="tier-revenue-amount">$85,546.25</span>
+                    <span class="tier-sub-stats">1,039 accounts (18.76%)</span>
+                  </div>
+                </div>
+
+                <div class="tier-breakdown-row">
+                  <div class="tier-name-cell">
+                    <span class="tier-name text-warning">Medium Risk</span>
+                    <span class="tier-rule">30% ≤ Prob &lt; 60%</span>
+                  </div>
+                  <div class="tier-bar-cell">
+                    <div class="tier-progress-track">
+                      <div class="tier-progress-fill fill-warning" style="width: 26.34%;"></div>
+                    </div>
+                  </div>
+                  <div class="tier-metrics-cell">
+                    <span class="tier-revenue-amount">$120,161.40</span>
+                    <span class="tier-sub-stats">1,720 accounts (26.34%)</span>
+                  </div>
+                </div>
+
+                <div class="tier-breakdown-row">
+                  <div class="tier-name-cell">
+                    <span class="tier-name text-success">Low Risk</span>
+                    <span class="tier-rule">Prob &lt; 30%</span>
+                  </div>
+                  <div class="tier-bar-cell">
+                    <div class="tier-progress-track">
+                      <div class="tier-progress-fill fill-success" style="width: 54.90%;"></div>
+                    </div>
+                  </div>
+                  <div class="tier-metrics-cell">
+                    <span class="tier-revenue-amount">$250,408.95</span>
+                    <span class="tier-sub-stats">4,284 accounts (54.90%)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">High-Risk MRR by Payment Method</h3>
+                  <span class="panel-subtitle">Where vulnerable revenue is billed</span>
+                </div>
+              </div>
+              <div class="chart-box-compact">
+                <canvas id="revPaymentRiskChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- Revenue-Risk Pareto Analysis -->
+          <div class="dashboard-panel mt-3">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">High-Risk Revenue Pareto Analysis (80/20 Rule)</h3>
+                <span class="panel-subtitle">Bars: High-Risk MRR Exposure by Billing Channel ($) • Line: Cumulative Percentage of Exposure (%) with 80% Threshold</span>
+              </div>
+              <span class="status-pill pill-amber">Pareto Exposure</span>
+            </div>
+            <div class="chart-box-medium">
+              <canvas id="revenueParetoChart"></canvas>
+            </div>
+            <div class="pareto-methodology-note">
+              <strong>Calculation Methodology:</strong> High-risk monthly charges are summed per payment channel for accounts with predicted churn probability &ge; 60% ($85,546.25 total). Channels are sorted descending, and cumulative exposure share is computed. Note: Electronic check billing alone accounts for <strong>$70,566.90 (82.49%)</strong> of total high-risk exposure.
+            </div>
+          </div>
+
+          <!-- Operational Risk Threshold Simulator -->
+          <div class="dashboard-panel mt-4">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Operational Risk Threshold Simulator</h3>
+                <span class="panel-subtitle">Simulate shifting the triage decision boundary to calibrate retention team workload and flagged revenue coverage</span>
+              </div>
+              <span class="status-pill pill-cyan">Interactive Simulation</span>
+            </div>
+
+            <div class="threshold-simulator-container">
+              <div class="simulator-slider-row">
+                <div class="slider-label-group">
+                  <span class="slider-title">Flagging Threshold (Probability):</span>
+                  <span class="slider-value-badge" id="sim-threshold-val">0.60 (60%)</span>
+                </div>
+                <input type="range" id="sim-threshold-slider" min="0.10" max="0.90" step="0.05" value="0.60" class="simulator-range-slider">
+                <div class="slider-scale-ticks">
+                  <span>0.10 (Sensitive)</span>
+                  <span>0.30</span>
+                  <span>0.50 (Default Binary)</span>
+                  <span>0.60 (High-Risk Base)</span>
+                  <span>0.80</span>
+                  <span>0.90 (Critical Triage)</span>
+                </div>
+              </div>
+
+              <div class="simulator-metrics-grid">
+                <div class="sim-metric-card">
+                  <span class="sim-metric-label">Flagged Accounts</span>
+                  <div class="sim-metric-num" id="sim-flagged-count">1,039</div>
+                  <span class="sim-metric-sub" id="sim-flagged-pct">14.75% of portfolio (7,043)</span>
+                </div>
+
+                <div class="sim-metric-card">
+                  <span class="sim-metric-label">Flagged Monthly Revenue</span>
+                  <div class="sim-metric-num text-danger" id="sim-flagged-mrr">$85,546.25</div>
+                  <span class="sim-metric-sub" id="sim-flagged-mrr-pct">18.76% of monthly MRR</span>
+                </div>
+
+                <div class="sim-metric-card">
+                  <span class="sim-metric-label">Annualized Exposure Run-Rate</span>
+                  <div class="sim-metric-num text-purple" id="sim-annual-exposure">$1.03M / yr</div>
+                  <span class="sim-metric-sub">Flagged Monthly &times; 12</span>
+                </div>
+
+                <div class="sim-metric-card">
+                  <span class="sim-metric-label">Operational Delta vs Baseline</span>
+                  <div class="sim-metric-num text-teal" id="sim-delta-count">0 accounts</div>
+                  <span class="sim-metric-sub" id="sim-delta-mrr">$0.00 / mo vs 0.60 threshold</span>
+                </div>
+              </div>
+
+              <div class="simulator-guidance-alert">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Data Science Rigor Notice:</strong> Adjusting this operational cutoff reallocates campaign intervention resources across the subscriber base. It does <em>not</em> retrain or alter the underlying statistical model weights or change its intrinsic holdout discrimination metrics.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verified 25% Retention Scenario -->
+          <div class="retention-calc-showcase mt-4">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Verified Retention Scenario: 25% High-Risk Retention</h3>
+                <span class="panel-subtitle">Quantifying protected monthly revenue if proactive outreach successfully retains 25% of high-risk customers</span>
+              </div>
+              <span class="status-pill pill-cyan">Transparent Math</span>
+            </div>
+
+            <div class="calc-steps-grid">
+              <div class="calc-step-card">
+                <span class="step-tag">Step 1: Baseline High-Risk MRR</span>
+                <span class="step-math">$85,546.25</span>
+                <span class="step-label">1,039 accounts with churn prob ≥ 60%</span>
+              </div>
+              <div class="calc-step-card">
+                <span class="step-tag">Step 2: Protected Monthly Revenue</span>
+                <span class="step-math text-teal">$21,386.56 / mo</span>
+                <span class="step-label">0.25 × $85,546.25 monthly charges</span>
+              </div>
+              <div class="calc-step-card">
+                <span class="step-tag">Step 3: Annualized Protected Run-Rate</span>
+                <span class="step-math text-purple">$256,638.75 / yr</span>
+                <span class="step-label">$21,386.56 × 12 months</span>
+              </div>
+            </div>
+
+            <details class="calc-assumptions-details">
+              <summary>View Explicit Operational Assumptions</summary>
+              <ul class="assumptions-list">
+                <li>Derived strictly by applying 25% to the verified high-risk monthly charges ($85,546.25).</li>
+                <li>Assumes retained subscribers maintain their prevailing monthly charge tiers across the intervention period.</li>
+                <li>Net ROI depends on specific campaign outreach costs (e.g. discount vouchers, agent call center overhead) which vary by operator.</li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+        <!-- =========================================================================
+             WORKSPACE 5: CUSTOMER EXPLORER
+             ========================================================================= -->
+        <section id="section-explorer" class="content-section">
+          <!-- Explorer Main Panel -->
+          <div class="dashboard-panel">
+            <!-- Filter Toolbar -->
+            <div class="explorer-filter-toolbar">
+              <div class="search-input-wrap">
+                <svg class="search-svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="customer-search" class="table-search-input" placeholder="Search Customer ID (e.g. 7590-VHVEG)...">
+              </div>
+
+              <div class="filter-group-row">
+                <div class="filter-unit">
+                  <label class="filter-label" for="filter-risk">Risk:</label>
+                  <select id="filter-risk" class="filter-dropdown">
+                    <option value="All">All Tiers</option>
+                    <option value="High Risk">High Risk (≥60%)</option>
+                    <option value="Medium Risk">Medium Risk (30–60%)</option>
+                    <option value="Low Risk">Low Risk (&lt;30%)</option>
+                  </select>
+                </div>
+
+                <div class="filter-unit">
+                  <label class="filter-label" for="filter-contract">Contract:</label>
+                  <select id="filter-contract" class="filter-dropdown">
+                    <option value="All">All Contracts</option>
+                    <option value="Month-to-month">Month-to-month</option>
+                    <option value="One year">One year</option>
+                    <option value="Two year">Two year</option>
+                  </select>
+                </div>
+
+                <div class="filter-unit">
+                  <label class="filter-label" for="filter-internet">Internet:</label>
+                  <select id="filter-internet" class="filter-dropdown">
+                    <option value="All">All Internet</option>
+                    <option value="Fiber optic">Fiber optic</option>
+                    <option value="DSL">DSL</option>
+                    <option value="No">No Internet</option>
+                  </select>
+                </div>
+
+                <div class="filter-unit">
+                  <label class="filter-label" for="filter-churn">Actual:</label>
+                  <select id="filter-churn" class="filter-dropdown">
+                    <option value="All">All Status</option>
+                    <option value="Yes">Churned (Yes)</option>
+                    <option value="No">Retained (No)</option>
+                  </select>
+                </div>
+
+                <button id="btn-reset-table-filters" class="btn-filter-reset">Reset</button>
+
+                <button id="btn-export-csv" class="btn-action-primary" title="Export matching filtered records as CSV">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  <span>Export CSV</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Table Legend Strip -->
+            <div class="table-legend-strip">
+              <span class="legend-strip-label">Risk Thresholds:</span>
+              <span class="legend-badge badge-pill-danger">● High Risk (≥ 60%)</span>
+              <span class="legend-badge badge-pill-warning">● Medium Risk (30%–60%)</span>
+              <span class="legend-badge badge-pill-success">● Low Risk (&lt; 30%)</span>
+              <span class="legend-badge badge-pill-critical">★ Critical Triage (≥ 80%)</span>
+              <span class="legend-strip-hint">Tip: Click any customer row to inspect complete account profile</span>
+            </div>
+
+            <!-- Scrollable Table -->
+            <div class="table-responsive-box">
+              <table class="enterprise-table" id="customers-table">
+                <thead>
+                  <tr>
+                    <th class="sortable-th active-sort" data-sort="customerID">Customer ID <span class="sort-icon">▲</span></th>
+                    <th class="sortable-th" data-sort="tenure">Tenure <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="Contract">Contract <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="InternetService">Internet <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="PaymentMethod">Payment Channel <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="MonthlyCharges">Monthly ($) <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="Churn">Actual Churn <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="Predicted_Churn_Probability">Predicted Risk <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="Churn_Risk_Category">Risk Tier <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th" data-sort="Retention_Priority">Retention Priority <span class="sort-icon">↕</span></th>
+                  </tr>
+                </thead>
+                <tbody id="customers-table-body">
+                  <tr><td colspan="10" class="table-loading-cell">Loading verified customer intelligence records...</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Table Pagination Bar -->
+            <div class="table-pagination-footer">
+              <span id="pagination-info" class="pagination-status-text">Showing 1 to 15 of 7,043 records</span>
+              <div class="pagination-controls-row">
+                <button id="btn-prev" class="btn-page-ctrl" disabled>Previous</button>
+                <span id="page-num" class="page-current-display">Page 1 / 470</span>
+                <button id="btn-next" class="btn-page-ctrl">Next</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Customer Detail Slide-Out Inspector Drawer -->
+          <div class="customer-drawer-backdrop" id="drawer-backdrop"></div>
+          <div class="customer-inspector-drawer" id="customer-drawer">
+            <div class="drawer-header">
+              <div class="drawer-title-group">
+                <span class="drawer-badge" id="drawer-risk-badge">High Risk</span>
+                <h3 class="drawer-cust-id" id="drawer-cust-id">7590-VHVEG</h3>
+              </div>
+              <button class="btn-close-drawer" id="btn-close-drawer" title="Close Drawer (Esc)">✕</button>
+            </div>
+
+            <div class="drawer-body" id="drawer-body">
+              <!-- Content rendered dynamically via JS -->
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================================================================
+             WORKSPACE 6: PREDICTION LAB & MODEL EVALUATION
+             ========================================================================= -->
+        <section id="section-predict" class="content-section">
+          <!-- Tab Navigation for Prediction Lab -->
+          <div class="predict-tab-bar">
+            <button class="btn-predict-tab active" data-subtab="live-predictor">Real-Time Churn Predictor</button>
+            <button class="btn-predict-tab" data-subtab="batch-predictor">Batch Customer Prediction (CSV)</button>
+            <button class="btn-predict-tab" data-subtab="model-evaluation">Model Performance & Evaluation</button>
+          </div>
+
+          <!-- Subtab 1: Live Churn Predictor -->
+          <div id="subtab-live-predictor" class="predict-subtab-view active">
+            <div class="predict-workspace-grid">
+              <!-- Form Panel -->
+              <div class="dashboard-panel form-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3 class="panel-title">Customer Feature Intake</h3>
+                    <span class="panel-subtitle">Score individual subscriber parameters using the genuine trained pipeline</span>
+                  </div>
+                  <div class="preset-buttons-row">
+                    <span class="preset-intro">Demo Presets:</span>
+                    <button type="button" class="btn-preset-pill preset-high" id="preset-high-risk">High-Risk Example</button>
+                    <button type="button" class="btn-preset-pill preset-low" id="preset-low-risk">Low-Risk Example</button>
+                  </div>
+                </div>
+
+                <form id="prediction-form" class="predict-form-body">
+                  <!-- Group 1: Demographics -->
+                  <div class="form-section-header">
+                    <span class="section-num-badge">1</span>
+                    <span>Customer Demographics</span>
+                  </div>
+                  <div class="form-grid-4">
+                    <div class="form-control-unit">
+                      <label for="gender">Gender</label>
+                      <select id="gender" name="gender" class="form-select">
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="SeniorCitizen">Senior Citizen</label>
+                      <select id="SeniorCitizen" name="SeniorCitizen" class="form-select">
+                        <option value="0">No (Under 65)</option>
+                        <option value="1">Yes (Senior)</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="Partner">Has Partner</label>
+                      <select id="Partner" name="Partner" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="Dependents">Has Dependents</label>
+                      <select id="Dependents" name="Dependents" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Group 2: Account Terms & Billing -->
+                  <div class="form-section-header">
+                    <span class="section-num-badge">2</span>
+                    <span>Account Terms & Payment</span>
+                  </div>
+                  <div class="form-grid-4">
+                    <div class="form-control-unit">
+                      <label for="tenure">Tenure (Months)</label>
+                      <input type="number" id="tenure" name="tenure" min="0" max="72" value="2" class="form-input" required>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="Contract">Contract Term</label>
+                      <select id="Contract" name="Contract" class="form-select">
+                        <option value="Month-to-month">Month-to-month</option>
+                        <option value="One year">One year</option>
+                        <option value="Two year">Two year</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="PaperlessBilling">Paperless Billing</label>
+                      <select id="PaperlessBilling" name="PaperlessBilling" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="PaymentMethod">Payment Method</label>
+                      <select id="PaymentMethod" name="PaymentMethod" class="form-select">
+                        <option value="Electronic check">Electronic check</option>
+                        <option value="Mailed check">Mailed check</option>
+                        <option value="Bank transfer (automatic)">Bank transfer (automatic)</option>
+                        <option value="Credit card (automatic)">Credit card (automatic)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Group 3: Subscribed Services -->
+                  <div class="form-section-header">
+                    <span class="section-num-badge">3</span>
+                    <span>Subscribed Services</span>
+                  </div>
+                  <div class="form-grid-3">
+                    <div class="form-control-unit">
+                      <label for="PhoneService">Phone Service</label>
+                      <select id="PhoneService" name="PhoneService" class="form-select">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="MultipleLines">Multiple Lines</label>
+                      <select id="MultipleLines" name="MultipleLines" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No phone service">No phone service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="InternetService">Internet Service</label>
+                      <select id="InternetService" name="InternetService" class="form-select">
+                        <option value="Fiber optic">Fiber optic</option>
+                        <option value="DSL">DSL</option>
+                        <option value="No">No Internet Service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="OnlineSecurity">Online Security</label>
+                      <select id="OnlineSecurity" name="OnlineSecurity" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="OnlineBackup">Online Backup</label>
+                      <select id="OnlineBackup" name="OnlineBackup" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="DeviceProtection">Device Protection</label>
+                      <select id="DeviceProtection" name="DeviceProtection" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="TechSupport">Tech Support</label>
+                      <select id="TechSupport" name="TechSupport" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="StreamingTV">Streaming TV</label>
+                      <select id="StreamingTV" name="StreamingTV" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                      </select>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="StreamingMovies">Streaming Movies</label>
+                      <select id="StreamingMovies" name="StreamingMovies" class="form-select">
+                        <option value="No">No</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No internet service">No internet service</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Group 4: Billing Amounts -->
+                  <div class="form-section-header">
+                    <span class="section-num-badge">4</span>
+                    <span>Billing Charges</span>
+                  </div>
+                  <div class="form-grid-2">
+                    <div class="form-control-unit">
+                      <label for="MonthlyCharges">Monthly Charges ($)</label>
+                      <input type="number" id="MonthlyCharges" name="MonthlyCharges" step="0.05" min="18" max="150" value="70.70" class="form-input" required>
+                    </div>
+                    <div class="form-control-unit">
+                      <label for="TotalCharges">Total Lifetime Charges ($)</label>
+                      <input type="number" id="TotalCharges" name="TotalCharges" step="0.05" min="0" max="9000" value="151.65" class="form-input" required>
+                    </div>
+                  </div>
+
+                  <div class="form-submit-block">
+                    <button type="submit" class="btn-predict-action" id="btn-predict">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                      <span>Execute Predictive Inference</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Prediction Result Panel -->
+              <div class="dashboard-panel result-panel" id="result-container">
+                <div class="panel-header">
+                  <div>
+                    <h3 class="panel-title">Model Risk Assessment</h3>
+                    <span class="panel-subtitle">Real-time inference output from pre-trained pipeline</span>
+                  </div>
+                  <span class="status-pill pill-neutral" id="res-badge">Awaiting Input</span>
+                </div>
+
+                <!-- Placeholder State -->
+                <div class="result-placeholder-view" id="result-placeholder">
+                  <div class="placeholder-graphic">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                  </div>
+                  <h4>Ready for Inference</h4>
+                  <p>Select a demo preset or customize attributes, then click <strong>Execute Predictive Inference</strong> to score churn likelihood.</p>
+                </div>
+
+                <!-- Active Result View -->
+                <div class="result-active-view hidden" id="result-content">
+                  <!-- Probability Gauge Card -->
+                  <div class="risk-gauge-box">
+                    <div class="gauge-label-row">
+                      <span class="gauge-caption">Predicted Churn Probability</span>
+                      <span class="gauge-number" id="res-prob-pct">78.7%</span>
+                    </div>
+                    <div class="gauge-track">
+                      <div class="gauge-fill-bar" id="res-progress-fill" style="width: 78.7%;"></div>
+                    </div>
+                  </div>
+
+                  <!-- Structured Metric Badges -->
+                  <div class="result-meta-grid">
+                    <div class="meta-field-card">
+                      <span class="field-title">Classification</span>
+                      <span class="field-value" id="res-predicted-class">Churn Likely (Yes)</span>
+                    </div>
+                    <div class="meta-field-card">
+                      <span class="field-title">Risk Category</span>
+                      <span class="field-value" id="res-risk-tier">High Risk</span>
+                    </div>
+                    <div class="meta-field-card">
+                      <span class="field-title">Retention Priority</span>
+                      <span class="field-value" id="res-priority">Priority 2 - High</span>
+                    </div>
+                    <div class="meta-field-card">
+                      <span class="field-title">High-Risk Alert</span>
+                      <span class="field-value" id="res-high-risk-flag">Yes</span>
+                    </div>
+                  </div>
+
+                  <!-- Prescribed Playbook Box -->
+                  <div class="prescribed-action-panel">
+                    <div class="action-panel-title">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+                      <span>Prescribed Retention Playbook:</span>
+                    </div>
+                    <div class="action-panel-text" id="res-action">
+                      Offer contract upgrade incentive; Promote automatic payment enrollment; Offer technical support retention package
+                    </div>
+                  </div>
+
+                  <!-- Probability Balance Readout -->
+                  <div class="prob-balance-row">
+                    <div class="balance-item">
+                      <span>Retention Probability:</span>
+                      <strong id="res-retain-pct">21.3%</strong>
+                    </div>
+                    <div class="balance-item">
+                      <span>Risk Score (0–100):</span>
+                      <strong id="res-risk-score">79 / 100</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- Subtab 2: Batch Customer Prediction (CSV Engine) -->
+          <div id="subtab-batch-predictor" class="predict-subtab-view hidden">
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Batch Customer Inference Engine</h3>
+                  <span class="panel-subtitle">Upload subscriber CSV files for automated feature validation, pipeline inference, and prescriptive action tagging</span>
+                </div>
+                <div class="batch-header-actions">
+                  <a href="/api/predict-batch/template" class="btn-action-secondary" download="sample_churn_batch_template.csv">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    <span>Download Sample CSV Template</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Upload Dropzone -->
+              <div class="batch-upload-dropzone" id="batch-dropzone">
+                <input type="file" id="batch-file-input" accept=".csv" class="hidden-file-input">
+                <div class="dropzone-content">
+                  <div class="dropzone-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                  </div>
+                  <h4>Drag & Drop Customer CSV or Click to Browse</h4>
+                  <p>Requires standard subscriber features. Target label <code>Churn</code> is strictly excluded from inference inputs.</p>
+                  <button type="button" class="btn-upload-browse" onclick="document.getElementById('batch-file-input').click()">Select CSV File</button>
+                </div>
+              </div>
+
+              <!-- Validation Alert -->
+              <div class="batch-validation-alert hidden" id="batch-error-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                <div id="batch-error-msg">Validation error details</div>
+              </div>
+
+              <!-- Loading State -->
+              <div class="batch-loading-indicator hidden" id="batch-spinner">
+                <span class="pulse-indicator"></span>
+                <span>Executing pre-trained model pipeline inference across batch records...</span>
+              </div>
+
+              <!-- Batch Results Container -->
+              <div class="batch-results-wrapper hidden" id="batch-results-container">
+                <div class="batch-summary-kpis">
+                  <div class="batch-kpi-card">
+                    <span class="batch-kpi-label">Total Records Scored</span>
+                    <div class="batch-kpi-num" id="batch-kpi-total">0</div>
+                  </div>
+                  <div class="batch-kpi-card">
+                    <span class="batch-kpi-label">Predicted Churners</span>
+                    <div class="batch-kpi-num text-danger" id="batch-kpi-churners">0</div>
+                  </div>
+                  <div class="batch-kpi-card">
+                    <span class="batch-kpi-label">Predicted Churn Rate</span>
+                    <div class="batch-kpi-num value-amber" id="batch-kpi-rate">0.0%</div>
+                  </div>
+                  <div class="batch-kpi-card">
+                    <span class="batch-kpi-label">High-Risk Accounts (&ge;60%)</span>
+                    <div class="batch-kpi-num text-purple" id="batch-kpi-high-risk">0</div>
+                  </div>
+                  <div class="batch-kpi-card">
+                    <span class="batch-kpi-label">Export Scored Batch</span>
+                    <a href="/api/predict-batch/download" id="btn-batch-download-csv" class="btn-batch-download" download="batch_scored_predictions.csv">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                      <span>Download Scored CSV</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="table-responsive-box mt-3">
+                  <table class="enterprise-table" id="batch-results-table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Customer ID</th>
+                        <th>Contract</th>
+                        <th>Internet</th>
+                        <th>Monthly ($)</th>
+                        <th>Predicted Risk</th>
+                        <th>Classification</th>
+                        <th>Risk Tier</th>
+                        <th>Prescribed Retention Playbook</th>
+                      </tr>
+                    </thead>
+                    <tbody id="batch-results-tbody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtab 2: Model Performance & Evaluation -->
+          <div id="subtab-model-evaluation" class="predict-subtab-view hidden">
+            <!-- Scorecards Grid -->
+            <div class="metrics-kpi-grid">
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Holdout ROC-AUC</span>
+                  <span class="status-pill pill-success">Selected</span>
+                </div>
+                <div class="kpi-metric-value text-teal">84.21%</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-positive">+2.28% over Random Forest</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Holdout Accuracy</span>
+                  <span class="status-pill pill-neutral">n=1,409</span>
+                </div>
+                <div class="kpi-metric-value">80.55%</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-positive">1,135 / 1,409 correct</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Holdout Precision</span>
+                  <span class="status-pill pill-neutral">Class 1</span>
+                </div>
+                <div class="kpi-metric-value value-amber">65.72%</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-warning">209 TP of 318 predicted churn</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel highlight-panel-red">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Holdout Recall</span>
+                  <span class="status-pill pill-danger">Catch Rate</span>
+                </div>
+                <div class="kpi-metric-value value-danger">55.88%</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-positive">+6.95% higher than RF</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Holdout F1-Score</span>
+                  <span class="status-pill pill-purple">Harmonic Mean</span>
+                </div>
+                <div class="kpi-metric-value text-purple">60.40%</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-positive">+5.44% higher than RF</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Benchmark Table & Chart Row -->
+            <div class="grid-layout-2col mt-3">
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3 class="panel-title">Holdout Test Set Benchmark (n = 1,409)</h3>
+                    <span class="panel-subtitle">Untouched evaluation set comparison</span>
+                  </div>
+                  <span class="status-pill pill-success">Verified</span>
+                </div>
+
+                <div class="table-responsive-box">
+                  <table class="enterprise-table benchmark-table">
+                    <thead>
+                      <tr>
+                        <th>Algorithm</th>
+                        <th>Status</th>
+                        <th>ROC-AUC</th>
+                        <th>Accuracy</th>
+                        <th>Recall</th>
+                        <th>Precision</th>
+                        <th>F1</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="table-row-selected">
+                        <td><strong>Logistic Regression</strong></td>
+                        <td><span class="status-pill pill-success">Selected</span></td>
+                        <td><strong>84.21%</strong></td>
+                        <td><strong>80.55%</strong></td>
+                        <td><strong>55.88%</strong></td>
+                        <td><strong>65.72%</strong></td>
+                        <td><strong>60.40%</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Random Forest</td>
+                        <td><span class="status-pill pill-neutral">Benchmark</span></td>
+                        <td>81.93%</td>
+                        <td>78.71%</td>
+                        <td>48.93%</td>
+                        <td>62.67%</td>
+                        <td>54.96%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="panel-footer-insight">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <span><strong>Selection Rationale:</strong> Logistic Regression outperformed Random Forest across all primary metrics, capturing <strong>+26 additional true churners</strong> (+6.95% recall) with superior discrimination (84.21% vs 81.93% AUC).</span>
+                </div>
+              </div>
+
+              <!-- Algorithm Comparison Chart -->
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3 class="panel-title">Algorithm Benchmark Comparison</h3>
+                    <span class="panel-subtitle">Holdout test metric performance</span>
+                  </div>
+                </div>
+                <div class="chart-box-compact">
+                  <canvas id="modelComparisonChart"></canvas>
+                </div>
+              </div>
+            </div>
+
+            
+            <!-- Predicted-Risk Distribution Histogram -->
+            <div class="dashboard-panel mt-3">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Model Predicted-Risk Distribution & Operational Risk Tiers</h3>
+                  <span class="panel-subtitle">Frequency distribution of continuous churn probabilities across the full subscriber portfolio with decision boundaries marked</span>
+                </div>
+                <span class="status-pill pill-cyan">Full Portfolio (n=7,043)</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="predictedRiskHistChart"></canvas>
+              </div>
+              <div class="panel-footer-insight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Probability Definition:</strong> Values represent predicted churn probabilities generated by the Logistic Regression pipeline. They are uncalibrated operational scores utilized for subscriber tiering and triage ranking.</span>
+              </div>
+            </div>
+
+            <!-- Confusion Matrix Diagnostics -->
+            <div class="dashboard-panel mt-3">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Holdout Confusion Matrix Diagnostics (n = 1,409)</h3>
+                  <span class="panel-subtitle">Verified test outcomes: TN + FP + FN + TP = 1,409</span>
+                </div>
+                <span class="status-pill pill-cyan">Stratified Test Split</span>
+              </div>
+
+              <div class="confusion-matrix-grid">
+                <div class="cm-quadrant cm-tn">
+                  <span class="cm-quad-label">True Negatives (TN)</span>
+                  <span class="cm-quad-count">926</span>
+                  <span class="cm-quad-rate">65.72% of Test Base</span>
+                  <span class="cm-quad-meaning">Retained customers correctly predicted</span>
+                </div>
+
+                <div class="cm-quadrant cm-fp">
+                  <span class="cm-quad-label">False Positives (FP)</span>
+                  <span class="cm-quad-count">109</span>
+                  <span class="cm-quad-rate">7.74% of Test Base</span>
+                  <span class="cm-quad-meaning">False alarm: retained but predicted to churn</span>
+                </div>
+
+                <div class="cm-quadrant cm-fn">
+                  <span class="cm-quad-label">False Negatives (FN)</span>
+                  <span class="cm-quad-count">165</span>
+                  <span class="cm-quad-rate">11.71% of Test Base</span>
+                  <span class="cm-quad-meaning">Missed churners: churned but predicted retained</span>
+                </div>
+
+                <div class="cm-quadrant cm-tp">
+                  <span class="cm-quad-label">True Positives (TP)</span>
+                  <span class="cm-quad-count">209</span>
+                  <span class="cm-quad-rate">14.83% of Test Base</span>
+                  <span class="cm-quad-meaning">Correctly detected churning customers</span>
+                </div>
+              </div>
+
+              <div class="cm-derived-metrics-list">
+                <div class="cm-metric-pill">
+                  <span class="cm-pill-title">Sensitivity (Recall)</span>
+                  <span class="cm-pill-val text-teal">55.88%</span>
+                </div>
+                <div class="cm-metric-pill">
+                  <span class="cm-pill-title">Specificity (TNR)</span>
+                  <span class="cm-pill-val text-success">89.47%</span>
+                </div>
+                <div class="cm-metric-pill">
+                  <span class="cm-pill-title">False Positive Rate</span>
+                  <span class="cm-pill-val text-warning">10.53%</span>
+                </div>
+                <div class="cm-metric-pill">
+                  <span class="cm-pill-title">False Negative Rate</span>
+                  <span class="cm-pill-val text-danger">44.12%</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Collapsible Academic Formulas Reference (Clean & compact for university demonstration) -->
+            <details class="calc-assumptions-details mt-3">
+              <summary>Academic Formulations & Step-by-Step Derivations Reference (College Demonstration)</summary>
+              <div class="academic-accordion-content">
+                <div class="academic-formula-grid">
+                  <div class="academic-formula-card">
+                    <h5>1. Logistic Regression Sigmoid & Logit</h5>
+                    <code>P(Y=1|X) = 1 / (1 + e^-z), where z = β₀ + ∑ βⱼXⱼ</code>
+                    <p>Linearization: ln(p / (1-p)) = β₀ + β₁X₁ + ... + βₚXₚ</p>
+                  </div>
+                  <div class="academic-formula-card">
+                    <h5>2. Accuracy Formulation</h5>
+                    <code>Accuracy = (TP + TN) / Total = (209 + 926) / 1,409 = 80.55%</code>
+                    <p>Total verified test set correctly classified: 1,135 of 1,409 records.</p>
+                  </div>
+                  <div class="academic-formula-card">
+                    <h5>3. Precision Formulation</h5>
+                    <code>Precision = TP / (TP + FP) = 209 / (209 + 109) = 209 / 318 = 65.72%</code>
+                    <p>65.72% of customers flagged by model actually intended to churn.</p>
+                  </div>
+                  <div class="academic-formula-card">
+                    <h5>4. Recall (Sensitivity) Formulation</h5>
+                    <code>Recall = TP / (TP + FN) = 209 / (209 + 165) = 209 / 374 = 55.88%</code>
+                    <p>Captures 55.88% of all true churners in holdout evaluation.</p>
+                  </div>
+                  <div class="academic-formula-card">
+                    <h5>5. F1-Score (Harmonic Mean)</h5>
+                    <code>F1 = 2 × (Precision × Recall) / (Precision + Recall) = 60.40%</code>
+                    <p>Harmonic mean balancing precision and recall across decision boundaries.</p>
+                  </div>
+                  <div class="academic-formula-card">
+                    <h5>6. Expected Loss Formulation</h5>
+                    <code>E[Loss] = ∑ (P_i × Charges_i) = $139,980.72 / month</code>
+                    <p>Probability-weighted expected loss directly mirrors actual lost monthly charges ($139,130.85).</p>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
