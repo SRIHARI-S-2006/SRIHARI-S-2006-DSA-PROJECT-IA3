@@ -1,11 +1,5 @@
 # Customer Churn Prediction & Retention Analytics (CCPRA)
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Flask](https://img.shields.io/badge/Flask-3.0-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.3-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
-[![Chart.js](https://img.shields.io/badge/Chart.js-4.4-FF6384?style=for-the-badge&logo=chartdotjs&logoColor=white)](https://www.chartjs.org/)
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-00C853?style=for-the-badge)]()
-
 CCPRA is an end-to-end customer intelligence and retention analytics platform that bridges data science, machine learning, and revenue strategy. It scores individual attrition risks across **7,043 subscribers**, calculates probability-weighted revenue exposure, and provides actionable retention intervention playbooks across six interactive enterprise workspaces.
 
 ---
@@ -177,14 +171,3 @@ Executes headless Chrome verification across all six workspaces, confirming 0 co
 | **High Risk Base** | $60\% \le P < 80\%$ (990 accounts) | Priority 2 (High) | Target contract upgrade incentive; promote automated payment discount |
 | **Medium Risk** | $30\% \le P < 60\%$ (1,720 accounts) | Priority 3 (Medium) | Digital email nurture campaign; trial of online security & backup services |
 | **Low Risk** | $P < 30\%$ (4,284 accounts) | Priority 4 (Low) | Standard loyalty communications; multi-line cross-sell offers |
-
----
-
-## 📜 License & Citations
-
-- **Code**: [MIT License](LICENSE)
-- **Primary Data**: IBM Cognos Analytics Open Dataset
-- **UCI Dataset**: [UCI Machine Learning Repository](https://archive.ics.uci.edu/dataset/563/iranian+churn+dataset)
-- **TRAI Reports**: [Telecom Regulatory Authority of India](https://www.trai.gov.in)
-- **FCC Data**: [FCC Consumer Complaints Open Data](https://opendata.fcc.gov)
-- **Mendeley Data**: [DOI: 10.17632/px3dt72xdw.1](https://data.mendeley.com/datasets/px3dt72xdw/1)
