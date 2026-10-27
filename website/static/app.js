@@ -4,6 +4,24 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Global Chart.js Aesthetic Configuration (Restrained Enterprise Palette)
+  if (typeof Chart !== "undefined") {
+    Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+    Chart.defaults.font.size = 11;
+    Chart.defaults.color = "#94a3b8"; // Slate 400
+    Chart.defaults.borderColor = "rgba(255, 255, 255, 0.06)";
+    if (Chart.defaults.plugins && Chart.defaults.plugins.tooltip) {
+      Chart.defaults.plugins.tooltip.backgroundColor = "#0f172a"; // Slate 900
+      Chart.defaults.plugins.tooltip.titleColor = "#f8fafc";
+      Chart.defaults.plugins.tooltip.bodyColor = "#cbd5e1";
+      Chart.defaults.plugins.tooltip.borderColor = "rgba(255, 255, 255, 0.12)";
+      Chart.defaults.plugins.tooltip.borderWidth = 1;
+      Chart.defaults.plugins.tooltip.padding = 10;
+      Chart.defaults.plugins.tooltip.cornerRadius = 6;
+      Chart.defaults.plugins.tooltip.boxPadding = 4;
+    }
+  }
+
   // 1. Navigation System (6 Core Workspaces)
   initNavigation();
 
@@ -24,8 +42,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 7. Advanced Analytical Visualizations & Features
   loadAdvancedVisualizations();
+  loadLifecycleRetention();
+  loadDistributionBoxPlot();
+  loadModelDiagnostics();
   initThresholdSimulator();
   initBatchPrediction();
+
+  // 8. Major Redesign: Enterprise Intelligence Labs & Provenance
+  loadPortfolioHealthGauge();
+  loadRetentionFunnel();
+  loadServiceContractMatrix();
+  loadCorrelationMatrix();
+  loadFinancialTreemap();
+  loadExternalMarketIntelligence();
+  loadUciBenchmark();
+  loadProvenanceRegistry();
 });
 
 /* ==============================================================================
@@ -44,21 +75,21 @@ function initNavigation() {
   const pageSubtitle = document.getElementById("page-subtitle");
 
   const titleMap = {
-    overview: "Executive Overview",
-    analytics: "Churn Analytics",
-    segments: "Customer Segments",
-    revenue: "Revenue Intelligence",
-    explorer: "Customer Explorer",
-    predict: "Prediction Lab"
+    overview: "Executive Intelligence",
+    analytics: "Customer Behavior Lab",
+    segments: "Market Intelligence",
+    revenue: "Revenue Strategy",
+    explorer: "Customer Operations",
+    predict: "Model Science Lab"
   };
 
   const subtitleMap = {
-    overview: "Subscriber portfolio health, churn velocity, and strategic risk distribution",
-    analytics: "Interactive multidimensional cohort drill-down and behavioral attrition drivers",
-    segments: "Cross-tabulated segment comparisons and operational risk cohorts",
-    revenue: "Granular quantification of portfolio MRR, high-risk exposure, and expected loss",
-    explorer: "Searchable subscriber registry with multidimensional filters and detailed profile inspector",
-    predict: "Real-time individual inference engine and holdout model evaluation diagnostics"
+    overview: "Portfolio health benchmarks, retention progression funnel, and multi-service churn matrix",
+    analytics: "Empirical survivor curves, statistical quantile distributions, and multivariate correlation matrix",
+    segments: "Macro TRAI broadband census, MNP churn volumes, and FCC consumer complaint telemetry",
+    revenue: "Financial risk concentration, hierarchical exposure treemap, and operational threshold economics",
+    explorer: "Portfolio subscriber registry, customer profile inspector, and multi-source data provenance",
+    predict: "Real-time inference, batch CSV scoring, benchmark diagnostics, and external validation"
   };
 
   window.navigateToSection = function(sectionKey) {
@@ -504,15 +535,15 @@ async function loadCustomerSegments() {
         }
 
         tr.innerHTML = `
-          <td><strong>${row.contract}</strong></td>
-          <td>${row.internet}</td>
-          <td><strong>${row.count.toLocaleString()}</strong></td>
-          <td>${rateBadge}</td>
-          <td>${row.avg_tenure} mo</td>
-          <td>$${row.avg_monthly_charges.toFixed(2)}</td>
-          <td><strong style="color: ${row.avg_predicted_risk >= 50 ? '#f87171' : '#34d399'};">${row.avg_predicted_risk}%</strong></td>
-          <td>${row.high_risk_count.toLocaleString()} accounts</td>
-          <td>
+          <td class="text-left"><strong>${row.contract}</strong></td>
+          <td class="text-left">${row.internet}</td>
+          <td class="text-right num"><strong>${row.count.toLocaleString()}</strong></td>
+          <td class="text-right num">${rateBadge}</td>
+          <td class="text-right num">${row.avg_tenure} mo</td>
+          <td class="text-right num">$${row.avg_monthly_charges.toFixed(2)}</td>
+          <td class="text-right num"><strong style="color: ${row.avg_predicted_risk >= 50 ? '#f87171' : '#34d399'};">${row.avg_predicted_risk}%</strong></td>
+          <td class="text-right num">${row.high_risk_count.toLocaleString()}</td>
+          <td class="text-center">
             <button class="btn-matrix-drilldown" onclick="drilldownSegment('${row.contract}', '${row.internet}')">
               Explore →
             </button>
@@ -577,32 +608,48 @@ async function loadCustomerSegments() {
 }
 
 // Global drilldown helpers
-window.drilldownSegment = function(contract, internet) {
+window.drilldownSegment = function(contract, internet, risk, churn) {
+  currentContract = (contract && contract !== "All") ? contract : "All";
+  currentInternet = (internet && internet !== "All") ? internet : "All";
+  currentRisk = (risk && risk !== "All") ? risk : "All";
+  currentChurn = (churn && churn !== "All") ? churn : "All";
+  currentSearch = "";
+  currentPage = 1;
+
   const expContract = document.getElementById("filter-contract");
   const expInternet = document.getElementById("filter-internet");
-  if (expContract) expContract.value = contract;
-  if (expInternet) expInternet.value = internet;
+  const expRisk = document.getElementById("filter-risk");
+  const expChurn = document.getElementById("filter-churn");
+  const searchInput = document.getElementById("customer-search");
+
+  if (expContract) expContract.value = currentContract;
+  if (expInternet) expInternet.value = currentInternet;
+  if (expRisk) expRisk.value = currentRisk;
+  if (expChurn) expChurn.value = currentChurn;
+  if (searchInput) searchInput.value = "";
+
+  if (typeof window.renderActiveDrilldownChips === "function") {
+    window.renderActiveDrilldownChips();
+  }
 
   window.navigateToSection("explorer");
   if (typeof fetchCustomers === "function") fetchCustomers();
 };
 
 window.drilldownByName = function(name) {
-  const expContract = document.getElementById("filter-contract");
-  const expInternet = document.getElementById("filter-internet");
-  const expRisk = document.getElementById("filter-risk");
-
   if (name.includes("Month-to-Month + Fiber Optic")) {
-    if (expContract) expContract.value = "Month-to-month";
-    if (expInternet) expInternet.value = "Fiber optic";
+    window.drilldownSegment("Month-to-month", "Fiber optic");
+  } else if (name.includes("Month-to-Month + Electronic Check")) {
+    window.drilldownSegment("Month-to-month", "All");
   } else if (name.includes("Long-Term Contracts")) {
-    if (expContract) expContract.value = "Two year";
+    window.drilldownSegment("Two year", "All");
   } else if (name.includes("High-Value Fiber Optic")) {
-    if (expInternet) expInternet.value = "Fiber optic";
+    window.drilldownSegment("All", "Fiber optic");
+  } else if (name.includes("New Subscribers")) {
+    window.drilldownSegment("Month-to-month", "All");
+  } else {
+    window.drilldownSegment("All", "All");
   }
-
-  window.navigateToSection("explorer");
-  if (typeof fetchCustomers === "function") fetchCustomers();
 };
 
 /* ==============================================================================
@@ -665,6 +712,7 @@ function initCustomerExplorer() {
     currentInternet = filterInternet ? filterInternet.value : "All";
     currentChurn = filterChurn ? filterChurn.value : "All";
     currentPage = 1;
+    window.renderActiveDrilldownChips();
     fetchCustomers();
   };
 
@@ -682,6 +730,29 @@ function initCustomerExplorer() {
       if (filterChurn) filterChurn.value = "All";
       currentSearch = "";
       applyTableFilters();
+    });
+  }
+
+  const btnClearDrilldown = document.getElementById("btn-clear-drilldown");
+  if (btnClearDrilldown) {
+    btnClearDrilldown.addEventListener("click", () => {
+      if (searchInput) searchInput.value = "";
+      if (filterRisk) filterRisk.value = "All";
+      if (filterContract) filterContract.value = "All";
+      if (filterInternet) filterInternet.value = "All";
+      if (filterChurn) filterChurn.value = "All";
+      currentSearch = "";
+      applyTableFilters();
+    });
+  }
+
+  // Connect Churn Analytics filter indicator drilldown button
+  const btnDrilldownExplorer = document.getElementById("btn-drilldown-to-explorer");
+  if (btnDrilldownExplorer) {
+    btnDrilldownExplorer.addEventListener("click", () => {
+      const c = document.getElementById("analytics-contract-filter")?.value || "All";
+      const i = document.getElementById("analytics-internet-filter")?.value || "All";
+      window.drilldownSegment(c, i);
     });
   }
 
@@ -746,6 +817,65 @@ function initCustomerExplorer() {
 
   fetchCustomers();
 }
+
+window.renderActiveDrilldownChips = function() {
+  const banner = document.getElementById("explorer-active-filter-banner");
+  const chipsContainer = document.getElementById("explorer-filter-chips");
+  if (!banner || !chipsContainer) return;
+
+  const activeFilters = [];
+  if (currentContract !== "All") activeFilters.push({ type: "contract", label: `Contract: ${currentContract}` });
+  if (currentInternet !== "All") activeFilters.push({ type: "internet", label: `Internet: ${currentInternet}` });
+  if (currentRisk !== "All") activeFilters.push({ type: "risk", label: `Risk: ${currentRisk}` });
+  if (currentChurn !== "All") activeFilters.push({ type: "churn", label: `Actual: ${currentChurn === 'Yes' ? 'Churned' : 'Retained'}` });
+  if (currentSearch) activeFilters.push({ type: "search", label: `Search: "${currentSearch}"` });
+
+  if (activeFilters.length === 0) {
+    banner.classList.add("hidden");
+    chipsContainer.innerHTML = "";
+    return;
+  }
+
+  banner.classList.remove("hidden");
+  chipsContainer.innerHTML = "";
+
+  activeFilters.forEach(f => {
+    const chip = document.createElement("span");
+    chip.className = "drilldown-chip";
+    chip.innerHTML = `${f.label} <button type="button" class="chip-remove-btn" title="Remove filter">✕</button>`;
+    chip.querySelector(".chip-remove-btn").addEventListener("click", () => {
+      window.removeDrilldownFilter(f.type);
+    });
+    chipsContainer.appendChild(chip);
+  });
+};
+
+window.removeDrilldownFilter = function(filterType) {
+  if (filterType === "contract") {
+    currentContract = "All";
+    const el = document.getElementById("filter-contract");
+    if (el) el.value = "All";
+  } else if (filterType === "internet") {
+    currentInternet = "All";
+    const el = document.getElementById("filter-internet");
+    if (el) el.value = "All";
+  } else if (filterType === "risk") {
+    currentRisk = "All";
+    const el = document.getElementById("filter-risk");
+    if (el) el.value = "All";
+  } else if (filterType === "churn") {
+    currentChurn = "All";
+    const el = document.getElementById("filter-churn");
+    if (el) el.value = "All";
+  } else if (filterType === "search") {
+    currentSearch = "";
+    const el = document.getElementById("customer-search");
+    if (el) el.value = "";
+  }
+  currentPage = 1;
+  window.renderActiveDrilldownChips();
+  fetchCustomers();
+};
 
 async function fetchCustomers() {
   const tbody = document.getElementById("customers-table-body");
@@ -823,16 +953,16 @@ async function fetchCustomers() {
       else if (prob >= 30) probColor = "#f59e0b";
 
       tr.innerHTML = `
-        <td><strong class="cust-id">${row.customerID}</strong></td>
-        <td>${row.tenure} mo</td>
-        <td>${row.Contract}</td>
-        <td>${row.InternetService || "—"}</td>
-        <td><span class="pay-method">${row.PaymentMethod}</span></td>
-        <td><strong>$${Number(row.MonthlyCharges).toFixed(2)}</strong></td>
-        <td>${churnBadge}</td>
-        <td><strong style="color: ${probColor};">${prob.toFixed(1)}%</strong></td>
-        <td>${riskBadge}</td>
-        <td>${priorityBadge}</td>
+        <td class="text-left"><strong class="cust-id">${row.customerID}</strong></td>
+        <td class="text-right num">${row.tenure} mo</td>
+        <td class="text-left">${row.Contract}</td>
+        <td class="text-left">${row.InternetService || "—"}</td>
+        <td class="text-left"><span class="pay-method">${row.PaymentMethod}</span></td>
+        <td class="text-right num"><strong>$${Number(row.MonthlyCharges).toFixed(2)}</strong></td>
+        <td class="text-center">${churnBadge}</td>
+        <td class="text-right num"><strong style="color: ${probColor};">${prob.toFixed(1)}%</strong></td>
+        <td class="text-left">${riskBadge}</td>
+        <td class="text-left">${priorityBadge}</td>
       `;
 
       tr.addEventListener("click", () => openCustomerDrawer(row));
@@ -876,6 +1006,38 @@ function openCustomerDrawer(cust) {
   if (probNum >= 60) barColor = "#ef4444";
   else if (probNum >= 30) barColor = "#f59e0b";
 
+  // Contextual Portfolio Benchmarks Calculation
+  const PORTFOLIO_MEAN_CHARGES = 64.76;
+  const PORTFOLIO_MEAN_TENURE = 32.4;
+  const custCharges = Number(cust.MonthlyCharges) || 0;
+  const chargeDiff = custCharges - PORTFOLIO_MEAN_CHARGES;
+  const chargeDiffPct = ((chargeDiff / PORTFOLIO_MEAN_CHARGES) * 100).toFixed(1);
+  const chargeSign = chargeDiff >= 0 ? "+" : "";
+
+  const custTenure = Number(cust.tenure) || 0;
+  const tenureDiff = custTenure - PORTFOLIO_MEAN_TENURE;
+  let tenureCohortName = "";
+  let tenureCohortRate = "";
+  let tenureHazardBadge = "";
+
+  if (custTenure <= 12) {
+    tenureCohortName = "0–12 Mo (Early Lifecycle)";
+    tenureCohortRate = "47.4% historical group churn";
+    tenureHazardBadge = `<span class="status-pill pill-danger">High Hazard Window</span>`;
+  } else if (custTenure <= 24) {
+    tenureCohortName = "13–24 Mo (Transition)";
+    tenureCohortRate = "28.7% historical group churn";
+    tenureHazardBadge = `<span class="status-pill pill-warning">Elevated Risk</span>`;
+  } else if (custTenure <= 48) {
+    tenureCohortName = "25–48 Mo (Established)";
+    tenureCohortRate = "20.4% historical group churn";
+    tenureHazardBadge = `<span class="status-pill pill-success">Moderate Stability</span>`;
+  } else {
+    tenureCohortName = "49–72 Mo (Long-Term)";
+    tenureCohortRate = "9.5% historical group churn";
+    tenureHazardBadge = `<span class="status-pill pill-success">High Loyalty Cohort</span>`;
+  }
+
   if (bodyEl) {
     bodyEl.innerHTML = `
       <!-- Probability Gauge Box -->
@@ -900,6 +1062,53 @@ function openCustomerDrawer(cust) {
           <span>Recommended Retention Playbook:</span>
         </div>
         <div class="action-panel-text">${cust.Retention_Action || "Maintain ongoing satisfaction"}</div>
+      </div>
+
+      <!-- Contextual Portfolio Benchmarks -->
+      <div class="drawer-benchmark-card">
+        <div class="benchmark-card-header">
+          <span class="status-pill pill-cyan">Portfolio Baseline Context</span>
+          <h4 class="benchmark-heading">Account vs Portfolio Benchmarks</h4>
+        </div>
+        <div class="benchmark-stats-grid">
+          <!-- Monthly Charges Benchmark -->
+          <div class="benchmark-stat-unit">
+            <span class="benchmark-metric-label">Monthly Billing Tier</span>
+            <div class="benchmark-metric-row">
+              <strong class="benchmark-val num">$${custCharges.toFixed(2)}</strong>
+              <span class="benchmark-diff-badge ${chargeDiff >= 0 ? 'badge-diff-higher' : 'badge-diff-lower'}">
+                ${chargeSign}$${Math.abs(chargeDiff).toFixed(2)} (${chargeSign}${chargeDiffPct}%)
+              </span>
+            </div>
+            <span class="benchmark-subtext">vs Portfolio Mean: $64.76 / mo</span>
+          </div>
+
+          <!-- Tenure Benchmark -->
+          <div class="benchmark-stat-unit">
+            <span class="benchmark-metric-label">Account Tenure</span>
+            <div class="benchmark-metric-row">
+              <strong class="benchmark-val num">${custTenure} Mo</strong>
+              <span class="benchmark-diff-badge ${tenureDiff >= 0 ? 'badge-diff-higher' : 'badge-diff-lower'}">
+                ${tenureDiff >= 0 ? '+' : ''}${tenureDiff.toFixed(1)} mo vs avg
+              </span>
+            </div>
+            <span class="benchmark-subtext">Portfolio Mean: 32.4 mo (Median: 29.0 mo)</span>
+          </div>
+
+          <!-- Lifecycle Cohort Historical Hazard -->
+          <div class="benchmark-stat-unit benchmark-stat-full">
+            <div class="benchmark-cohort-row">
+              <div>
+                <span class="benchmark-metric-label">Account Lifecycle Cohort</span>
+                <div class="cohort-name-text">
+                  <strong>${tenureCohortName}</strong> • <span class="num text-secondary">${tenureCohortRate}</span>
+                </div>
+              </div>
+              <div>${tenureHazardBadge}</div>
+            </div>
+            <span class="benchmark-subtext">Historical cohort attrition rate from 7,043 observed subscriber accounts (distinct from individual model prediction).</span>
+          </div>
+        </div>
       </div>
 
       <!-- Demographics Section -->
@@ -1025,6 +1234,7 @@ function initPredictionLab() {
 
       if (targetSubtab === "model-evaluation") {
         renderModelComparisonChart();
+        loadModelDiagnostics();
       }
     });
   });
@@ -1053,6 +1263,7 @@ function initPredictionLab() {
         MonthlyCharges: "70.70",
         TotalCharges: "151.65"
       });
+      form.dispatchEvent(new Event("submit"));
     });
   }
 
@@ -1063,7 +1274,7 @@ function initPredictionLab() {
         SeniorCitizen: "0",
         Partner: "Yes",
         Dependents: "Yes",
-        tenure: "48",
+        tenure: "60",
         Contract: "Two year",
         PaperlessBilling: "No",
         PaymentMethod: "Credit card (automatic)",
@@ -1076,9 +1287,10 @@ function initPredictionLab() {
         TechSupport: "Yes",
         StreamingTV: "No",
         StreamingMovies: "No",
-        MonthlyCharges: "60.25",
-        TotalCharges: "2892.00"
+        MonthlyCharges: "65.00",
+        TotalCharges: "3900.00"
       });
+      form.dispatchEvent(new Event("submit"));
     });
   }
 
@@ -1107,7 +1319,7 @@ function initPredictionLab() {
         const data = await res.json();
 
         if (data.status === "success" && data.prediction) {
-          displayPredictionResult(data.prediction);
+          displayPredictionResult(data.prediction, data.explanation);
         } else {
           alert(`Prediction Error: ${data.message || "Failed to calculate prediction"}`);
         }
@@ -1134,7 +1346,7 @@ function setFormValues(values) {
   });
 }
 
-function displayPredictionResult(pred) {
+function displayPredictionResult(pred, explanation) {
   const placeholder = document.getElementById("result-placeholder");
   const content = document.getElementById("result-content");
   const badge = document.getElementById("res-badge");
@@ -1185,6 +1397,76 @@ function displayPredictionResult(pred) {
   if (actionText) actionText.textContent = pred.retention_action;
   if (retainPct) retainPct.textContent = `${(pred.retain_probability * 100).toFixed(1)}%`;
   if (riskScore) riskScore.textContent = `${pred.churn_risk_score} / 100`;
+
+  // Render local feature contributions
+  if (explanation) {
+    renderPredictionExplanation(explanation);
+  }
+}
+
+function renderPredictionExplanation(explanation) {
+  const scoreVal = document.getElementById("res-score-val");
+  const posContainer = document.getElementById("res-pos-contribs");
+  const negContainer = document.getElementById("res-neg-contribs");
+
+  if (!posContainer || !negContainer) return;
+
+  if (scoreVal && explanation && explanation.decision_score !== undefined) {
+    const s = explanation.decision_score;
+    scoreVal.textContent = `${s >= 0 ? '+' : ''}${s.toFixed(2)}`;
+    scoreVal.style.color = s >= 0 ? 'var(--color-danger)' : 'var(--color-success)';
+  }
+
+  const posList = (explanation && explanation.top_risk_increasing) ? explanation.top_risk_increasing : [];
+  const negList = (explanation && explanation.top_risk_reducing) ? explanation.top_risk_reducing : [];
+
+  const maxPos = posList.length > 0 ? Math.max(...posList.map(x => Math.abs(x.contribution))) : 0.5;
+  const maxNeg = negList.length > 0 ? Math.max(...negList.map(x => Math.abs(x.contribution))) : 0.5;
+  const globalMax = Math.max(maxPos, maxNeg, 1.0);
+
+  // Render Risk-Increasing Contributions
+  posContainer.innerHTML = "";
+  if (posList.length > 0) {
+    posList.forEach(item => {
+      const widthPct = Math.min(100, Math.max(12, (Math.abs(item.contribution) / globalMax) * 100));
+      const row = document.createElement("div");
+      row.className = "contrib-bar-item";
+      row.innerHTML = `
+        <div class="contrib-label-row">
+          <span class="contrib-feature-name">${item.label}</span>
+          <span class="contrib-val-num text-rose num">+${item.contribution.toFixed(3)}</span>
+        </div>
+        <div class="contrib-track">
+          <div class="contrib-fill fill-rose" style="width: ${widthPct}%;"></div>
+        </div>
+      `;
+      posContainer.appendChild(row);
+    });
+  } else {
+    posContainer.innerHTML = `<span class="contrib-empty-text">No significant risk-increasing factors</span>`;
+  }
+
+  // Render Protective Contributions
+  negContainer.innerHTML = "";
+  if (negList.length > 0) {
+    negList.forEach(item => {
+      const widthPct = Math.min(100, Math.max(12, (Math.abs(item.contribution) / globalMax) * 100));
+      const row = document.createElement("div");
+      row.className = "contrib-bar-item";
+      row.innerHTML = `
+        <div class="contrib-label-row">
+          <span class="contrib-feature-name">${item.label}</span>
+          <span class="contrib-val-num text-teal num">${item.contribution.toFixed(3)}</span>
+        </div>
+        <div class="contrib-track">
+          <div class="contrib-fill fill-teal" style="width: ${widthPct}%;"></div>
+        </div>
+      `;
+      negContainer.appendChild(row);
+    });
+  } else {
+    negContainer.innerHTML = `<span class="contrib-empty-text">No significant protective factors</span>`;
+  }
 }
 
 function renderModelComparisonChart() {
@@ -2032,6 +2314,8 @@ function initThresholdSimulator() {
   const annualEl = document.getElementById("sim-annual-exposure");
   const deltaCountEl = document.getElementById("sim-delta-count");
   const deltaMrrEl = document.getElementById("sim-delta-mrr");
+  const precEl = document.getElementById("sim-precision");
+  const recEl = document.getElementById("sim-recall");
 
   if (!slider) return;
 
@@ -2063,6 +2347,13 @@ function initThresholdSimulator() {
         if (deltaMrrEl) {
           const sign = sim.delta_charges >= 0 ? "+" : "";
           deltaMrrEl.textContent = `${sign}$${sim.delta_charges.toLocaleString()} / mo vs 0.60 baseline`;
+        }
+
+        if (precEl && sim.empirical_precision_pct !== undefined) {
+          precEl.textContent = `${sim.empirical_precision_pct}%`;
+        }
+        if (recEl && sim.empirical_recall_pct !== undefined) {
+          recEl.textContent = `${sim.empirical_recall_pct}%`;
         }
       } catch (err) {
         console.error("Threshold sim error:", err);
@@ -2257,4 +2548,1086 @@ function initBatchPrediction() {
       handleFile(e.target.files[0]);
     }
   });
+}
+
+
+/* ==============================================================================
+   DISTINCTIVE ANALYTICAL VIEWS & MODEL DIAGNOSTICS (PHASE 3 IMPLEMENTATION)
+   ============================================================================== */
+
+// State for Box Plot
+let currentBoxMetric = "MonthlyCharges";
+let cachedBoxData = null;
+
+// 1. Customer Lifecycle & Pseudo-Retention Survivor Curve
+async function loadLifecycleRetention() {
+  const ctx = document.getElementById("lifecycleRetentionChart");
+  if (!ctx) return;
+
+  try {
+    const res = await fetch("/api/lifecycle-retention");
+    const data = await res.json();
+    if (!data || !data.milestones) return;
+
+    if (chartInstances["lifecycleRetentionChart"]) {
+      chartInstances["lifecycleRetentionChart"].destroy();
+    }
+
+    const labels = data.milestones.map(m => `${m.milestone_months} Mo`);
+    const retentionRates = data.milestones.map(m => m.pseudo_retention_rate);
+    const activeCounts = data.milestones.map(m => m.accounts_active_at_milestone);
+
+    chartInstances["lifecycleRetentionChart"] = new Chart(ctx, {
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            type: "line",
+            label: "Pseudo-Retention Rate (%)",
+            data: retentionRates,
+            borderColor: "#38bdf8",
+            backgroundColor: "rgba(56, 189, 248, 0.12)",
+            fill: true,
+            tension: 0.25,
+            pointRadius: 4,
+            pointHoverRadius: 6,
+            yAxisID: "y"
+          },
+          {
+            type: "bar",
+            label: "Active Accounts (Count)",
+            data: activeCounts,
+            backgroundColor: "rgba(16, 185, 129, 0.25)",
+            borderColor: "#10b981",
+            borderWidth: 1,
+            borderRadius: 3,
+            maxBarThickness: 28,
+            yAxisID: "y1"
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            type: "linear",
+            position: "left",
+            min: 60,
+            max: 100,
+            grid: { color: "rgba(51, 65, 85, 0.3)" },
+            ticks: { callback: v => `${v}%` },
+            title: { display: true, text: "Empirical Retention Rate (%)", color: "#94a3b8" }
+          },
+          y1: {
+            type: "linear",
+            position: "right",
+            beginAtZero: true,
+            max: 8000,
+            grid: { drawOnChartArea: false },
+            ticks: { callback: v => v.toLocaleString() },
+            title: { display: true, text: "Active Subscribers Remaining", color: "#94a3b8" }
+          },
+          x: {
+            grid: { color: "rgba(51, 65, 85, 0.15)" },
+            title: { display: true, text: "Tenure Milestone", color: "#94a3b8" }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: c => {
+                if (c.dataset.type === "line") {
+                  return `Survivor Retention: ${c.parsed.y}% of cohort`;
+                }
+                return `Active Accounts: ${c.parsed.y.toLocaleString()} subscribers`;
+              }
+            }
+          }
+        }
+      }
+    });
+  } catch (err) {
+    console.error("Error loading lifecycle retention:", err);
+  }
+}
+
+// 2. Statistical Box Plot (Charges & Tenure)
+async function loadDistributionBoxPlot() {
+  const canvas = document.getElementById("distributionBoxPlotChart");
+  if (!canvas) return;
+
+  try {
+    if (!cachedBoxData) {
+      const res = await fetch("/api/distribution-comparison");
+      cachedBoxData = await res.json();
+    }
+    renderBoxPlotCanvas(currentBoxMetric);
+  } catch (err) {
+    console.error("Error loading box plot:", err);
+  }
+}
+
+window.switchBoxMetric = function(metric) {
+  currentBoxMetric = metric;
+  document.querySelectorAll("#btn-box-charges, #btn-box-tenure").forEach(b => b.classList.remove("active"));
+  const btn = document.getElementById(metric === "MonthlyCharges" ? "btn-box-charges" : "btn-box-tenure");
+  if (btn) btn.classList.add("active");
+
+  const churnMedEl = document.getElementById("box-churn-med");
+  const retainMedEl = document.getElementById("box-retain-med");
+  const textEl = document.getElementById("box-plot-insight-text");
+
+  if (cachedBoxData && cachedBoxData[metric]) {
+    const c = cachedBoxData[metric]["Yes"];
+    const r = cachedBoxData[metric]["No"];
+    if (metric === "MonthlyCharges") {
+      if (churnMedEl) churnMedEl.textContent = `$${c.median.toFixed(2)}`;
+      if (retainMedEl) retainMedEl.textContent = `$${r.median.toFixed(2)}`;
+      if (textEl) textEl.textContent = `Monthly billing shows stark divergence: Churned median is $${c.median} (IQR $${c.iqr}) vs. Retained median $${r.median} (IQR $${r.iqr}).`;
+    } else {
+      if (churnMedEl) churnMedEl.textContent = `${c.median} mo`;
+      if (retainMedEl) retainMedEl.textContent = `${r.median} mo`;
+      if (textEl) textEl.textContent = `Tenure distribution highlights massive early vulnerability: 50% of churners leave by month ${c.median} (IQR ${c.iqr} mo) vs. retained median of ${r.median} mo.`;
+    }
+  }
+
+  renderBoxPlotCanvas(metric);
+};
+
+function renderBoxPlotCanvas(metric) {
+  const canvas = document.getElementById("distributionBoxPlotChart");
+  if (!canvas || !cachedBoxData || !cachedBoxData[metric]) return;
+
+  const data = cachedBoxData[metric];
+  const churn = data["Yes"];
+  const retain = data["No"];
+
+  const dpr = window.devicePixelRatio || 1;
+  const rect = canvas.getBoundingClientRect();
+  const width = rect.width || canvas.parentElement.clientWidth || 500;
+  const height = rect.height || 260;
+
+  canvas.width = width * dpr;
+  canvas.height = height * dpr;
+  canvas.style.width = `${width}px`;
+  canvas.style.height = `${height}px`;
+
+  const ctx = canvas.getContext("2d");
+  ctx.scale(dpr, dpr);
+  ctx.clearRect(0, 0, width, height);
+
+  // Layout bounds
+  const padLeft = 60;
+  const padRight = 30;
+  const padTop = 30;
+  const padBottom = 40;
+  const plotWidth = width - padLeft - padRight;
+  const plotHeight = height - padTop - padBottom;
+
+  // Determine min/max range
+  const globalMin = metric === "MonthlyCharges" ? 10 : 0;
+  const globalMax = metric === "MonthlyCharges" ? 130 : 80;
+
+  const yScale = val => padTop + plotHeight - ((val - globalMin) / (globalMax - globalMin)) * plotHeight;
+
+  // Gridlines and Y-axis ticks
+  ctx.strokeStyle = "rgba(51, 65, 85, 0.35)";
+  ctx.lineWidth = 1;
+  ctx.font = "11px Inter, sans-serif";
+  ctx.fillStyle = "#94a3b8";
+  ctx.textAlign = "right";
+
+  const tickStep = metric === "MonthlyCharges" ? 20 : 12;
+  for (let t = globalMin; t <= globalMax; t += tickStep) {
+    const yPos = yScale(t);
+    ctx.beginPath();
+    ctx.moveTo(padLeft, yPos);
+    ctx.lineTo(width - padRight, yPos);
+    ctx.stroke();
+
+    const label = metric === "MonthlyCharges" ? `$${t}` : `${t} mo`;
+    ctx.fillText(label, padLeft - 8, yPos + 4);
+  }
+
+  // Draw 2 Box Plots: Col 1 = Retained, Col 2 = Churned
+  const groups = [
+    { name: "Retained (No)", stats: retain, color: "#10b981", colCenter: padLeft + plotWidth * 0.32 },
+    { name: "Churned (Yes)", stats: churn, color: "#f43f5e", colCenter: padLeft + plotWidth * 0.72 }
+  ];
+
+  const boxWidth = Math.min(85, plotWidth * 0.28);
+
+  groups.forEach(g => {
+    const s = g.stats;
+    const cx = g.colCenter;
+    const yQ1 = yScale(s.q1);
+    const yMed = yScale(s.median);
+    const yQ3 = yScale(s.q3);
+    const yMin = yScale(s.min);
+    const yMax = yScale(s.max);
+    const yMean = yScale(s.mean);
+
+    // Whisker line (Min to Max)
+    ctx.strokeStyle = g.color;
+    ctx.lineWidth = 1.8;
+    ctx.beginPath();
+    ctx.moveTo(cx, yMin);
+    ctx.lineTo(cx, yQ1);
+    ctx.moveTo(cx, yQ3);
+    ctx.lineTo(cx, yMax);
+    ctx.stroke();
+
+    // Top & Bottom Crossbars
+    ctx.beginPath();
+    ctx.moveTo(cx - 14, yMin);
+    ctx.lineTo(cx + 14, yMin);
+    ctx.moveTo(cx - 14, yMax);
+    ctx.lineTo(cx + 14, yMax);
+    ctx.stroke();
+
+    // Box (Q1 to Q3)
+    ctx.fillStyle = g.color === "#10b981" ? "rgba(16, 185, 129, 0.22)" : "rgba(244, 63, 94, 0.22)";
+    const bTop = Math.min(yQ1, yQ3);
+    const bHeight = Math.abs(yQ1 - yQ3);
+    ctx.fillRect(cx - boxWidth / 2, bTop, boxWidth, bHeight);
+
+    ctx.strokeStyle = g.color;
+    ctx.lineWidth = 2;
+    ctx.strokeRect(cx - boxWidth / 2, bTop, boxWidth, bHeight);
+
+    // Median Line
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 2.5;
+    ctx.beginPath();
+    ctx.moveTo(cx - boxWidth / 2, yMed);
+    ctx.lineTo(cx + boxWidth / 2, yMed);
+    ctx.stroke();
+
+    // Mean indicator (diamond)
+    ctx.fillStyle = "#fbbf24";
+    ctx.beginPath();
+    ctx.moveTo(cx, yMean - 4);
+    ctx.lineTo(cx + 4, yMean);
+    ctx.lineTo(cx, yMean + 4);
+    ctx.lineTo(cx - 4, yMean);
+    ctx.closePath();
+    ctx.fill();
+
+    // Group labels underneath
+    ctx.font = "600 12px Inter, sans-serif";
+    ctx.fillStyle = g.color;
+    ctx.textAlign = "center";
+    ctx.fillText(g.name, cx, height - 14);
+
+    // Value Badges (Median & Mean)
+    ctx.font = "11px 'JetBrains Mono', monospace";
+    ctx.fillStyle = "#ffffff";
+    const prefix = metric === "MonthlyCharges" ? "$" : "";
+    const suffix = metric === "MonthlyCharges" ? "" : "m";
+    ctx.fillText(`Med: ${prefix}${s.median.toFixed(1)}${suffix}`, cx, yMed - 6);
+  });
+}
+
+// 3. Model Diagnostics (Cumulative Gains, Calibration, PR Curve)
+async function loadModelDiagnostics() {
+  try {
+    const res = await fetch("/api/model-diagnostics");
+    const data = await res.json();
+    if (!data || data.error) return;
+
+    renderCumulativeGainsChart(data.cumulative_gains);
+    renderCalibrationCurveChart(data.calibration);
+    renderPrecisionRecallChart(data.pr_curve);
+  } catch (err) {
+    console.error("Error loading model diagnostics:", err);
+  }
+}
+
+// 3a. Cumulative Gains Chart
+function renderCumulativeGainsChart(gainsData) {
+  const ctx = document.getElementById("cumulativeGainsChart");
+  if (!ctx || !gainsData) return;
+
+  if (chartInstances["cumulativeGainsChart"]) {
+    chartInstances["cumulativeGainsChart"].destroy();
+  }
+
+  const decileLabels = gainsData.map(g => `${g.decile * 10}%`);
+  const gainValues = gainsData.map(g => g.cum_gain_pct);
+  const baselineValues = gainsData.map(g => g.decile * 10);
+  const liftValues = gainsData.map(g => g.cum_lift);
+
+  chartInstances["cumulativeGainsChart"] = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: decileLabels,
+      datasets: [
+        {
+          label: "Cumulative Churners Captured (%)",
+          data: gainValues,
+          borderColor: "#38bdf8",
+          backgroundColor: "rgba(56, 189, 248, 0.15)",
+          fill: true,
+          pointRadius: 5,
+          tension: 0.15,
+          yAxisID: "y"
+        },
+        {
+          label: "Baseline (Random Selection 1:1)",
+          data: baselineValues,
+          borderColor: "#64748b",
+          borderDash: [5, 5],
+          pointRadius: 0,
+          fill: false,
+          yAxisID: "y"
+        },
+        {
+          label: "Cumulative Lift (Factor)",
+          data: liftValues,
+          borderColor: "#c084fc",
+          backgroundColor: "#c084fc",
+          pointRadius: 4,
+          tension: 0.15,
+          fill: false,
+          yAxisID: "y1"
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 105,
+          grid: { color: "rgba(51, 65, 85, 0.3)" },
+          ticks: { callback: v => `${v}%` },
+          title: { display: true, text: "Cumulative % of True Churners Captured", color: "#94a3b8" }
+        },
+        y1: {
+          position: "right",
+          beginAtZero: true,
+          max: 3.5,
+          grid: { drawOnChartArea: false },
+          ticks: { callback: v => `${v.toFixed(1)}×` },
+          title: { display: true, text: "Lift Multiplier", color: "#94a3b8" }
+        },
+        x: {
+          title: { display: true, text: "Top % of Population Targeted (Deciles)", color: "#94a3b8" },
+          grid: { color: "rgba(51, 65, 85, 0.2)" }
+        }
+      },
+      plugins: {
+        legend: { position: "top", labels: { boxWidth: 10, padding: 8 } },
+        tooltip: {
+          callbacks: {
+            label: c => {
+              if (c.dataset.label.includes("Lift")) {
+                return `Cumulative Lift: ${c.parsed.y}× higher than random`;
+              }
+              return `${c.dataset.label}: ${c.parsed.y}%`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// 3b. Calibration Curve / Reliability Diagram
+function renderCalibrationCurveChart(calData) {
+  const ctx = document.getElementById("calibrationCurveChart");
+  if (!ctx || !calData) return;
+
+  if (chartInstances["calibrationCurveChart"]) {
+    chartInstances["calibrationCurveChart"].destroy();
+  }
+
+  const modelPoints = calData.prob_pred.map((p, i) => ({
+    x: p,
+    y: calData.prob_true[i]
+  }));
+
+  const perfectPoints = [
+    { x: 0, y: 0 },
+    { x: 25, y: 25 },
+    { x: 50, y: 50 },
+    { x: 75, y: 75 },
+    { x: 100, y: 100 }
+  ];
+
+  chartInstances["calibrationCurveChart"] = new Chart(ctx, {
+    type: "scatter",
+    data: {
+      datasets: [
+        {
+          label: "Logistic Regression Pipeline",
+          data: modelPoints,
+          borderColor: "#2dd4bf",
+          backgroundColor: "#2dd4bf",
+          showLine: true,
+          tension: 0.15,
+          pointRadius: 5,
+          pointHoverRadius: 7
+        },
+        {
+          label: "Perfect Calibration (Diagonal)",
+          data: perfectPoints,
+          borderColor: "#64748b",
+          borderDash: [5, 5],
+          pointRadius: 0,
+          showLine: true,
+          fill: false
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        x: {
+          type: "linear",
+          min: 0,
+          max: 100,
+          title: { display: true, text: "Mean Predicted Churn Probability (%)", color: "#94a3b8" },
+          grid: { color: "rgba(51, 65, 85, 0.3)" },
+          ticks: { callback: v => `${v}%` }
+        },
+        y: {
+          min: 0,
+          max: 100,
+          title: { display: true, text: "Observed Empirical Positive Fraction (%)", color: "#94a3b8" },
+          grid: { color: "rgba(51, 65, 85, 0.3)" },
+          ticks: { callback: v => `${v}%` }
+        }
+      },
+      plugins: {
+        legend: { position: "top", labels: { boxWidth: 10, padding: 8 } },
+        tooltip: {
+          callbacks: {
+            label: c => {
+              if (c.dataset.label.includes("Perfect")) return "Perfect 1:1 Calibration";
+              return `Pred: ${c.parsed.x.toFixed(1)}% | Actual: ${c.parsed.y.toFixed(1)}%`;
+            }
+          }
+        }
+      }
+    }
+  });
+}
+
+// 3c. Precision-Recall Curve linked to Thresholds
+function renderPrecisionRecallChart(prPoints) {
+  const ctx = document.getElementById("precisionRecallChart");
+  if (!ctx || !prPoints) return;
+
+  if (chartInstances["precisionRecallChart"]) {
+    chartInstances["precisionRecallChart"].destroy();
+  }
+
+  const thresholdLabels = prPoints.map(p => p.threshold.toFixed(2));
+  const precisionData = prPoints.map(p => p.precision);
+  const recallData = prPoints.map(p => p.recall);
+  const f1Data = prPoints.map(p => p.f1_score);
+
+  chartInstances["precisionRecallChart"] = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: thresholdLabels,
+      datasets: [
+        {
+          label: "Precision (%) [Purity of Churn Alert]",
+          data: precisionData,
+          borderColor: "#10b981",
+          backgroundColor: "#10b981",
+          pointRadius: 4,
+          tension: 0.2
+        },
+        {
+          label: "Recall (%) [Capture Rate of Churners]",
+          data: recallData,
+          borderColor: "#f43f5e",
+          backgroundColor: "#f43f5e",
+          pointRadius: 4,
+          tension: 0.2
+        },
+        {
+          label: "F1-Score (%) [Harmonic Mean]",
+          data: f1Data,
+          borderColor: "#c084fc",
+          backgroundColor: "#c084fc",
+          pointRadius: 4,
+          borderDash: [4, 4],
+          tension: 0.2
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 105,
+          grid: { color: "rgba(51, 65, 85, 0.3)" },
+          ticks: { callback: v => `${v}%` },
+          title: { display: true, text: "Metric Performance (%)", color: "#94a3b8" }
+        },
+        x: {
+          title: { display: true, text: "Decision Boundary Threshold (Probability)", color: "#94a3b8" },
+          grid: { color: "rgba(51, 65, 85, 0.2)" }
+        }
+      },
+      plugins: {
+        legend: { position: "top", labels: { boxWidth: 10, padding: 10 } },
+        tooltip: {
+          callbacks: {
+            title: c => `Threshold τ = ${c[0].label}`,
+            label: c => `${c.dataset.label}: ${c.parsed.y}%`
+          }
+        }
+      }
+    }
+  });
+}
+
+/* ==============================================================================
+   8. MAJOR PRODUCT REDESIGN: ENTERPRISE ANALYTICAL LABS IMPLEMENTATION
+   ============================================================================== */
+
+/**
+ * Workspace 1: Executive Portfolio Health Dial Gauge
+ */
+function loadPortfolioHealthGauge() {
+  const canvas = document.getElementById("portfolioHealthGaugeChart");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  if (chartInstances.portfolioHealthGauge) chartInstances.portfolioHealthGauge.destroy();
+
+  chartInstances.portfolioHealthGauge = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["Safe Zone (<20%)", "Industry Warning (20–25%)", "Elevated Danger (25–35%)", "Remainder"],
+      datasets: [{
+        data: [20, 5, 10, 65],
+        backgroundColor: [
+          "rgba(16, 185, 129, 0.85)",
+          "rgba(245, 158, 11, 0.85)",
+          "rgba(244, 63, 94, 0.85)",
+          "rgba(255, 255, 255, 0.04)"
+        ],
+        borderWidth: 0,
+        circumference: 180,
+        rotation: -90
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: c => `${c.label}: ${c.raw}%`
+          }
+        }
+      },
+      cutout: "75%"
+    }
+  });
+
+  const numEl = document.getElementById("gauge-churn-num");
+  if (numEl) numEl.textContent = "26.54%";
+}
+
+/**
+ * Workspace 1: Retention Pipeline Progression Funnel
+ */
+function loadRetentionFunnel() {
+  const container = document.getElementById("retention-funnel-container");
+  if (!container) return;
+
+  const stages = [
+    { title: "1. Verified Active Base", count: 7043, pct: 100.0, color: "#38bdf8", sub: "Total customer portfolio" },
+    { title: "2. Retained Core Base", count: 5174, pct: 73.46, color: "#10b981", sub: "Actual retained subscribers" },
+    { title: "3. Low-Risk Steady Base", count: 3760, pct: 53.39, color: "#34d399", sub: "Prob < 30% (Stable ARR)" },
+    { title: "4. Medium-Risk Watchlist", count: 1414, pct: 20.08, color: "#f59e0b", sub: "30% ≤ Prob < 60%" },
+    { title: "5. High-Risk Action Pool", count: 1039, pct: 14.75, color: "#fb7185", sub: "Prob ≥ 60% ($85.5K MRR)" },
+    { title: "6. Critical Immediate Outreach", count: 49, pct: 0.70, color: "#e11d48", sub: "Prob ≥ 80% ($4.1K MRR)" }
+  ];
+
+  container.innerHTML = stages.map(s => `
+    <div class="funnel-stage-card">
+      <div class="funnel-stage-header">
+        <span class="funnel-stage-title">${s.title}</span>
+        <span class="funnel-stage-stats" style="color: ${s.color};">${s.count.toLocaleString()} accounts (${s.pct.toFixed(1)}%)</span>
+      </div>
+      <div class="funnel-track">
+        <div class="funnel-fill" style="width: ${Math.max(4, s.pct)}%; background: ${s.color};"></div>
+      </div>
+    </div>
+  `).join('');
+}
+
+/**
+ * Workspace 1: 2D Service x Contract Churn Rate Matrix Heatmap
+ */
+async function loadServiceContractMatrix() {
+  const container = document.getElementById("service-contract-matrix-container");
+  if (!container) return;
+
+  try {
+    const res = await fetch("/api/behavioral-intelligence");
+    const data = await res.json();
+    const rows = data.service_contract_matrix || [];
+
+    // Group by Service
+    const services = ["Fiber optic", "DSL", "No"];
+    const contracts = ["Month-to-month", "One year", "Two year"];
+
+    let html = `
+      <table class="matrix-2d-grid">
+        <thead>
+          <tr>
+            <th class="matrix-2d-th text-left">Internet Infrastructure</th>
+            ${contracts.map(c => `<th class="matrix-2d-th">${c}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    services.forEach(svc => {
+      const svcLabel = svc === "No" ? "No Internet" : svc;
+      html += `<tr><td class="matrix-2d-rowhead">${svcLabel}</td>`;
+      contracts.forEach(contract => {
+        const item = rows.find(r => r.InternetService === svc && r.Contract === contract) || {
+          churn_rate: 0, churns: 0, total: 0, avg_mrr: 0
+        };
+        // Compute color by churn rate
+        let bg = "rgba(16, 185, 129, 0.15)";
+        let textCol = "#34d399";
+        let borderCol = "rgba(16, 185, 129, 0.3)";
+        if (item.churn_rate > 40) {
+          bg = "rgba(244, 63, 94, 0.35)";
+          textCol = "#fb7185";
+          borderCol = "rgba(244, 63, 94, 0.6)";
+        } else if (item.churn_rate > 20) {
+          bg = "rgba(245, 158, 11, 0.25)";
+          textCol = "#fbbf24";
+          borderCol = "rgba(245, 158, 11, 0.5)";
+        } else if (item.churn_rate > 8) {
+          bg = "rgba(56, 189, 248, 0.18)";
+          textCol = "#38bdf8";
+          borderCol = "rgba(56, 189, 248, 0.35)";
+        }
+
+        html += `
+          <td class="matrix-2d-cell" style="background: ${bg}; border-color: ${borderCol};"
+              onclick="drillDownToExplorer({ contract: '${contract}', internet: '${svc}' })"
+              title="Click to view ${item.total} subscribers in Customer Explorer">
+            <div class="cell-rate-big" style="color: ${textCol};">${item.churn_rate}%</div>
+            <div class="cell-sub-metrics">${item.churns} / ${item.total} Churned</div>
+            <div class="cell-sub-metrics" style="color: #94a3b8;">Avg $${item.avg_mrr.toFixed(2)}/mo</div>
+          </td>
+        `;
+      });
+      html += `</tr>`;
+    });
+
+    html += `</tbody></table>`;
+    container.innerHTML = html;
+  } catch (err) {
+    console.error("Error loading service contract matrix:", err);
+  }
+}
+
+/**
+ * Workspace 2: Multivariate Behavioral Correlation Matrix Heatmap
+ */
+async function loadCorrelationMatrix() {
+  const container = document.getElementById("correlation-matrix-container");
+  if (!container) return;
+
+  try {
+    const res = await fetch("/api/behavioral-intelligence");
+    const data = await res.json();
+    const corr = data.correlation;
+    if (!corr || !corr.variables) return;
+
+    const vars = corr.variables;
+    const matrix = corr.matrix;
+
+    let html = `
+      <table class="correlation-table">
+        <thead>
+          <tr>
+            <th class="corr-head text-left">Feature Variable</th>
+            ${vars.map(v => `<th class="corr-head">${v}</th>`).join('')}
+          </tr>
+        </thead>
+        <tbody>
+    `;
+
+    vars.forEach((v1, i) => {
+      html += `<tr><td class="matrix-2d-rowhead">${v1}</td>`;
+      vars.forEach((v2, j) => {
+        const val = matrix[i][j];
+        let bg = "rgba(255, 255, 255, 0.02)";
+        let col = "#e2e8f0";
+        if (i === j) {
+          bg = "rgba(255, 255, 255, 0.08)";
+          col = "#ffffff";
+        } else if (val > 0) {
+          const alpha = Math.min(0.7, val * 0.8 + 0.05);
+          bg = `rgba(244, 63, 94, ${alpha})`;
+          col = val > 0.4 ? "#ffffff" : "#fb7185";
+        } else if (val < 0) {
+          const alpha = Math.min(0.7, Math.abs(val) * 0.8 + 0.05);
+          bg = `rgba(56, 189, 248, ${alpha})`;
+          col = val < -0.3 ? "#ffffff" : "#7dd3fc";
+        }
+
+        html += `
+          <td class="corr-cell" style="background: ${bg}; color: ${col};"
+              title="${v1} vs ${v2}: Pearson r = ${val}">
+            ${val > 0 ? "+" : ""}${val.toFixed(2)}
+          </td>
+        `;
+      });
+      html += `</tr>`;
+    });
+
+    html += `</tbody></table>`;
+    container.innerHTML = html;
+  } catch (err) {
+    console.error("Error loading correlation matrix:", err);
+  }
+}
+
+/**
+ * Workspace 4: Financial Exposure Hierarchy Treemap
+ */
+async function loadFinancialTreemap() {
+  const container = document.getElementById("financial-treemap-container");
+  if (!container) return;
+
+  try {
+    const res = await fetch("/api/behavioral-intelligence");
+    const data = await res.json();
+    const tiers = data.financial_hierarchy || [];
+
+    const colors = {
+      "Low Risk": { border: "#10b981", bg: "rgba(16, 185, 129, 0.08)", text: "#34d399" },
+      "Medium Risk": { border: "#f59e0b", bg: "rgba(245, 158, 11, 0.08)", text: "#fbbf24" },
+      "High Risk": { border: "#f43f5e", bg: "rgba(244, 63, 94, 0.12)", text: "#fb7185" }
+    };
+
+    container.innerHTML = tiers.map(t => {
+      const c = colors[t.name] || colors["Low Risk"];
+      return `
+        <div class="treemap-tile" style="border-color: ${c.border}; background: ${c.bg};">
+          <div>
+            <div class="treemap-tile-header">
+              <span style="color: ${c.text};">${t.name}</span>
+              <span style="color: #94a3b8; font-family: var(--font-mono);">${t.total_customers.toLocaleString()} accounts</span>
+            </div>
+            <div class="treemap-mrr-big" style="color: #ffffff;">$${t.total_mrr.toLocaleString()}</div>
+            <span style="font-size: 0.70rem; color: #94a3b8;">Monthly Recurring Revenue</span>
+          </div>
+          <div class="treemap-sub-breakdown">
+            ${(t.children || []).map(child => `
+              <div class="treemap-sub-row">
+                <span>${child.name}</span>
+                <span style="font-family: var(--font-mono); font-weight: 600;">$${child.mrr.toLocaleString()} (${child.churn_rate}%)</span>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }).join('');
+  } catch (err) {
+    console.error("Error loading financial treemap:", err);
+  }
+}
+
+/**
+ * Workspace 3: Macro Telecom Market Intelligence (TRAI & FCC)
+ */
+async function loadExternalMarketIntelligence() {
+  try {
+    const res = await fetch("/api/external-market-intelligence");
+    const data = await res.json();
+
+    // 1. TRAI Broadband Market Share (Polar Area)
+    const traiShareCanvas = document.getElementById("traiMarketShareChart");
+    if (traiShareCanvas && data.trai && data.trai.broadband_market_share) {
+      const ctx = traiShareCanvas.getContext("2d");
+      if (chartInstances.traiMarketShare) chartInstances.traiMarketShare.destroy();
+
+      const items = data.trai.broadband_market_share;
+      chartInstances.traiMarketShare = new Chart(ctx, {
+        type: "polarArea",
+        data: {
+          labels: items.map(i => i.operator),
+          datasets: [{
+            data: items.map(i => i.subscribers_million),
+            backgroundColor: [
+              "rgba(56, 189, 248, 0.75)",
+              "rgba(192, 132, 252, 0.75)",
+              "rgba(251, 113, 133, 0.75)",
+              "rgba(245, 158, 11, 0.75)",
+              "rgba(148, 163, 184, 0.75)"
+            ],
+            borderWidth: 1,
+            borderColor: "rgba(255, 255, 255, 0.1)"
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            r: {
+              grid: { color: "rgba(51, 65, 85, 0.3)" },
+              ticks: { display: false }
+            }
+          },
+          plugins: {
+            legend: { position: "right", labels: { boxWidth: 10, padding: 8 } },
+            tooltip: {
+              callbacks: {
+                label: c => `${c.label}: ${c.raw}M subscribers (${items[c.dataIndex].share_pct}%)`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // 2. TRAI MNP Circle Churn Intensity Bar Chart
+    const mnpCanvas = document.getElementById("traiMnpCircleChart");
+    if (mnpCanvas && data.trai && data.trai.top_mnp_circles) {
+      const ctx = mnpCanvas.getContext("2d");
+      if (chartInstances.traiMnp) chartInstances.traiMnp.destroy();
+
+      const circles = data.trai.top_mnp_circles;
+      chartInstances.traiMnp = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: circles.map(c => c.circle),
+          datasets: [{
+            label: "Monthly Porting Requests (Millions)",
+            data: circles.map(c => (c.monthly_porting_requests / 1e6).toFixed(2)),
+            backgroundColor: "rgba(251, 113, 133, 0.8)",
+            borderRadius: 4
+          }]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              beginAtZero: true,
+              grid: { color: "rgba(51, 65, 85, 0.25)" },
+              ticks: { callback: v => `${v}M` },
+              title: { display: true, text: "Porting Volume (Millions / Month)", color: "#94a3b8" }
+            },
+            y: {
+              grid: { display: false }
+            }
+          },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: c => `${c.raw} Million requests (${circles[c.dataIndex].zone})`
+              }
+            }
+          }
+        }
+      });
+    }
+
+    // 3. FCC Consumer Complaints Delivery Method vs Issues (Stacked Bar)
+    const fccCanvas = document.getElementById("fccMethodIssueChart");
+    if (fccCanvas && data.fcc && data.fcc.method_issue_matrix) {
+      const ctx = fccCanvas.getContext("2d");
+      if (chartInstances.fccComplaints) chartInstances.fccComplaints.destroy();
+
+      const matrix = data.fcc.method_issue_matrix;
+      const methods = Object.keys(matrix);
+
+      chartInstances.fccComplaints = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: methods,
+          datasets: [
+            {
+              label: "Unwanted Calls",
+              data: methods.map(m => matrix[m]["Unwanted Calls"] || 0),
+              backgroundColor: "rgba(244, 63, 94, 0.85)"
+            },
+            {
+              label: "Billing Disputes",
+              data: methods.map(m => matrix[m]["Billing"] || 0),
+              backgroundColor: "rgba(245, 158, 11, 0.85)"
+            },
+            {
+              label: "Availability / Outages",
+              data: methods.map(m => matrix[m]["Availability (including rural call completion)"] || matrix[m]["Availability"] || 0),
+              backgroundColor: "rgba(56, 189, 248, 0.85)"
+            }
+          ]
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              stacked: true,
+              grid: { color: "rgba(51, 65, 85, 0.25)" },
+              title: { display: true, text: "Complaint Tickets (n = 5,000 SODA Sample)", color: "#94a3b8" }
+            },
+            y: {
+              stacked: true,
+              grid: { display: false }
+            }
+          },
+          plugins: {
+            legend: { position: "top", labels: { boxWidth: 10, padding: 8 } }
+          }
+        }
+      });
+    }
+  } catch (err) {
+    console.error("Error loading external market intelligence:", err);
+  }
+}
+
+/**
+ * Workspace 5: Independent UCI Iranian Telecom Churn Benchmark Experiment
+ */
+async function loadUciBenchmark() {
+  const canvas = document.getElementById("uciBenchmarkChart");
+  if (!canvas) return;
+
+  try {
+    const res = await fetch("/api/uci-benchmark");
+    const data = await res.json();
+    if (!data.models) return;
+
+    const ctx = canvas.getContext("2d");
+    if (chartInstances.uciBenchmark) chartInstances.uciBenchmark.destroy();
+
+    const metrics = ["Accuracy", "ROC-AUC", "Precision", "Recall", "F1-Score"];
+    const lr = data.models["Logistic Regression"];
+    const rf = data.models["Random Forest"];
+
+    chartInstances.uciBenchmark = new Chart(ctx, {
+      type: "bar",
+      data: {
+        labels: metrics,
+        datasets: [
+          {
+            label: "Logistic Regression (Linear Benchmark)",
+            data: [
+              (lr.accuracy * 100).toFixed(1),
+              (lr.roc_auc * 100).toFixed(1),
+              (lr.precision * 100).toFixed(1),
+              (lr.recall * 100).toFixed(1),
+              (lr.f1 * 100).toFixed(1)
+            ],
+            backgroundColor: "rgba(56, 189, 248, 0.85)",
+            borderRadius: 4
+          },
+          {
+            label: "Random Forest (Nonlinear Telemetry)",
+            data: [
+              (rf.accuracy * 100).toFixed(1),
+              (rf.roc_auc * 100).toFixed(1),
+              (rf.precision * 100).toFixed(1),
+              (rf.recall * 100).toFixed(1),
+              (rf.f1 * 100).toFixed(1)
+            ],
+            backgroundColor: "rgba(192, 132, 252, 0.85)",
+            borderRadius: 4
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 105,
+            grid: { color: "rgba(51, 65, 85, 0.3)" },
+            ticks: { callback: v => `${v}%` },
+            title: { display: true, text: "Evaluation Metric (%)", color: "#94a3b8" }
+          },
+          x: {
+            grid: { display: false }
+          }
+        },
+        plugins: {
+          legend: { position: "top", labels: { boxWidth: 10, padding: 10 } },
+          tooltip: {
+            callbacks: {
+              label: c => `${c.dataset.label}: ${c.raw}%`
+            }
+          }
+        }
+      }
+    });
+  } catch (err) {
+    console.error("Error loading UCI benchmark:", err);
+  }
+}
+
+/**
+ * Workspace 6: Multi-Source Data Provenance & Verification Registry
+ */
+async function loadProvenanceRegistry() {
+  const container = document.getElementById("provenance-cards-container");
+  if (!container) return;
+
+  try {
+    const res = await fetch("/api/provenance");
+    const data = await res.json();
+    const datasets = data.datasets || [];
+
+    container.innerHTML = datasets.map(d => `
+      <div class="provenance-card">
+        <div class="prov-card-header">
+          <span class="prov-card-title">${d.title}</span>
+          <span class="status-pill pill-success">${d.quality_status.includes("Cleaned") || d.quality_status.includes("Verified") ? "Verified" : "Audited"}</span>
+        </div>
+        <div class="prov-meta-row">
+          <span>Publisher:</span>
+          <span class="prov-meta-val">${d.publisher}</span>
+        </div>
+        <div class="prov-meta-row">
+          <span>License:</span>
+          <span class="prov-meta-val">${d.license}</span>
+        </div>
+        <div class="prov-meta-row">
+          <span>Records & Features:</span>
+          <span class="prov-meta-val">${typeof d.records === "number" ? d.records.toLocaleString() : d.records} rows • ${d.features}</span>
+        </div>
+        <div class="prov-meta-row">
+          <span>Coverage Period:</span>
+          <span class="prov-meta-val">${d.coverage}</span>
+        </div>
+        <p class="prov-desc">${d.role}</p>
+        <a href="${d.source_url}" target="_blank" rel="noopener noreferrer" class="prov-link-badge">
+          <span>Official Public Source URL &rarr;</span>
+        </a>
+      </div>
+    `).join('');
+  } catch (err) {
+    console.error("Error loading provenance registry:", err);
+  }
 }

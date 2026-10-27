@@ -1,0 +1,76 @@
+{
+  "dataset_name": "FCC Consumer Complaints Open Data (CGB)",
+  "source": "Federal Communications Commission (opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/3xyp-aqkj)",
+  "total_sample_records": 5000,
+  "date_range": "2016-05-23 to 2024-10-12",
+  "top_issues": {
+    "Unwanted Calls": 2228,
+    "Billing": 886,
+    "Availability": 498,
+    "Availability (including rural call completion)": 333,
+    "Equipment": 276,
+    "Speed": 119,
+    "Number Portability (keeping your number if you change providers)": 118,
+    "Privacy": 113
+  },
+  "top_methods": {
+    "Wireless (cell phone/other mobile device)": 2120,
+    "Wired": 662,
+    "Cable": 658,
+    "Internet (VOIP)": 563,
+    "Wireless": 401,
+    "Unspecified": 228
+  },
+  "method_issue_matrix": {
+    "Wireless (cell phone/other mobile device)": {
+      "Unwanted Calls": 1305,
+      "Billing": 287,
+      "Availability": 0,
+      "Availability (including rural call completion)": 186
+    },
+    "Wired": {
+      "Unwanted Calls": 492,
+      "Billing": 44,
+      "Availability": 0,
+      "Availability (including rural call completion)": 77
+    },
+    "Cable": {
+      "Unwanted Calls": 0,
+      "Billing": 276,
+      "Availability": 216,
+      "Availability (including rural call completion)": 0
+    },
+    "Internet (VOIP)": {
+      "Unwanted Calls": 427,
+      "Billing": 23,
+      "Availability": 0,
+      "Availability (including rural call completion)": 70
+    }
+  },
+  "top_states": {
+    "CA": 667,
+    "TX": 442,
+    "NY": 369,
+    "FL": 359,
+    "GA": 180,
+    "IL": 165,
+    "PA": 157,
+    "NC": 144,
+    "OH": 144,
+    "MI": 133
+  },
+  "monthly_trend": {
+    "2022-07": 299,
+    "2022-09": 1,
+    "2022-10": 4,
+    "2022-12": 2,
+    "2023-02": 4,
+    "2023-04": 5,
+    "2023-05": 2,
+    "2023-07": 1,
+    "2023-08": 2,
+    "2023-09": 3,
+    "2024-03": 3,
+    "2024-10": 2
+  }
+}

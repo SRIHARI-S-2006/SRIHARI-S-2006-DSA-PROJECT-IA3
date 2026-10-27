@@ -34,13 +34,16 @@ desktop.ini
 .idea/
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 
 # Local Backups (Explicitly Protected & Excluded from Git)
 website_backup*/
 *backup*/
 
-# Scratch & Diagnostics
-scratch/
+# Scratch temporary screenshots & logs (keeps verification scripts)
+scratch/workspaces/
+scratch/workspaces_redesign/
+scratch/*.png
 *.log
 
 # Sensitive environment configuration
@@ -48,3 +51,6 @@ scratch/
 .env.*
 secrets.json
 credentials.json
+
+# Temporary tool artifacts
+.taste-skill/

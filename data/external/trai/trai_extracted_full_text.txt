@@ -1,0 +1,987 @@
+
+--- PAGE 1 ---
+ 
+ 
+ 
+ 
+1 
+For immediate release               (Press Release No. 125/2026)  
+Information Note to the Press  
+                           
+        
+TELECOM REGULATORY AUTHORITY OF INDIA 
+New Delhi, 28th September 2026 
+(www.trai.gov.in) 
+ 
+Highlights of Telecom Subscription Data at the end of August 2026 
+ 
+ In the month of August 2026, 15.83 million subscribers submitted their 
+requests for Mobile Number Portability (MNP).        
+ The number of active wireless (mobile) subscribers (on the date of peak VLR#) 
+in August 2026 was 1207.59 million. 
+____________________________________________________________________________________________________________________________________________________ 
+Note: 
+*  The wireless subscriber base comprises of wireless mobile telephone subscribers (including M2M cellular mobile connections), and FWA 
+subscribers. 
+@ Tele-density has been computed on the basis of the projection of population from the ‘Report of the Technical Group on Population 
+Projections for India and States 2011 – 2036’, published in August 2020.  
+# VLR is an acronym of Visitor Location Register. The dates of peak VLR for various Telecom Service Providers (TSPs) August be different in 
+different service areas. 
+ Information in this press release is based on the data provided by the Telecom Service Providers (TSPs) to TRAI. 
+Particulars Wireless* Wireline 
+Total 
+(Wireless+ 
+Wireline) 
+Broadband Subscribers  with M2M 
+cellular mobile connections (Million) 1,052.58 48.63 1,101.21 
+Broadband Subscribers  without M2M 
+cellular mobile connections (Million) 961.65 48.63 1,010.28 
+Urban Telephone Subscribers (Million) 759.11 43.16 802.28 
+Net Addition in August 2026 (Million) 5.25 0.34 5.59 
+Monthly Growth Rate 0.70% 0.80% 0.70% 
+Rural Telephone Subscribers (Million) 553.14 5.29 558.43 
+ Net Addition in August 2026 (Million) 0.73 0.10 0.83 
+ Monthly Growth Rate 0.13% 1.96% 0.15% 
+Total Telephone Subscribers (Million) 1312.25 48.45 1360.70 
+Net Addition in August 2026 (Million) 5.98 0.44 6.42 
+Monthly Growth Rate 0.46% 0.93% 0.47% 
+Share of Urban Subscribers 57.85% 89.08% 58.96% 
+Share of Rural Subscribers 42.15% 10.92% 41.04% 
+Overall Tele-density @ with M2M 
+cellular mobile connections 91.69% 3.39% 95.07% 
+Urban Tele-density@  146.66% 8.34% 155.00% 
+Rural Tele-density@  60.55% 0.58% 61.12% 
+Tele-density@ without M2M cellular 
+mobile connections 81.87% 3.39% 85.26% 
+�������������������������������������������� ������������������������ 
+--- PAGE 2 ---
+ 
+ 
+ 
+ 
+2 
+ 
+ 
+I.   Broadband Subscribers 
+ 
+ As per the information received from 1579 operators for the month of August 
+2026, the total number of broadband subscribers increased from 1094.48 
+million at the end of July 2026 to 1101.21 million at the end of August 2026 
+with a monthly growth rate of 0.61%. Segment-wise number of broadband 
+subscribers and their monthly growth rates are as below: -     
+Segment–wise Broadband Subscribers and Monthly Growth Rate in the 
+month of August 2026 
+   
+ 
+ 
+Top five Broadband (Wired & Wireless) Service providers at the end of  
+August 2026 
+S.N. Service Provider Subscriber base  
+(In million) 
+1.  Reliance Jio Infocomm Ltd. 538.03 
+2.  Bharti Airtel Ltd. 386.39 
+3.  Vodafone Idea Ltd. 130.88 
+4.  Bharat Sanchar Nigam Ltd. 27.82 
+5.  Atria Convergence Technologies Ltd. 2.48 
+Market Share of Top Five Broadband (Wired  & 
+Wireless) Service Providers 98.58% 
+ 
+Segment Subscription 
+Broadband 
+Subscribers 
+(in million) Percentage 
+Change July 
+2026 
+August  
+2026 
+Wired 
+subscribers 
+Fixed Wired Access 
+(DSL, FTTx, Ethernet/LAN, 
+Cable Modem, ILL) 
+48.14 48.63 1.01% 
+Wireless 
+Subscribers  
+Fixed Wireless Access 
+(5G FWA, Wi-Fi, Wi-Max, 
+Radio/UBR, Satellite) 
+18.84 19.34 2.68% 
+Mobile Wireless Access 
+(Handset/Dongle/M2M-
+based-3G, 4G, 5G) 
+1027.50 1033.24 0.56% 
+Total Broadband Subscriptions 1094.48 1101.21 0.61% 
+�������������������������������������������� ������������������������ 
+--- PAGE 3 ---
+ 
+ 
+ 
+ 
+3 
+ The graphical representation of the service provider-wise market share of 
+broadband services is given below: - 
+Service Provider-wise Market Share of Broadband                                        
+(Wired & Wireless) Services at the end of August 2026 
+ 
+Top Five Fixed Wired Access Broadband Service providers at the end of 
+August 2026 
+S.N. Service Provider Subscriber base (In million) 
+1.  Reliance Jio Infocomm Ltd.  14.81 
+2.  Bharti Airtel Ltd. 11.44 
+3.  Bharat Sanchar Nigam Ltd 4.56 
+4.  Atria Convergence Technologies Ltd. 2.48 
+5.  Kerala Vision Broadband Ltd. 1.56 
+Market Share of Top Five Fixed (Wired) Access Broadband 
+Service Providers 71.66% 
+ 
+Top five Wireless (Fixed wireless & mobile) Access Broadband Service                
+                           providers at the end of August 2026 
+S.N. Service Provider Subscriber base (In million) 
+1.  Reliance Jio Infocomm Ltd. 523.22 
+2.  Bharti Airtel Ltd. 374.96 
+3.  Vodafone Idea Ltd. 130.87 
+4.  Bharat Sanchar Nigam Ltd. 23.26 
+5.  IBus Virtual Network Services Private Limited 0.12 
+Market Share of Top Five Wireless (Fixed wireless & Mobile) 
+Access Broadband Service providers 99.99% 
+�������������������������������������������� ������������������������ 
+--- PAGE 4 ---
+ 
+ 
+ 
+ 
+4 
+II. Wireline Telephone Subscriber Base 
+ The number of wireline subscribers increased from 48.01 million at the end of 
+July 2026 to 48.45 million at the end of August 2026. The net increase in the 
+wireline subscriber base was 0.44 million with a monthly growth rate of 
+0.93%.   
+ The overall wireline tele-density in India increased from 3.36% at the end of 
+July 2026 to 3.39% at the end of August 2026. Urban and rural wireline tele-
+density were 8.34% and 0.58% respectively, at the end of August 2026.  The 
+respective share of urban subscribers, and rural subscribers in total wireline 
+subscribers were 89.08% and 10.92% respectively at the end of August 2026. 
+ PSU access service providers viz. BSNL, MTNL, and APSFL together held 
+16.05% of the wireline market share at the end of August 2026. Detailed 
+statistics of the wireline subscriber base are available at Annexure-I.  
+Access Service Provider-wise Market Share of Wireline Subscribers at the 
+end of August 2026 
+ 
+ 
+ 
+ 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 5 ---
+ 
+ 
+ 
+ 
+5 
+ The net addition/ decline in the wireline subscriber base of various access 
+service providers in the month of August 2026 is given below: 
+ 
+Access Service Provider-wise Net Addition/Decline in Wireline 
+Subscribers during the month of August 2026  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 6 ---
+ 
+ 
+ 
+ 
+6 
+III. Wireless Telephone (Mobile + FWA) Subscriber Base 
+ 
+      The number of wireless (mobile + 
+Fixed Wireless Access) subscribers 
+increased from 1306.27 million at the 
+end of July 2026 to 1312.25 million at 
+the end of August 2026, thereby 
+registering a monthly growth rate of 
+0.46%. Total wireless subscription in 
+urban areas increased from 753.86 
+million in July 2026 to 759.11 million 
+in August 2026. The subscription in 
+rural areas also increased from 552.40 
+million to 553.14 million during the 
+same period. The monthly growth rate 
+of urban and rural wireless 
+subscriptions was 0.70% and 0.13%, 
+respectively.   
+  The wireless tele-density in India 
+increased from 91.33% at the end of July 
+2026 to 91.69% at the end of August 
+2026. The urban wireless tele-density 
+increased from 145.84% at the end of July 
+2026 to 146.66% at the end of August 
+2026. The rural wireless tele-density 
+increased from 60.48% to 60.55% during 
+the same period. The share of urban and 
+rural wireless subscribers in the total 
+number of wireless subscribers was 
+57.85% and 42.15% respectively, at the 
+end of August 2026. 
+ 
+ 
+Note: In the calculation of Tele-density figures, M2M cellular mobile connections have also been considered. 
+�������������������������������������������� ������������������������ 
+--- PAGE 7 ---
+ 
+ 
+ 
+ 
+7 
+  The details of wireless (mobile) subscribers and wireless (FWA) subscribers 
+are given below:  
+(A) Wireless (mobile) subscriber Base 
+    The number of wireless (mobile) 
+subscribers increased from 1287.92 
+million at the end of July 2026 to 1293.43 
+million at the end of August 2026 thereby 
+registering a monthly growth rate of 
+0.43%. Wireless (mobile) subscription in 
+urban areas increased from 743.65 
+million at the end of July 2026 to 748.84 
+million at the end of August 2026 and 
+wireless (mobile) subscription in rural 
+areas also increased from 544.27 million 
+to 544.58 million during the same period. 
+The monthly growth rates of urban and 
+rural wireless (mobile) subscription were 
+0.70% and 0.06% respectively. 
+ 
+ 
+        
+ The wireless (mobile) tele-density in 
+India increased from 90.04% at the end of 
+July 2026 to 90.37% at the end of August 
+2026. The urban wireless (mobile) tele-
+density increased from 143.86% at the 
+end of July 2026 to 144.67% at the end 
+of August 2026 and rural wireless 
+(mobile) tele-density increased from 
+59.59% to 59.61% during the same 
+period. The share of urban and rural 
+wireless (mobile) subscribers in the total 
+number of wireless (mobile) subscribers 
+were 57.90% and 42.10% respectively, at 
+the end of August 2026. The detailed 
+statistics of wireless (mobile) subscriber 
+base is available at Annexure-II. 
+ 
+ 
+Note: In the calculation of Tele-density figures, M2M cellular mobile connections have also been considered. 
+�������������������������������������������� ������������������������ 
+--- PAGE 8 ---
+ 
+ 
+ 
+ 
+8 
+• At the end of August 2026, the private access service providers held 92.75% of 
+the market share in terms of wireless (mobile) subscribers, whereas PSU access 
+service providers viz. BSNL and MTNL together held a market share of 7.25%.   
+ The graphical representation of access service provider-wise market share and 
+net additions in wireless (mobile) subscriber base are given below: - 
+ 
+ 
+Access Service Provider-wise Market Shares in term of Wireless (Mobile) 
+Subscribers at the end of August 2026 
+ 
+ 
+ 
+Net Addition/ Decline in Wireless (Mobile) Subscribers of Access Service 
+Providers in the month of August 2026 
+ 
+ 
+  
+�������������������������������������������� ������������������������ 
+--- PAGE 9 ---
+ 
+ 
+ 
+ 
+9 
+ 
+Growth in Wireless (Mobile) Subscribers 
+ 
+Major Access Service Provider-wise Monthly Growth/ Decline Rate of 
+Wireless (Mobile) Subscribers in the month of August 2026 
+ 
+ 
+Licensed Service Area (LSA)-wise Monthly Growth/ Decline rate of 
+Wireless (Mobile) Subscribers in the month of August 2026 
+ 
+ 
+ 
+ All LSAs except Himachal Pradesh have shown growth in their wireless 
+(Mobile) subscribers during the month of August 2026.  
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 10 ---
+ 
+ 
+ 
+ 
+10 
+ (B) Wireless (FWA) subscriber Base  
+ At present, fixed wireless access (FWA) based services are being provided 
+under two categories viz.  
+a) 5G FWA i.e. FWA using 5G radio access technology; and  
+b) UBR FWA i.e. FWA using Unlicensed Band Radio (UBR) technology.  
+ The number of wireless (5G FWA) subscribers increased from 13.21 million 
+at the end of July 2026 to 13.45 million at the end of August 2026 with 
+subscriptions in urban and rural areas as 6.47 million and 6.98 million 
+respectively. The shares of urban and rural wireless (5G FWA) subscribers 
+in total wireless (5G FWA) subscribers were 48.10% and 51.90% 
+respectively, at the end of August 2026.  
+ LSA wise information on the wireless (5G FWA) subscriber base is available 
+at Annexure-V.  
+ The number of total wireless FWA subscribers using UBR technology (UBR 
+FWA) stood at 5.37 million at the end of August 2026 with subscriptions 
+in urban and rural areas of 3.80 million and 1.57 million respectively. The 
+shares of urban and rural wireless (UBR FWA) subscribers in total wireless 
+(UBR FWA) subscribers were 70.72% and 29.28% respectively, at the end 
+of August 2026.  
+ LSA wise information on the wireless (UBR FWA) subscriber base is 
+available at Annexure-VI.  
+ 
+ 
+ 
+ 
+ 
+      
+�������������������������������������������� ������������������������ 
+--- PAGE 11 ---
+ 
+ 
+ 
+ 
+11 
+IV. M2M cellular mobile connections  
+  The Number of M2M cellular mobile connections increased from 137.70 
+million at the end of July 2026 to 140.50 million at the end of August 2026. 
+ 
+ Bharti Airtel Limited has the highest number of M2M cellular mobile 
+connections of 86.06 million with a market share of 61.25%, followed by 
+Reliance Jio Infocomm Limited, Vodafone Idea Limited and BSNL with 
+market share of 19.29%, 16.06% and 3.40% respectively.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 12 ---
+ 
+ 
+ 
+ 
+12 
+V. Total Telephone Subscriber Base  
+  The number of total telephone 
+subscribers in India increased from 
+1354.28 million at the end of July 2026 to 
+1360.70 million at the end of August 2026, 
+thereby showing a monthly growth rate of 
+0.47%. Urban telephone subscription 
+increased from 796.68 million at the end 
+of July 2026 to 802.28 million at the end 
+of August 2026 and the rural telephone 
+subscription also increased from 557.59 
+million to 558.43 million during the same 
+period. The monthly growth rates of urban 
+and rural telephone subscription were 
+0.70% and   0.15% respectively during the 
+month of August 2026. 
+ 
+ 
+ 
+ The overall tele-density in India 
+increased from 94.68% at the end of July 
+2026 to 95.07% at the end of August 
+2026. The urban tele-density increased 
+from 154.12% at the end of July 2026 to 
+155.00% at the end of August 2026 and 
+rural tele-density also increased from 
+61.05% to 61.12% during the same 
+period. The share of urban and rural 
+subscribers in total number of telephone 
+subscribers at the end of August 2026 
+were 58.96% and 41.04% respectively. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Note: In the calculation of Tele-density figures, M2M cellular mobile connections have also been considered. 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 13 ---
+ 
+ 
+ 
+ 
+13 
+ A summary of total telephone subscriber base at the end of August 2026 is 
+as below: 
+ 
+Telephone subscriber base at the end of August 2026 (in million) 
+ 
+S. No. Type of telephone connection No. of subscribers Total 
+1. 
+Wireless 
+Consumer 
+SIM 1,152.92 
+1,312.25 2. M2M SIM 140.50 
+3. FWA 18.82 
+4.            Wireline 48.45  
+5.           Total 1,360.70  
+ 
+ 
+ The following table provides a summary information on wireless (mobile) 
+telephone subscriber base at the end of August 2026: 
+Wireless (mobile) subscriber base at the end of August 2026 (in 
+million) 
+ 
+S. No. Item No. of subscribers 
+1. 
+Total number of Wireless (mobile) 
+connections including M2M cellular 
+mobile connections * 
+1,293.43 
+2. 
+Number of Wireless (mobile) connections 
+excluding M2M cellular mobile 
+connections 
+1,152.92 
+* Wireless (mobile) connections = Consumer SIM + M2M SIM  
+  
+�������������������������������������������� ������������������������ 
+--- PAGE 14 ---
+ 
+ 
+ 
+ 
+14 
+Overall Tele-density (LSA Wise) – At the end of August 2026 
+ 
+ 
+ 
+ As may be seen in the above chart, nine LSAs have less tele-density than 
+the all-India average tele-density at the end of August 2026. Delhi LSA has 
+the maximum tele-density of 371.29%, and the Bihar LSA has the minimum 
+tele-density of 64.34% at the end of August 2026.  
+Notes: - 
+1. Population data/projections are available state wise only. 
+2. Tele-density figures are derived from the telephone subscriber data provided by the access service 
+providers and the projection of population from the “Report of the Technical Group on Population 
+Projections for India and States 2011 – 2036 published in August 2020.  
+3. Telephone subscriber data for Delhi, includes, apart from the data for the State of Delhi, wireless 
+subscriber data for the areas served by the local exchanges of Ghaziabad & Noida (in Uttar Pradesh) 
+and Gurgaon & Faridabad (in Haryana).  
+4. Data/information for West Bengal includes Kolkata, Maharashtra includes Mumbai and Uttar 
+Pradesh includes UPE & UPW service areas. 
+5. Data/information for Andhra Pradesh includes Telangana, Madhya Pradesh includes Chhattisgarh, 
+Bihar includes Jharkhand, Maharashtra includes Goa, Uttar Pradesh includes Uttarakhand, West 
+Bengal includes Sikkim and North-East includes Arunachal Pradesh, Manipur, Meghalaya, 
+Mizoram, Nagaland & Tripura States. 
+6. In the calculation of Tele-density figures, M2M cellular mobile connections have also been included.  
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 15 ---
+ 
+ 
+ 
+ 
+15 
+VI. Category-wise Growth in subscriber base  
+ 
+Circle Category-wise Net Additions in Telephone Subscribers in the Month  
+of August 2026 
+Circle 
+Category 
+Net additions in the month 
+of August 2026 
+Telephone Subscriber base at 
+the end of August 2026 
+Wireline 
+segment 
+Wireless* 
+segment 
+Wireline 
+segment 
+Wireless* 
+segment 
+Circle A       282,636        2,606,554        20,538,512        440,936,742  
+Circle B       136,223        1,555,448        12,116,700        508,801,968  
+Circle C       27,042        815,982        3,915,237        218,562,284  
+Metro -1423       1,002,262        11,883,844        143,946,369  
+All India       444,478  5,980,246       48,454,293        1,312,247,363  
+ 
+Circle Category-wise Monthly and Yearly Growth Rates in 
+Telephone Subscribers in the Month of August 2026 
+ 
+Circle 
+Category 
+Monthly growth rate (%) (July 
+2026 to August 2026) 
+Yearly growth rate (%) 
+(August 2025 to August 2026) 
+Wireline 
+Segment 
+Wireless* 
+Segment 
+Wireline 
+Segment 
+Wireless* 
+Segment 
+Circle A 1.40% 0.59% 3.15% 7.37% 
+Circle B 1.14% 0.31% 8.85% 5.44% 
+Circle C 0.70% 0.37% 18.18% 8.63% 
+Metro -0.01% 0.70% -2.21% 5.66% 
+All India 0.93% 0.46% 4.19% 6.63% 
+ 
+* The wireless subscriber base comprises of wireless mobile telephone subscribers (including M2M cellular mobile connections), and FWA 
+subscribers. 
+ 
+Note: Circle Category-Metro includes Delhi, Mumbai and Kolkata. 
+ 
+ In the wireline segment, during the month of August 2026, on a monthly 
+basis, all circles except ‘Metro’ Category, have registered a growth in the 
+subscribers. On a yearly basis also, all circles except ‘Metro’ category, have 
+registered a growth in their wireline subscriber bases. 
+ As can be seen in the above tables, in the wireless segment, during the 
+month of August 2026, on a monthly basis, all circles have registered a 
+growth in their subscriber bases. On a yearly basis also, all the circles 
+have registered a growth in their wireless subscriber bases. 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 16 ---
+ 
+ 
+ 
+ 16 
+ 
+ 
+ 
+ 
+ Out of the total 1293.43 million wireless (mobile) subscribers, 1207.59 million 
+wireless (mobile) subscribers were active on the date of peak VLR in the month 
+of August 2026. The proportion of active wireless (mobile) subscribers was 
+approximately 93.36% of the total wireless (mobile) subscriber base. 
+ The detailed statistics on the proportion of active wireless (mobile) subscribers 
+(also referred to as VLR subscribers) on the date of peak VLR in the month of 
+August 2026 is available at Annexure-III and the methodology used for 
+reporting VLR subscribers is available at Annexure-IV. 
+ 
+Percentage of VLR Subscribers for the Top Four Access Service 
+Providers in the month of August 2026 
+ 
+ 
+ 
+ Bharti Airtel has the maximum proportion (99.01%) of its active wireless 
+(mobile) subscribers (VLR) as against its total wireless (mobile) subscribers 
+(HLR) on the date of peak VLR in the month of August 2026.  
+ 
+VII.  Active Wireless (Mobile) Subscribers (VLR Data) 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 17 ---
+ 
+ 
+ 
+ 17 
+ 
+ 
+Service Area wise percentage of VLR subscribers in the month of August 
+2026 
+ 
+VIII. Mobile Number Portability (MNP) 
+ 
+ MNP was implemented in Haryana Licensed Service Area (LSA) with effect from 
+25.11.2010 and across the rest of the country with effect from 20.01.2011. 
+Initially, it was available only within the same LSA. Inter-LSA MNP was 
+introduced nationwide with effect from 03.07.2015, enabling wireless 
+subscribers to retain their mobile numbers when they relocate from one LSA to 
+another. 
+ 
+ 
+   During the month of August 2026, about 15.83 million subscribers submitted 
+their requests for MNP.  Out of the total requests, number of requests received 
+from Zone-I & Zone-II were about 8.67 million and 7.16 million respectively. 
+ 
+ In MNP Zone-I (Northern and Western India), the highest number of requests 
+have been received in UP (East) LSA (2.23 million) followed by UP (West) LSA 
+(1.51 million).  
+�������������������������������������������� ������������������������ 
+--- PAGE 18 ---
+ 
+ 
+ 
+ 
+18 
+ In MNP Zone-II (Southern and Eastern India), the highest number of requests 
+have been received in Madhya Pradesh LSA (1.53 million) followed by Bihar 
+LSA (1.47 million). 
+Licensed Service Area Wise MNP Status 
+Zone-I Zone–II 
+Service 
+Area 
+Number of Porting 
+Requests in 
+the month of 
+Service 
+Area 
+Number of Porting 
+Requests in 
+the month of  
+July-26 August-26 July-26 August-26 
+Delhi 711,530 700,940 Andhra Pradesh 661,963 662,357 
+Gujarat 1,073,227 1,033,817 Assam 149,874 160,184 
+Haryana 452,025 445,458 Bihar 1,466,991 1,469,902 
+Himachal 
+Pradesh 59,841 58,959 Karnataka 643,775 621,350 
+Jammu & 
+Kashmir 94,339 77,532 Kerala 269,056 238,747 
+Maharashtr 
+a 1,085,090 1,079,115 Kolkata 196,463 193,992 
+Mumbai 282,132 290,673 Madhya Pradesh 1,524,933 1,529,112 
+Punjab 401,022 389,766 North East 47,939 51,615 
+Rajasthan 885,751 856,195 Odisha 252,883 293,186 
+U.P.(East) 2,294,656 2,227,586 Tamil Nadu 562,239 543,015 
+U.P.(West) 1,547,662 1,509,533 West Bengal 1,315,864 1,396,942 
+Total 8,887,275 8,669,574 Total 7,091,980 7,160,402 
+Total (Zone-I + Zone-II) 15,979,255 15,829,976 
+ 
+  
+Contact details in case of any clarification: - 
+ 
+Shri Akhilesh Kumar Trivedi, Advisor (NSL-II),  
+Telecom Regulatory Authority of India        
+World Trade Centre, Tower-F,  
+Nauroji Nagar, New Delhi – 110029 
+Ph: 011-20907758                                                         (Arun Agrawal) 
+E-mail: advmn@trai.gov.in                                        Pr. Advisor (NSL), TRAI 
+�������������������������������������������� ������������������������ 
+--- PAGE 19 ---
+ 
+ 
+ 
+ 19 
+. 
+July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 
+Andhra Pradesh 466,379             468,093             -                    -              1,082,228              1,091,098              10,507   10,333     1,030,603              1,035,860       -            -             71,085       70,535             2,129,924        2,155,135        -          -                83,422           78,323           4,874,148            4,909,377            35,229      
+Assam 92,485               92,522               -                    -              94,821                   97,525                   -        -          -                        -                 -            -             1,740         1,820               255,150           257,637           -          -                -                -                444,196               449,504               5,308        
+Bihar 151,617             152,534             -                    -              471,087                 474,149                 9            -          81,744                   82,974            -            -             8,029         7,589               799,184           805,192           -          -                -                -                1,511,670            1,522,438            10,768      
+Delhi -                    -                    476,630             463,112       2,551,311              2,568,642              9,616     9,428       965,640                 962,796          -            -             73,452       72,062             1,185,027        1,190,126        -          -                -                -                5,261,676             5,266,166             4,490        
+Gujarat 444,508             440,963             -                    -              392,156                 395,768                 1,308     1,300       807,793                 836,613          -            -             118,613     113,634           936,143           943,136           -          -                -                -                2,700,521            2,731,414            30,893      
+Haryana 377,876             381,186             -                    -              267,928                 272,867                 -        -          151,822                 150,985          -            -             260            270                  182,846           183,392           -          -                -                -                980,732               988,700               7,968        
+Himachal Pradesh 99,973               100,614             -                    -              32,554                   33,244                   -        -          3,635                     3,635              -            -             60              60                    81,571             82,101             -          -                -                -                217,793               219,654                1,861        
+J & K 57,784               45,164               -                    -              167,596                 169,500                 -        -          -                        -                 -            -             30              30                    282,238           283,773           -          -                -                -                507,648                498,467               (9,181)       
+Karnataka 463,000             464,061             -                    -              1,400,267              1,412,694              8,186     8,134       2,704,484              2,840,874       -            -             190,862     191,500           1,305,416        1,350,728        -          -                -                -                6,072,215            6,267,991            195,776    
+Kerala 965,262             969,103             -                    -              164,662                 166,668                 1,948     1,977       86,960                   87,349            -            -             5,307         5,117               423,045           426,126           -          -                -                -                1,647,184            1,656,340             9,156         
+Kolkata 224,726             224,811             -                    -              229,784                 232,084                 1,395     1,371       367,615                 371,622          -            -             13,072       11,117             691,805           697,132           -          -                -                -                1,528,397            1,538,137            9,740        
+Madhya Pradesh 309,913             310,511             -                    -              685,505                 694,974                 6            -          130,287                 140,057          -            -             36,747       38,512             1,200,715        1,230,424        -          -                -                -                2,363,173            2,414,478            51,305      
+Maharashtra 607,597             603,261             -                    -              758,190                 778,679                 5,199     5,131       1,004,128              991,050          -            -             21,642       21,422             351,529           363,662           -          -                -                -                2,748,285            2,763,205            14,920      
+Mumbai 4,904                 4,900                 606,966             587,352       652,656                 648,171                 26,264   26,169     2,561,303              2,563,212       -            -             157,652     158,020           1,085,449        1,091,717        -          -                -                -                5,095,194            5,079,541            (15,653)      
+North East 59,690               59,776               -                    -              68,606                   69,567                   -        -          -                        -                 -            -             330            330                  254,799           256,990           -          -                -                -                383,425               386,663                3,238        
+Odisha 161,236             162,081             -                    -              127,650                 130,309                 4            -          150,052                 156,862          -            -             3,446         4,476               381,075           384,783           -          -                -                -                823,463               838,511               15,048      
+Punjab 548,785             551,866             -                    -              485,374                 493,537                 1,341     1,338       52,902                   55,170            324,073     322,490       993            1,023               480,062           483,549           58,264     58,272           -                -                1,951,794            1,967,245            15,451      
+Rajasthan 289,362             289,233             -                    -              420,399                 428,491                 2,593     2,495       77,753                   78,564            -            -             8,055         7,885               625,852           635,152           -          -                -                -                1,424,014            1,441,820            17,806      
+Tamil Nadu 794,437             797,309             -                    -              1,199,354              1,210,500              7,024     7,013       767,169                 757,027          -            -             31,285       29,210             1,061,438        1,065,466        -          -                -                -                3,860,707            3,866,525             5,818        
+U.P.(E) 144,035             145,697             -                    -              427,501                 434,041                 54          14            48,763                   48,410            -            -             12,560       12,544             788,016           792,963           -          -                -                -                1,420,929            1,433,669            12,740      
+U.P.(W) 206,685             206,381             -                    -              358,201                 364,551                 7            -          31,166                   31,387            -            -             5,285         6,805               902,826           910,263           -          -                -                -                1,504,170            1,519,387            15,217      
+West Bengal 177,781             180,072             -                    -              116,032                 117,936                 13          12            7,487                     7,413              -            -             150            150                  387,018           389,478           -          -                -                -                688,481               695,061                6,580         
+Total 6,648,035         6,650,138         1,083,596         1,050,464  12,153,862          12,284,995         75,474  74,715    11,031,306          11,201,860   324,073   322,490     760,655    754,111          15,791,128   15,978,925    58,264    58,272          83,422          78,323          48,009,815          48,454,293          444,478    
+Net Addition 2,103                (33,132)      131,133               (759)        170,554         (1,583)        (6,544)             187,797         8                    (5,099)           444,478               
+Rural Subscribers 2,170,674          2,190,018          24                      14                161,218                 163,579                 210        210          1,491,436              1,528,570       165,651     165,485       -            -                  1,135,646        1,182,704        -          -                64,235           60,309           5,189,094            5,290,889            101,795    
+Vodafone Idea  Total  STPL  APSFL 
+Wireline Subscriber Base Annexure-I 
+ Net 
+Addition 
+Reliance Com. Tata Tele. Quadrant Bharti Airtel Reliance Jio 
+Service Area 
+BSNL MTNL 
+�������������������������������������������� ������������������������ 
+--- PAGE 20 ---
+ 
+ 
+ 
+ 20 
+   
+     
+ 
+July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 July-26 Aug-26 
+Andhra Pradesh 39,732,416            39,937,042                  -              -              8,715,411  8,753,514  7,614,955                 7,679,474                 32,652,535 32,864,786 88,715,317        89,234,816              519,499                 
+Assam 15,143,012            15,270,657                  -              -              1,519,974  1,514,641  2,901,384                 2,899,920                 10,216,861 10,291,012 29,781,231        29,976,230              194,999                 
+Bihar 50,040,817            50,105,575                  -              -              7,480,977  7,504,851  5,518,948                 5,539,813                 45,882,993 46,124,438 108,923,735      109,274,677            350,942                 
+Delhi 40,228,926            40,712,950                  3                  -              16,543,979 16,742,242 122,756  120,657  20,697,557 20,789,246 77,593,221        78,365,095              771,874                 
+Gujarat 15,946,351            16,059,429                  2                  -              20,116,264 20,324,998 3,304,433                 3,317,956                 33,856,293 34,067,272 73,223,343        73,769,655              546,312                 
+Haryana 7,964,101              7,982,329                    -              -              6,201,808  6,205,068  4,717,784                 4,775,713                 8,308,319  8,315,218  27,192,012        27,278,328              86,316                   
+Himachal Pradesh 3,637,211              3,646,564                    -              -              393,086  395,022  1,800,820                 1,817,071                 3,639,396  3,592,194  9,470,513          9,450,851                (19,662)                  
+J & K 7,070,320              7,069,179                    -              -              270,058  261,962  863,662                    863,103                    6,063,404  6,080,498  14,267,444        14,274,742              7,298                     
+Karnataka 45,088,864            45,416,167                  4                  -              7,751,977  7,753,137  4,750,730                 4,787,079                 26,780,725 26,971,321 84,372,300        84,927,704              555,404                 
+Kerala 9,841,122              9,908,479                    3                  1                  12,807,413 12,853,355 9,025,390                 9,056,965                 11,246,920 11,287,542 42,920,848        43,106,342              185,494                 
+Kolkata 6,062,654              6,074,476                    -              -              4,508,421  4,538,165  1,420,158                 1,424,408                 11,089,259 11,116,033 23,080,492        23,153,082              72,590                   
+M adhya Pradesh 18,696,294            18,711,618                  -              -              12,391,285 12,392,757 5,127,474                 5,152,360                 50,872,131 51,079,265 87,087,184        87,336,000              248,816                 
+M aharashtra 34,081,957            34,367,416                  -              -              20,696,362 20,691,316 5,293,675                 5,327,192                 44,467,148 44,608,248 104,539,142      104,994,172            455,030                 
+M umbai 16,447,086            16,461,258                  62                27                10,725,580 10,751,229 37,977  34,197  13,441,467 13,526,403 40,652,172        40,773,114              120,942                 
+North East 6,839,355              6,850,897                    -              -              591,840  590,167  1,293,699                 1,309,150                 4,711,654  4,723,023  13,436,548        13,473,237              36,689                   
+Odisha 13,464,578            13,477,538                  -              -              1,553,801  1,557,705  5,491,419                 5,499,606                 18,504,489 18,664,429 39,014,287        39,199,278              184,991                 
+Punjab 14,198,899            14,193,818                  6                  2                  5,572,993  5,623,167  4,104,294                 4,106,818                 11,825,488 11,859,083 35,701,680        35,782,888              81,208                   
+Rajasthan 26,440,461            26,450,165                  34                1                  8,172,241  8,154,765  5,847,630                 5,966,476                 28,519,571 28,640,776 68,979,937        69,212,183              232,246                 
+ Tamil Nadu 33,848,814            33,980,568                  2                  -              14,196,843 14,242,659 7,850,699                 7,849,488                 25,309,000 25,487,757 81,205,358        81,560,472              355,114                 
+U.P.(E) 41,789,816            41,796,955                  -              -              16,599,835 16,608,558 8,451,922                 8,477,041                 44,972,938 45,238,147 111,814,511      112,120,701            306,190                 
+U.P.(W ) 23,498,533            23,599,795                  -              -              12,156,122 12,062,015 5,179,350                 5,195,393                 26,360,551 26,353,692 67,194,556        67,210,895              16,339                   
+W est Bengal 19,426,718            19,526,242                  3                  1                  10,096,942 10,048,058 2,619,442                 2,625,673                 26,611,644 26,751,522 58,754,749        58,951,496              196,747                 
+Total 489,488,305         491,599,117         119              32                199,063,212         199,569,351         93,177,868        93,670,699        160,733        154,854        506,030,343         508,431,905         1,287,920,580   1,293,425,958         5,505,378             
+Net Addition 2,110,812                      (87)               506,139                492,831             (5,879)           2,401,562                      -                     5,505,378                          
+Rural Subscribers 200,716,743                200,235,376                -                   -                   92,676,219 92,359,646                  30,752,112               30,877,410               2,566                  2,522                  220,123,854                221,106,836                544,271,494           544,581,790                  310,296               
+Annexure-II Wireless (Mobile) Subscriber Base 
+LSA 
+MTNL  Bharti Airtel                         Reliance Com. Vodafone Idea BSNL 
+ Net Addition 
+Total Reliance Jio 
+�������������������������������������������� ������������������������ 
+--- PAGE 21 ---
+ 
+ 
+ 
+ 21 
+                     
+                             
+ 
+ 
+Note:  Peak VLR figures in some LSAs of some of the service providers are more than their HLR  figures due to a large number of inroamers. 
+Circle Bharti BSNL Vodafone Idea M TNL Reliance Com. Reliance Jio Overall (for all service providers together) 
+Andhra Pradesh 96.24 58.68 95.87 - 96.95 93.24 
+Assam 99.82 21.86 85.87 - 101.12 92.02 
+Bihar 91.63 29.10 84.08 - 96.88 90.16 
+Delhi 95.03 49.97 180.69 - 100.34 86.95 
+Gujarat 105.35 44.34 87.49 - 101.35 95.84 
+Haryana 103.13 20.00 91.47 - 104.66 86.39 
+Himachal Pradesh 96.79 45.48 99.43 - 102.74 89.30 
+J & K 105.56 55.38 78.99 - 83.50 92.64 
+Karnataka 97.16 70.75 68.16 - 92.42 91.52 
+Kerala 100.35 115.61 94.97 - 95.61 100.71 
+Kolkata 94.76 70.46 85.23 - 98.08 92.99 
+Madhya Pradesh 96.82 40.26 86.60 - 96.74 91.99 
+Maharashtra 107.13 88.12 92.94 - 108.64 104.01 
+Mumbai 95.26 71.40 106.04 100.00 88.17 86.63 
+North East 99.99 44.26 95.87 - 107.20 96.92 
+Odisha 100.23 39.68 84.47 - 102.62 92.25 
+Punjab 113.40 32.11 90.33 100.00 103.32 97.11 
+Rajasthan 99.68 34.07 89.90 100.00 98.99 92.59 
+Tamil Nadu 95.94 85.97 79.93 - 98.61 93.02 
+U.P. (E) 101.33 28.55 82.69 - 96.34 91.05 
+U.P. (W ) 109.47 30.62 93.81 - 98.96 96.45 
+W est Bengal 93.62 74.14 91.29 100.00 98.97 94.78 
+Overall (for all 
+LSAs) 99.01 54.37 83.84 164.21 100.00 98.80 93.36 
+     Proportion of VLR on the date of Peak VLR as against HLR in the month of August-26 (%)     Annexure-III 
+�������������������������������������������� ������������������������ 
+--- PAGE 22 ---
+ 
+ 
+ 
+ 22 
+Annexure IV 
+VLR Subscribers in the Wireless Segment 
+ 
+Home Location Register (HLR)  is a central database that contains details of 
+each mobile phone subscriber that is authorized to use the GSM core network. 
+The HLRs store details of every SIM card issued by the service provider. Each 
+SIM has a unique identifier called an International Mobile Subscriber Identity 
+(IMSI), which is the primary key to each HLR record. The HLR data is stored for 
+as long as a subscriber remains with the service provider. HLR also manages 
+the mobility of subscribers by means of updating their position in administrative 
+areas. It sends the subscriber data to a Visitor Location Register (VLR).  
+ 
+Subscriber numbers reported by the service providers is the difference between 
+the numbers of IMSI registered in service provider’s HLR and sum of other 
+figures as given below: - 
+ 
+1 Total IMSI's in HLR (A) 
+2  Less: (B = a + b + c + d + e) 
+a.  Test/Service Cards  
+b.  Employees  
+c. 
+Stock in hand/in Distribution Channels 
+(Active Card) 
+d.  Subscriber Retention period expired  
+e.  Service suspended pending disconnection  
+3  Subscribers Base (A-B)  
+�������������������������������������������� ������������������������ 
+--- PAGE 23 ---
+ 
+ 
+ 
+ 23 
+Visitor Location Register (VLR) is a temporary database of the subscribers who 
+have roamed into the particular area, which it serves. Each base station in the 
+network is served by exactly one VLR; hence a subscriber cannot be present in 
+more than one VLR at a time. 
+ 
+If subscriber is in active stage i.e. he is able to send/receive calls/SMSs he is 
+available both in HLR and VLR. However, it may be possible that the subscriber 
+is registered in HLR but not in VLR due to the reason that he is either switched-
+off or moved out of coverage area, not reachable etc. In such circumstances he 
+will be available in HLR but not in VLR. This causes difference between 
+subscriber number reported by the service providers based on HLR and 
+numbers available in VLR.  
+ 
+The VLR subscriber data calculated here is based on active subscribers in VLR 
+on the date of peak subscriber number in VLR of the particular month for which 
+the data is being collected. This data is to be taken from the switches having the 
+purge time of not more than 72 hours.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+�������������������������������������������� ������������������������ 
+--- PAGE 24 ---
+ 
+ 
+ 
+ 24 
+ 
+Annexure-V 
+Fixed-Wireless (5G) Subscribers Base 
+ 
+5G-Fixed Wireless Subscribers   
+TSPs Name 
+→ Bharti Airtel Reliance Jio Grand Total 
+↓Telecom 
+Service 
+Area 
+July-26 August-26 July-26 August-26 July-26 August-26 
+Andhra 
+Pradesh 333,021 337,659 786,100 797,158 1,119,121 1,134,817 
+Assam 89,341 92,953 218,388 221,099 307,729 314,052 
+Bihar 199,231 201,284 798,105 812,258 997,336 1,013,542 
+Delhi 193,820 200,100 233,403 232,536 427,223 432,636 
+Gujarat 226,806 234,694 480,782 486,836 707,588 721,530 
+Haryana 105,098 106,962 266,321 269,930 371,419 376,892 
+Himachal 
+Pradesh 21,070 21,777 86,522 87,600 107,592 109,377 
+Jammu & 
+Kashmir 66,562 66,303 196,410 201,004 262,972 267,307 
+Karnataka 326,885 335,897 460,167 466,934 787,052 802,831 
+Kerala 77,809 80,143 204,831 207,821 282,640 287,964 
+Kolkata 110,617 113,684 171,708 170,258 282,325 283,942 
+Madhya 
+Pradesh 183,409 189,395 650,076 664,600 833,485 853,995 
+Maharashtr 
+a 343,947 355,014 680,747 690,160 1,024,694 1,045,174 
+Mumbai 128,694 132,940 115,150 116,259 243,844 249,199 
+North East 44,426 45,049 100,587 101,892 145,013 146,941 
+Odisha 91,827 94,547 352,685 360,198 444,512 454,745 
+Punjab 187,970 191,716 544,922 550,683 732,892 742,399 
+Rajasthan 232,142 238,166 533,406 545,765 765,548 783,931 
+Tamil Nadu 445,364 456,984 425,290 430,124 870,654 887,108 
+Uttar 
+Pradesh 
+(East) 247,146 251,820 799,079 816,037 1,046,225 1,067,857 
+Uttar 
+Pradesh 
+(West) 180,559 184,074 615,191 627,253 795,750 811,327 
+West Bengal 102,242 103,164 550,356 562,691 652,598 665,855 
+TOTAL 3,937,986 4,034,325 9,270,226 9,419,096 13,208,212 13,453,421 
+Net 
+Addition   96,339                 148,870    245,209 
+Monthly 
+Growth %   2.45%   1.61%   1.86% 
+  
+�������������������������������������������� ������������������������ 
+--- PAGE 25 ---
+ 
+ 
+ 
+ 25 
+ 
+Annexure-VI 
+Fixed-Wireless (UBR) Subscribers Base 
+ 
+UBR- Fixed Wireless Subscribers 
+TSPs Name → Reliance Jio  
+↓Telecom Service Area July-26 August-26 
+Andhra Pradesh  440,877       467,390  
+Assam  44,995         47,681  
+Bihar  346,692       356,310  
+Delhi  356,996       371,300  
+Gujarat  350,953       367,493  
+Haryana  215,850       224,754  
+Himachal Pradesh  14,312         15,321  
+Jammu & Kashmir  88,353         90,783  
+Karnataka  324,070       341,021  
+Kerala  13,397         14,151  
+Kolkata  235,106       242,137  
+Madhya Pradesh  314,800       332,066  
+Maharashtra  421,463       441,115  
+Mumbai  72,728         75,864  
+North East  20,254         20,806  
+Odisha  72,784         76,404  
+Punjab  298,876       311,503  
+Rajasthan  354,668       370,338  
+Tamil Nadu  228,256       241,444  
+Uttar Pradesh (East)  339,124       353,777  
+Uttar Pradesh (West)  431,108       450,151  
+West Bengal  152,663       156,175  
+TOTAL 5,138,325 5,367,984 
+Net Addition   229,659 
+Monthly Growth %   4.47% 
+ 
+*Only Reliance Jio Infocomm Limited has reported the information on the number of UBR FWA subscribers. 
+�������������������������������������������� ������������������������ 

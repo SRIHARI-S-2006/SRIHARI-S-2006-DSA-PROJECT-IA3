@@ -1,0 +1,3213 @@
+{
+  "correlation": {
+    "variables": [
+      "Tenure",
+      "Monthly Charges",
+      "Total Charges",
+      "Churn",
+      "Senior Citizen",
+      "Has Partner",
+      "Has Dependents"
+    ],
+    "matrix": [
+      [
+        1.0,
+        0.248,
+        0.826,
+        -0.352,
+        0.017,
+        0.38,
+        0.16
+      ],
+      [
+        0.248,
+        1.0,
+        0.651,
+        0.193,
+        0.22,
+        0.097,
+        -0.114
+      ],
+      [
+        0.826,
+        0.651,
+        1.0,
+        -0.198,
+        0.103,
+        0.318,
+        0.062
+      ],
+      [
+        -0.352,
+        0.193,
+        -0.198,
+        1.0,
+        0.151,
+        -0.15,
+        -0.164
+      ],
+      [
+        0.017,
+        0.22,
+        0.103,
+        0.151,
+        1.0,
+        0.016,
+        -0.211
+      ],
+      [
+        0.38,
+        0.097,
+        0.318,
+        -0.15,
+        0.016,
+        1.0,
+        0.453
+      ],
+      [
+        0.16,
+        -0.114,
+        0.062,
+        -0.164,
+        -0.211,
+        0.453,
+        1.0
+      ]
+    ]
+  },
+  "service_contract_matrix": [
+    {
+      "InternetService": "DSL",
+      "Contract": "Month-to-month",
+      "total": 1223,
+      "churns": 394,
+      "churn_rate": 32.22,
+      "avg_mrr": 50.22
+    },
+    {
+      "InternetService": "DSL",
+      "Contract": "One year",
+      "total": 570,
+      "churns": 53,
+      "churn_rate": 9.3,
+      "avg_mrr": 61.4
+    },
+    {
+      "InternetService": "DSL",
+      "Contract": "Two year",
+      "total": 628,
+      "churns": 12,
+      "churn_rate": 1.91,
+      "avg_mrr": 70.46
+    },
+    {
+      "InternetService": "Fiber optic",
+      "Contract": "Month-to-month",
+      "total": 2128,
+      "churns": 1162,
+      "churn_rate": 54.61,
+      "avg_mrr": 87.02
+    },
+    {
+      "InternetService": "Fiber optic",
+      "Contract": "One year",
+      "total": 539,
+      "churns": 104,
+      "churn_rate": 19.29,
+      "avg_mrr": 98.78
+    },
+    {
+      "InternetService": "Fiber optic",
+      "Contract": "Two year",
+      "total": 429,
+      "churns": 31,
+      "churn_rate": 7.23,
+      "avg_mrr": 104.57
+    },
+    {
+      "InternetService": "No",
+      "Contract": "Month-to-month",
+      "total": 524,
+      "churns": 99,
+      "churn_rate": 18.89,
+      "avg_mrr": 20.41
+    },
+    {
+      "InternetService": "No",
+      "Contract": "One year",
+      "total": 364,
+      "churns": 9,
+      "churn_rate": 2.47,
+      "avg_mrr": 20.82
+    },
+    {
+      "InternetService": "No",
+      "Contract": "Two year",
+      "total": 638,
+      "churns": 5,
+      "churn_rate": 0.78,
+      "avg_mrr": 21.78
+    }
+  ],
+  "scatter_sample": [
+    {
+      "id": "6302-JGYRJ",
+      "x": 31,
+      "y": 79.45,
+      "r": 8,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.128,
+      "contract": "One year"
+    },
+    {
+      "id": "2320-JRSDE",
+      "x": 1,
+      "y": 19.9,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.276,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2332-EFBJY",
+      "x": 16,
+      "y": 19.7,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.149,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1624-WOIWJ",
+      "x": 10,
+      "y": 84.7,
+      "r": 5,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.515,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9391-EOYLI",
+      "x": 12,
+      "y": 80.45,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.71,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1977-STDKI",
+      "x": 1,
+      "y": 73.0,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.702,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8919-FYFQZ",
+      "x": 44,
+      "y": 30.35,
+      "r": 6,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.219,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7893-IXHRQ",
+      "x": 1,
+      "y": 20.55,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.245,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5835-BEQEU",
+      "x": 3,
+      "y": 76.95,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.742,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6275-YDUVO",
+      "x": 2,
+      "y": 86.2,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.662,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6347-DCUIK",
+      "x": 10,
+      "y": 74.15,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.641,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1567-DSCIC",
+      "x": 8,
+      "y": 94.0,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.729,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9239-ZBZZV",
+      "x": 6,
+      "y": 47.95,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.704,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3838-OZURD",
+      "x": 66,
+      "y": 105.0,
+      "r": 14,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.337,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6029-WTIPC",
+      "x": 37,
+      "y": 101.1,
+      "r": 10,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.669,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7927-AUXBZ",
+      "x": 30,
+      "y": 85.15,
+      "r": 8,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.359,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8020-BWHYL",
+      "x": 15,
+      "y": 75.3,
+      "r": 5,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.484,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1349-WXNGG",
+      "x": 1,
+      "y": 20.05,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.182,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8623-TMRBY",
+      "x": 51,
+      "y": 84.2,
+      "r": 10,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.332,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3223-WZWJM",
+      "x": 26,
+      "y": 83.95,
+      "r": 7,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.654,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3992-YWPKO",
+      "x": 6,
+      "y": 109.9,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.613,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1024-VRZHF",
+      "x": 11,
+      "y": 74.95,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.7,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2154-KVJFF",
+      "x": 15,
+      "y": 79.75,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.621,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5229-PRWKT",
+      "x": 8,
+      "y": 86.55,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.756,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0224-HJAPT",
+      "x": 5,
+      "y": 47.15,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.471,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2884-GBPFB",
+      "x": 35,
+      "y": 70.3,
+      "r": 8,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.421,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7242-QZLXF",
+      "x": 1,
+      "y": 25.3,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.601,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4704-ERYFC",
+      "x": 22,
+      "y": 69.25,
+      "r": 6,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.541,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6618-RYATB",
+      "x": 1,
+      "y": 79.55,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.69,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4228-ZGYUW",
+      "x": 4,
+      "y": 90.05,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.753,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3348-CFRNX",
+      "x": 28,
+      "y": 92.35,
+      "r": 8,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.461,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2667-WYLWJ",
+      "x": 8,
+      "y": 19.75,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.091,
+      "contract": "One year"
+    },
+    {
+      "id": "3090-HAWSU",
+      "x": 61,
+      "y": 111.6,
+      "r": 14,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.075,
+      "contract": "Two year"
+    },
+    {
+      "id": "8380-PEFPE",
+      "x": 1,
+      "y": 71.65,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.65,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0406-BPDVR",
+      "x": 54,
+      "y": 101.5,
+      "r": 12,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.26,
+      "contract": "One year"
+    },
+    {
+      "id": "6900-PXRMS",
+      "x": 26,
+      "y": 105.75,
+      "r": 8,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.569,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3244-DCJWY",
+      "x": 1,
+      "y": 70.25,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.7,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1980-KXVPM",
+      "x": 3,
+      "y": 75.05,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.693,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6416-TVAIH",
+      "x": 1,
+      "y": 68.5,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.669,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4523-WXCEF",
+      "x": 59,
+      "y": 101.1,
+      "r": 14,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.368,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2141-RRYGO",
+      "x": 4,
+      "y": 68.65,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.464,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4110-PFEUZ",
+      "x": 1,
+      "y": 69.55,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.545,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3207-OYBWH",
+      "x": 57,
+      "y": 95.25,
+      "r": 13,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.339,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9025-AOMKI",
+      "x": 6,
+      "y": 93.55,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.746,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9940-RHLFB",
+      "x": 1,
+      "y": 75.3,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.608,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7851-WZEKY",
+      "x": 2,
+      "y": 95.15,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.825,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3891-PUQOD",
+      "x": 1,
+      "y": 59.2,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.416,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8155-IBNHG",
+      "x": 24,
+      "y": 75.4,
+      "r": 6,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.489,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2889-FPWRM",
+      "x": 72,
+      "y": 117.8,
+      "r": 14,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.104,
+      "contract": "One year"
+    },
+    {
+      "id": "8185-UPYBR",
+      "x": 6,
+      "y": 75.5,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.731,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3721-CNEYS",
+      "x": 2,
+      "y": 70.95,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.69,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4806-KEXQR",
+      "x": 4,
+      "y": 79.9,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.732,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0841-NULXI",
+      "x": 1,
+      "y": 35.55,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.701,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7254-IQWOZ",
+      "x": 1,
+      "y": 69.65,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.707,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2876-VBBBL",
+      "x": 1,
+      "y": 20.25,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.253,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6173-ITPWD",
+      "x": 47,
+      "y": 83.35,
+      "r": 10,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.309,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9820-RMCQV",
+      "x": 11,
+      "y": 48.55,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.178,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5385-SUIRI",
+      "x": 52,
+      "y": 104.2,
+      "r": 13,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.5,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5729-KLZAR",
+      "x": 4,
+      "y": 80.85,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.595,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6323-AYBRX",
+      "x": 59,
+      "y": 19.35,
+      "r": 5,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.004,
+      "contract": "Two year"
+    },
+    {
+      "id": "4658-HCOHW",
+      "x": 21,
+      "y": 102.8,
+      "r": 7,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.499,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7198-GLXTC",
+      "x": 2,
+      "y": 79.0,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.67,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6653-CBBOM",
+      "x": 1,
+      "y": 70.3,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.7,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7240-ETPTR",
+      "x": 9,
+      "y": 48.75,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.679,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7028-DVOIQ",
+      "x": 35,
+      "y": 99.05,
+      "r": 9,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.683,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0236-HFWSV",
+      "x": 15,
+      "y": 93.35,
+      "r": 6,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.775,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4745-LSPLO",
+      "x": 1,
+      "y": 20.5,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.192,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4412-YLTKF",
+      "x": 27,
+      "y": 78.05,
+      "r": 7,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.608,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6502-HCJTI",
+      "x": 7,
+      "y": 94.7,
+      "r": 5,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.591,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2718-GAXQD",
+      "x": 4,
+      "y": 46.0,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.374,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2115-BFTIW",
+      "x": 25,
+      "y": 70.95,
+      "r": 6,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.342,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6161-UUUTA",
+      "x": 3,
+      "y": 79.9,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.765,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3398-ZOUAA",
+      "x": 21,
+      "y": 69.1,
+      "r": 6,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.59,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0661-XEYAN",
+      "x": 1,
+      "y": 25.8,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.608,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6397-JNZZG",
+      "x": 43,
+      "y": 55.55,
+      "r": 7,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.198,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2957-LOLHO",
+      "x": 12,
+      "y": 45.4,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.317,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9221-OTIVJ",
+      "x": 14,
+      "y": 104.85,
+      "r": 6,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.766,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5174-RNGBH",
+      "x": 9,
+      "y": 66.25,
+      "r": 5,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.221,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6543-XRMYR",
+      "x": 30,
+      "y": 99.7,
+      "r": 8,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.678,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1670-SVOWZ",
+      "x": 14,
+      "y": 89.65,
+      "r": 6,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.381,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4749-VFKVB",
+      "x": 1,
+      "y": 50.1,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.508,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5103-MHMHY",
+      "x": 1,
+      "y": 45.95,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.296,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0876-WDUUZ",
+      "x": 5,
+      "y": 85.4,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.539,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2984-MIIZL",
+      "x": 4,
+      "y": 74.8,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.589,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9490-DFPMD",
+      "x": 42,
+      "y": 84.65,
+      "r": 9,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.557,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6715-OFDBP",
+      "x": 5,
+      "y": 70.05,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.585,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6996-KNSML",
+      "x": 1,
+      "y": 74.9,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.694,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0235-KGSLC",
+      "x": 1,
+      "y": 85.55,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.649,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7598-UAASY",
+      "x": 2,
+      "y": 76.4,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.604,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6352-TWCAU",
+      "x": 35,
+      "y": 86.45,
+      "r": 9,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.571,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9274-CNFMO",
+      "x": 4,
+      "y": 74.95,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.702,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6204-IEUXJ",
+      "x": 3,
+      "y": 80.1,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.398,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6770-XUAGN",
+      "x": 1,
+      "y": 21.0,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.271,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1449-XQEMT",
+      "x": 3,
+      "y": 19.8,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.242,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2856-HYAPG",
+      "x": 1,
+      "y": 68.65,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.624,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4404-HIBDJ",
+      "x": 25,
+      "y": 74.3,
+      "r": 7,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.051,
+      "contract": "One year"
+    },
+    {
+      "id": "3009-JWMPU",
+      "x": 62,
+      "y": 96.75,
+      "r": 14,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.315,
+      "contract": "One year"
+    },
+    {
+      "id": "9831-BPFRI",
+      "x": 39,
+      "y": 89.55,
+      "r": 9,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.183,
+      "contract": "One year"
+    },
+    {
+      "id": "8397-MVTAZ",
+      "x": 34,
+      "y": 100.05,
+      "r": 9,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.667,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4124-MMETB",
+      "x": 22,
+      "y": 94.65,
+      "r": 7,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.645,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8329-IBCTI",
+      "x": 1,
+      "y": 19.65,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.191,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5442-XSDCW",
+      "x": 11,
+      "y": 79.5,
+      "r": 5,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.548,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9647-ERGBE",
+      "x": 30,
+      "y": 100.05,
+      "r": 9,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.634,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1447-GIQMR",
+      "x": 1,
+      "y": 69.15,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.713,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8625-AZYZY",
+      "x": 24,
+      "y": 104.65,
+      "r": 8,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.693,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8821-XNHVZ",
+      "x": 1,
+      "y": 80.05,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.637,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1447-PJGGA",
+      "x": 57,
+      "y": 95.25,
+      "r": 13,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.153,
+      "contract": "Two year"
+    },
+    {
+      "id": "6400-BWQKW",
+      "x": 6,
+      "y": 79.05,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.637,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8679-JOEVF",
+      "x": 16,
+      "y": 59.4,
+      "r": 5,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.299,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1501-SGHBW",
+      "x": 2,
+      "y": 45.85,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.34,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8640-SDGKB",
+      "x": 4,
+      "y": 74.4,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.505,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7938-OUHIO",
+      "x": 3,
+      "y": 98.7,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.706,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7180-PISOG",
+      "x": 1,
+      "y": 74.5,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.725,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4625-EWPTF",
+      "x": 8,
+      "y": 30.45,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.474,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0733-VUNUW",
+      "x": 24,
+      "y": 55.65,
+      "r": 6,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.211,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2962-XPMCQ",
+      "x": 2,
+      "y": 45.15,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.509,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1624-NALOJ",
+      "x": 5,
+      "y": 89.8,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.777,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4154-AQUGT",
+      "x": 13,
+      "y": 89.05,
+      "r": 5,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.496,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4274-OWWYO",
+      "x": 1,
+      "y": 74.35,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.67,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7551-DACSP",
+      "x": 6,
+      "y": 55.3,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.299,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3393-FMZPV",
+      "x": 25,
+      "y": 100.25,
+      "r": 7,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.67,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6641-XRPSU",
+      "x": 34,
+      "y": 70.0,
+      "r": 8,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.333,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5597-GLBUC",
+      "x": 1,
+      "y": 85.45,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.736,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1502-XFCVR",
+      "x": 58,
+      "y": 106.45,
+      "r": 14,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.172,
+      "contract": "One year"
+    },
+    {
+      "id": "7951-QKZPL",
+      "x": 33,
+      "y": 24.5,
+      "r": 5,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.022,
+      "contract": "Two year"
+    },
+    {
+      "id": "8399-YNDCH",
+      "x": 21,
+      "y": 60.05,
+      "r": 6,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.326,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4484-GLZOU",
+      "x": 52,
+      "y": 105.05,
+      "r": 13,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.519,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7055-VKGDA",
+      "x": 54,
+      "y": 105.4,
+      "r": 13,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.1,
+      "contract": "One year"
+    },
+    {
+      "id": "5552-ZNFSJ",
+      "x": 1,
+      "y": 45.3,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.425,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6595-YGXIT",
+      "x": 25,
+      "y": 88.95,
+      "r": 7,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.659,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0345-HKJVM",
+      "x": 6,
+      "y": 89.3,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.689,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7377-DMMRI",
+      "x": 2,
+      "y": 47.8,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.415,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2737-YNGYW",
+      "x": 2,
+      "y": 80.55,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.661,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4390-KYULV",
+      "x": 3,
+      "y": 20.55,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.224,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0925-VYDLG",
+      "x": 3,
+      "y": 75.25,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.668,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2474-BRUCM",
+      "x": 40,
+      "y": 101.85,
+      "r": 10,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.47,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9572-MTILT",
+      "x": 59,
+      "y": 106.75,
+      "r": 14,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.237,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4603-JANFB",
+      "x": 1,
+      "y": 69.85,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.706,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2519-FAKOD",
+      "x": 38,
+      "y": 99.25,
+      "r": 10,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.487,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1038-ZAGBI",
+      "x": 12,
+      "y": 19.8,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.05,
+      "contract": "One year"
+    },
+    {
+      "id": "4598-XLKNJ",
+      "x": 25,
+      "y": 98.5,
+      "r": 8,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.649,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8824-RWFXJ",
+      "x": 3,
+      "y": 56.15,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.321,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7273-TEFQD",
+      "x": 3,
+      "y": 41.15,
+      "r": 4,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.704,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7593-XFKDI",
+      "x": 1,
+      "y": 46.3,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.348,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8861-HGGKB",
+      "x": 10,
+      "y": 86.45,
+      "r": 5,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.663,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7623-TRNQN",
+      "x": 1,
+      "y": 49.9,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.304,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4512-ZUIYL",
+      "x": 2,
+      "y": 70.0,
+      "r": 4,
+      "churn": true,
+      "risk": "Medium Risk",
+      "score": 0.516,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6289-CPNLD",
+      "x": 33,
+      "y": 73.9,
+      "r": 8,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.102,
+      "contract": "One year"
+    },
+    {
+      "id": "4822-YCXMX",
+      "x": 25,
+      "y": 84.8,
+      "r": 7,
+      "churn": true,
+      "risk": "High Risk",
+      "score": 0.65,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1582-RAFML",
+      "x": 1,
+      "y": 60.1,
+      "r": 4,
+      "churn": true,
+      "risk": "Low Risk",
+      "score": 0.295,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8974-OVACP",
+      "x": 1,
+      "y": 20.15,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.19,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3976-HXHCE",
+      "x": 72,
+      "y": 19.3,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.002,
+      "contract": "Two year"
+    },
+    {
+      "id": "0999-QXNSA",
+      "x": 7,
+      "y": 45.75,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.363,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0442-TDYUO",
+      "x": 48,
+      "y": 20.05,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.01,
+      "contract": "Two year"
+    },
+    {
+      "id": "7562-UXTPG",
+      "x": 13,
+      "y": 70.15,
+      "r": 5,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.53,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8022-BECSI",
+      "x": 22,
+      "y": 19.6,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.043,
+      "contract": "One year"
+    },
+    {
+      "id": "7107-UBYKY",
+      "x": 35,
+      "y": 25.75,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.097,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0277-BKSQP",
+      "x": 8,
+      "y": 54.4,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.462,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9801-NOSHQ",
+      "x": 23,
+      "y": 19.8,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.033,
+      "contract": "One year"
+    },
+    {
+      "id": "8329-UTMVM",
+      "x": 27,
+      "y": 104.65,
+      "r": 8,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.368,
+      "contract": "One year"
+    },
+    {
+      "id": "5453-AXEPF",
+      "x": 17,
+      "y": 80.5,
+      "r": 6,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.522,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9970-QBCDA",
+      "x": 6,
+      "y": 19.7,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.145,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0336-PIKEI",
+      "x": 72,
+      "y": 74.4,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.006,
+      "contract": "Two year"
+    },
+    {
+      "id": "3752-CQSJI",
+      "x": 13,
+      "y": 20.45,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.136,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1746-TGTWV",
+      "x": 1,
+      "y": 75.35,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.516,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5124-EOGYE",
+      "x": 31,
+      "y": 20.45,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.015,
+      "contract": "Two year"
+    },
+    {
+      "id": "3078-ZKNTS",
+      "x": 13,
+      "y": 19.75,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.037,
+      "contract": "Two year"
+    },
+    {
+      "id": "6614-YWYSC",
+      "x": 61,
+      "y": 25.0,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.006,
+      "contract": "Two year"
+    },
+    {
+      "id": "7426-GSWPO",
+      "x": 64,
+      "y": 103.5,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.286,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3082-WQRVY",
+      "x": 14,
+      "y": 19.65,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.071,
+      "contract": "One year"
+    },
+    {
+      "id": "4573-JKNAE",
+      "x": 12,
+      "y": 19.35,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.027,
+      "contract": "Two year"
+    },
+    {
+      "id": "4079-WWQQQ",
+      "x": 72,
+      "y": 65.55,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.015,
+      "contract": "Two year"
+    },
+    {
+      "id": "4369-NYSCF",
+      "x": 56,
+      "y": 75.75,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.049,
+      "contract": "One year"
+    },
+    {
+      "id": "2274-XUATA",
+      "x": 72,
+      "y": 63.1,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.018,
+      "contract": "Two year"
+    },
+    {
+      "id": "5016-LIPDW",
+      "x": 57,
+      "y": 19.4,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.007,
+      "contract": "One year"
+    },
+    {
+      "id": "2990-OGYTD",
+      "x": 67,
+      "y": 86.15,
+      "r": 13,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.019,
+      "contract": "Two year"
+    },
+    {
+      "id": "1488-PBLJN",
+      "x": 72,
+      "y": 116.85,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.044,
+      "contract": "Two year"
+    },
+    {
+      "id": "5197-PYEPU",
+      "x": 42,
+      "y": 94.45,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.149,
+      "contract": "One year"
+    },
+    {
+      "id": "6103-LIANB",
+      "x": 59,
+      "y": 99.5,
+      "r": 13,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.118,
+      "contract": "Two year"
+    },
+    {
+      "id": "0310-SUCIN",
+      "x": 71,
+      "y": 84.8,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.023,
+      "contract": "One year"
+    },
+    {
+      "id": "6131-FOYAS",
+      "x": 35,
+      "y": 59.6,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.206,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1162-ECVII",
+      "x": 72,
+      "y": 109.75,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.087,
+      "contract": "Two year"
+    },
+    {
+      "id": "0447-RXSGD",
+      "x": 24,
+      "y": 99.65,
+      "r": 8,
+      "churn": false,
+      "risk": "High Risk",
+      "score": 0.602,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2688-BHGOG",
+      "x": 9,
+      "y": 79.55,
+      "r": 5,
+      "churn": false,
+      "risk": "High Risk",
+      "score": 0.729,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0014-BMAQU",
+      "x": 63,
+      "y": 84.65,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.035,
+      "contract": "Two year"
+    },
+    {
+      "id": "8049-WJCLQ",
+      "x": 10,
+      "y": 60.2,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.275,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7242-EDTYC",
+      "x": 44,
+      "y": 19.55,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.006,
+      "contract": "Two year"
+    },
+    {
+      "id": "3580-HYCSP",
+      "x": 72,
+      "y": 110.3,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.059,
+      "contract": "Two year"
+    },
+    {
+      "id": "8958-JPTRR",
+      "x": 56,
+      "y": 24.3,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.017,
+      "contract": "One year"
+    },
+    {
+      "id": "1304-SEGFY",
+      "x": 72,
+      "y": 97.85,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.142,
+      "contract": "Two year"
+    },
+    {
+      "id": "4712-UYOOI",
+      "x": 20,
+      "y": 20.0,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.098,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4312-GVYNH",
+      "x": 70,
+      "y": 49.85,
+      "r": 9,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.011,
+      "contract": "Two year"
+    },
+    {
+      "id": "1245-HARPS",
+      "x": 14,
+      "y": 20.4,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.032,
+      "contract": "Two year"
+    },
+    {
+      "id": "9251-AWQGT",
+      "x": 48,
+      "y": 20.0,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.005,
+      "contract": "Two year"
+    },
+    {
+      "id": "0098-BOWSO",
+      "x": 27,
+      "y": 19.4,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.125,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7801-CEDNV",
+      "x": 27,
+      "y": 48.7,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.057,
+      "contract": "One year"
+    },
+    {
+      "id": "1548-ARAGG",
+      "x": 4,
+      "y": 58.5,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.308,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7524-VRLPL",
+      "x": 69,
+      "y": 74.1,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.01,
+      "contract": "Two year"
+    },
+    {
+      "id": "7601-WFVZV",
+      "x": 1,
+      "y": 19.55,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.195,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0953-LGOVU",
+      "x": 12,
+      "y": 35.5,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.218,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1208-NBVFH",
+      "x": 20,
+      "y": 49.6,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.285,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4439-YRNVD",
+      "x": 10,
+      "y": 36.25,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.329,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6339-RZCBJ",
+      "x": 48,
+      "y": 78.9,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.023,
+      "contract": "Two year"
+    },
+    {
+      "id": "2519-ERQOJ",
+      "x": 33,
+      "y": 54.6,
+      "r": 7,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.4,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5151-HQRDG",
+      "x": 37,
+      "y": 55.05,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.151,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4304-XUMGI",
+      "x": 50,
+      "y": 75.15,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.03,
+      "contract": "Two year"
+    },
+    {
+      "id": "8332-OSJDW",
+      "x": 12,
+      "y": 26.4,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.071,
+      "contract": "One year"
+    },
+    {
+      "id": "2267-FPIMA",
+      "x": 50,
+      "y": 94.4,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.274,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9552-TGUZV",
+      "x": 8,
+      "y": 75.0,
+      "r": 5,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.485,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9578-FOMUK",
+      "x": 15,
+      "y": 24.8,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.21,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8184-WMOFI",
+      "x": 62,
+      "y": 71.4,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.013,
+      "contract": "One year"
+    },
+    {
+      "id": "7110-BDTWG",
+      "x": 71,
+      "y": 47.05,
+      "r": 9,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.022,
+      "contract": "Two year"
+    },
+    {
+      "id": "6439-LAJXL",
+      "x": 9,
+      "y": 68.95,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.226,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2284-VFLKH",
+      "x": 49,
+      "y": 99.25,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.183,
+      "contract": "One year"
+    },
+    {
+      "id": "5451-YHYPW",
+      "x": 72,
+      "y": 115.75,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.061,
+      "contract": "Two year"
+    },
+    {
+      "id": "3279-DYZQM",
+      "x": 71,
+      "y": 19.45,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.002,
+      "contract": "Two year"
+    },
+    {
+      "id": "8486-AYEQH",
+      "x": 31,
+      "y": 76.05,
+      "r": 7,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.523,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4872-VXRIL",
+      "x": 56,
+      "y": 64.65,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.025,
+      "contract": "One year"
+    },
+    {
+      "id": "0292-WEGCH",
+      "x": 54,
+      "y": 86.2,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.155,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7349-ALMUX",
+      "x": 37,
+      "y": 65.6,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.012,
+      "contract": "Two year"
+    },
+    {
+      "id": "3688-FTHLT",
+      "x": 16,
+      "y": 63.05,
+      "r": 5,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.399,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6176-YJWAS",
+      "x": 72,
+      "y": 97.95,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.05,
+      "contract": "Two year"
+    },
+    {
+      "id": "3352-RICWQ",
+      "x": 9,
+      "y": 19.75,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.033,
+      "contract": "Two year"
+    },
+    {
+      "id": "0936-NQLJU",
+      "x": 41,
+      "y": 20.65,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.009,
+      "contract": "Two year"
+    },
+    {
+      "id": "5135-RDDQL",
+      "x": 63,
+      "y": 50.65,
+      "r": 9,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.009,
+      "contract": "Two year"
+    },
+    {
+      "id": "7016-NVRIC",
+      "x": 29,
+      "y": 90.1,
+      "r": 8,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.184,
+      "contract": "One year"
+    },
+    {
+      "id": "4808-YNLEU",
+      "x": 35,
+      "y": 62.15,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.077,
+      "contract": "One year"
+    },
+    {
+      "id": "1599-MMYRQ",
+      "x": 62,
+      "y": 81.45,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.046,
+      "contract": "One year"
+    },
+    {
+      "id": "1779-PWPMG",
+      "x": 72,
+      "y": 114.65,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.063,
+      "contract": "Two year"
+    },
+    {
+      "id": "0787-LHDYT",
+      "x": 16,
+      "y": 20.6,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.134,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2027-CWDNU",
+      "x": 18,
+      "y": 85.6,
+      "r": 6,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.499,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6791-YBNAK",
+      "x": 18,
+      "y": 25.55,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.245,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3882-IYOIJ",
+      "x": 60,
+      "y": 115.25,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.038,
+      "contract": "Two year"
+    },
+    {
+      "id": "5980-BDHPY",
+      "x": 72,
+      "y": 87.1,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.017,
+      "contract": "Two year"
+    },
+    {
+      "id": "6518-KZXCB",
+      "x": 22,
+      "y": 25.25,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.031,
+      "contract": "Two year"
+    },
+    {
+      "id": "7312-XSBAT",
+      "x": 1,
+      "y": 49.75,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.329,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1248-DYXUB",
+      "x": 52,
+      "y": 24.8,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.007,
+      "contract": "Two year"
+    },
+    {
+      "id": "8738-JOKAR",
+      "x": 42,
+      "y": 67.7,
+      "r": 8,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.043,
+      "contract": "One year"
+    },
+    {
+      "id": "3969-GYXEL",
+      "x": 11,
+      "y": 76.4,
+      "r": 5,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.425,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3719-TDVQB",
+      "x": 54,
+      "y": 18.95,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.009,
+      "contract": "Two year"
+    },
+    {
+      "id": "5208-FVQKB",
+      "x": 70,
+      "y": 67.95,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.006,
+      "contract": "Two year"
+    },
+    {
+      "id": "8048-DSDFQ",
+      "x": 1,
+      "y": 20.2,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.193,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "9695-IDRZR",
+      "x": 34,
+      "y": 116.15,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.097,
+      "contract": "Two year"
+    },
+    {
+      "id": "0020-JDNXP",
+      "x": 34,
+      "y": 61.25,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.068,
+      "contract": "One year"
+    },
+    {
+      "id": "0356-OBMAC",
+      "x": 56,
+      "y": 99.9,
+      "r": 13,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.089,
+      "contract": "Two year"
+    },
+    {
+      "id": "0458-HEUZG",
+      "x": 13,
+      "y": 35.4,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.086,
+      "contract": "Two year"
+    },
+    {
+      "id": "9909-IDLEK",
+      "x": 20,
+      "y": 96.8,
+      "r": 7,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.342,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2712-SYWAY",
+      "x": 1,
+      "y": 25.7,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.379,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7156-MXBJE",
+      "x": 43,
+      "y": 85.1,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.069,
+      "contract": "One year"
+    },
+    {
+      "id": "6668-CNMFP",
+      "x": 19,
+      "y": 89.35,
+      "r": 6,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.303,
+      "contract": "One year"
+    },
+    {
+      "id": "8267-KFGYD",
+      "x": 1,
+      "y": 21.05,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.215,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7196-LIWRH",
+      "x": 6,
+      "y": 19.55,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.046,
+      "contract": "Two year"
+    },
+    {
+      "id": "7691-KGKGP",
+      "x": 53,
+      "y": 65.0,
+      "r": 9,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.042,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0114-IGABW",
+      "x": 71,
+      "y": 58.25,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.015,
+      "contract": "Two year"
+    },
+    {
+      "id": "3413-BMNZE",
+      "x": 1,
+      "y": 45.25,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.368,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2789-CZANW",
+      "x": 64,
+      "y": 110.3,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.035,
+      "contract": "Two year"
+    },
+    {
+      "id": "7639-LIAYI",
+      "x": 52,
+      "y": 79.75,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.032,
+      "contract": "Two year"
+    },
+    {
+      "id": "7398-SKNQZ",
+      "x": 3,
+      "y": 94.9,
+      "r": 4,
+      "churn": false,
+      "risk": "High Risk",
+      "score": 0.764,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7785-RDVIG",
+      "x": 3,
+      "y": 19.3,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.151,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2832-SCUCO",
+      "x": 2,
+      "y": 19.9,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.235,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6770-UAYGJ",
+      "x": 49,
+      "y": 25.25,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.007,
+      "contract": "Two year"
+    },
+    {
+      "id": "5914-XRFQB",
+      "x": 72,
+      "y": 115.8,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.056,
+      "contract": "Two year"
+    },
+    {
+      "id": "5010-IPEAQ",
+      "x": 67,
+      "y": 54.2,
+      "r": 10,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.006,
+      "contract": "Two year"
+    },
+    {
+      "id": "6479-SZPLM",
+      "x": 36,
+      "y": 19.45,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.009,
+      "contract": "Two year"
+    },
+    {
+      "id": "6732-FZUGP",
+      "x": 47,
+      "y": 94.9,
+      "r": 11,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.133,
+      "contract": "One year"
+    },
+    {
+      "id": "8200-KLNYW",
+      "x": 21,
+      "y": 80.9,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.086,
+      "contract": "One year"
+    },
+    {
+      "id": "1307-TVUFB",
+      "x": 42,
+      "y": 79.35,
+      "r": 9,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.36,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6078-VESFR",
+      "x": 13,
+      "y": 70.45,
+      "r": 5,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.461,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3996-ZNWYK",
+      "x": 71,
+      "y": 19.8,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.002,
+      "contract": "Two year"
+    },
+    {
+      "id": "9076-AXYIK",
+      "x": 64,
+      "y": 102.1,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.116,
+      "contract": "Two year"
+    },
+    {
+      "id": "5150-ITWWB",
+      "x": 3,
+      "y": 94.85,
+      "r": 4,
+      "churn": false,
+      "risk": "High Risk",
+      "score": 0.847,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5386-THSLQ",
+      "x": 66,
+      "y": 45.55,
+      "r": 9,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.035,
+      "contract": "One year"
+    },
+    {
+      "id": "5125-CNDSP",
+      "x": 63,
+      "y": 40.6,
+      "r": 8,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.014,
+      "contract": "One year"
+    },
+    {
+      "id": "9795-VOWON",
+      "x": 7,
+      "y": 24.35,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.323,
+      "contract": "One year"
+    },
+    {
+      "id": "8404-VLQFB",
+      "x": 15,
+      "y": 25.25,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.212,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1666-JZPZT",
+      "x": 27,
+      "y": 49.0,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.208,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "1480-IVEVR",
+      "x": 35,
+      "y": 81.6,
+      "r": 8,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.283,
+      "contract": "One year"
+    },
+    {
+      "id": "0567-XRHCU",
+      "x": 69,
+      "y": 43.95,
+      "r": 8,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.012,
+      "contract": "Two year"
+    },
+    {
+      "id": "4195-PNGZS",
+      "x": 69,
+      "y": 24.45,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.003,
+      "contract": "Two year"
+    },
+    {
+      "id": "9881-VCZEP",
+      "x": 25,
+      "y": 54.1,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.252,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5012-YSPJJ",
+      "x": 31,
+      "y": 54.35,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.086,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "6752-APNJL",
+      "x": 42,
+      "y": 54.5,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.049,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0274-JKUJR",
+      "x": 7,
+      "y": 58.85,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.347,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "8705-WZCYL",
+      "x": 1,
+      "y": 44.8,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.52,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "2520-SGTTA",
+      "x": 0,
+      "y": 20.0,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.049,
+      "contract": "Two year"
+    },
+    {
+      "id": "8229-BUJHX",
+      "x": 71,
+      "y": 20.5,
+      "r": 6,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.002,
+      "contract": "Two year"
+    },
+    {
+      "id": "0224-NIJLP",
+      "x": 8,
+      "y": 20.15,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.035,
+      "contract": "Two year"
+    },
+    {
+      "id": "0620-DLSLK",
+      "x": 13,
+      "y": 81.9,
+      "r": 5,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.583,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "7094-MSZAO",
+      "x": 10,
+      "y": 20.05,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.145,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "0345-XMMUG",
+      "x": 46,
+      "y": 108.9,
+      "r": 12,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.127,
+      "contract": "Two year"
+    },
+    {
+      "id": "8317-BVKSO",
+      "x": 14,
+      "y": 20.05,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.207,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3896-ZVNET",
+      "x": 24,
+      "y": 24.7,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.023,
+      "contract": "Two year"
+    },
+    {
+      "id": "3423-HHXAO",
+      "x": 14,
+      "y": 19.5,
+      "r": 4,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.071,
+      "contract": "One year"
+    },
+    {
+      "id": "3662-FXJFO",
+      "x": 54,
+      "y": 20.5,
+      "r": 5,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.007,
+      "contract": "Two year"
+    },
+    {
+      "id": "2468-SJFLM",
+      "x": 1,
+      "y": 74.3,
+      "r": 4,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.551,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "3714-XPXBW",
+      "x": 37,
+      "y": 78.9,
+      "r": 8,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.119,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "5322-TEUJK",
+      "x": 71,
+      "y": 114.6,
+      "r": 14,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.031,
+      "contract": "Two year"
+    },
+    {
+      "id": "6285-FTQBF",
+      "x": 72,
+      "y": 25.55,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.002,
+      "contract": "Two year"
+    },
+    {
+      "id": "3323-CPBWR",
+      "x": 23,
+      "y": 96.9,
+      "r": 7,
+      "churn": false,
+      "risk": "Medium Risk",
+      "score": 0.466,
+      "contract": "Month-to-month"
+    },
+    {
+      "id": "4443-EMBNA",
+      "x": 71,
+      "y": 24.75,
+      "r": 7,
+      "churn": false,
+      "risk": "Low Risk",
+      "score": 0.003,
+      "contract": "Two year"
+    }
+  ],
+  "financial_hierarchy": [
+    {
+      "name": "High Risk",
+      "total_mrr": 85546.25,
+      "total_customers": 1039,
+      "children": [
+        {
+          "name": "Month-to-month",
+          "mrr": 85546.25,
+          "customers": 1039,
+          "churn_rate": 72.09
+        }
+      ]
+    },
+    {
+      "name": "Low Risk",
+      "total_mrr": 250408.95,
+      "total_customers": 4371,
+      "children": [
+        {
+          "name": "Month-to-month",
+          "mrr": 59502.1,
+          "customers": 1288,
+          "churn_rate": 18.4
+        },
+        {
+          "name": "One year",
+          "mrr": 87901.0,
+          "customers": 1388,
+          "churn_rate": 10.3
+        },
+        {
+          "name": "Two year",
+          "mrr": 103005.85,
+          "customers": 1695,
+          "churn_rate": 2.83
+        }
+      ]
+    },
+    {
+      "name": "Medium Risk",
+      "total_mrr": 120161.4,
+      "total_customers": 1633,
+      "children": [
+        {
+          "name": "Month-to-month",
+          "mrr": 112245.8,
+          "customers": 1548,
+          "churn_rate": 43.22
+        },
+        {
+          "name": "One year",
+          "mrr": 7915.6,
+          "customers": 85,
+          "churn_rate": 27.06
+        }
+      ]
+    }
+  ]
+}

@@ -36,42 +36,42 @@
           <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>
           </svg>
-          <span class="nav-text">Executive Overview</span>
+          <span class="nav-text">Executive Intelligence</span>
         </a>
 
         <a href="#analytics" class="nav-item" data-section="analytics">
           <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/>
           </svg>
-          <span class="nav-text">Churn Analytics</span>
+          <span class="nav-text">Customer Behavior Lab</span>
         </a>
 
         <a href="#segments" class="nav-item" data-section="segments">
           <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/>
           </svg>
-          <span class="nav-text">Customer Segments</span>
+          <span class="nav-text">Market Intelligence</span>
         </a>
 
         <a href="#revenue" class="nav-item" data-section="revenue">
           <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/>
           </svg>
-          <span class="nav-text">Revenue Intelligence</span>
+          <span class="nav-text">Revenue Strategy</span>
         </a>
 
         <a href="#explorer" class="nav-item" data-section="explorer">
           <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
           </svg>
-          <span class="nav-text">Customer Explorer</span>
+          <span class="nav-text">Customer Operations</span>
         </a>
 
         <a href="#predict" class="nav-item" data-section="predict">
           <svg class="nav-svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
           </svg>
-          <span class="nav-text">Prediction Lab</span>
+          <span class="nav-text">Model Science Lab</span>
         </a>
       </nav>
 
@@ -96,20 +96,20 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
           <div class="page-title-block">
-            <h1 class="page-main-title" id="page-title">Executive Overview</h1>
-            <p class="page-sub-title" id="page-subtitle">Subscriber portfolio health, churn velocity, and strategic risk distribution</p>
+            <h1 class="page-main-title" id="page-title">Executive Intelligence</h1>
+            <p class="page-sub-title" id="page-subtitle">Portfolio health benchmarks, retention progression funnel, and multi-service churn matrix</p>
           </div>
         </div>
 
         <div class="topbar-right">
           <div class="meta-tag meta-dataset">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3"/></svg>
-            <span>7,043 Records</span>
+            <span>7,043 Accounts</span>
           </div>
 
           <div class="meta-tag meta-status">
             <span class="badge-dot-green"></span>
-            <span>Production Engine</span>
+            <span>Active Model</span>
           </div>
 
           <button class="btn-refresh" id="btn-refresh-data" title="Reload System Metrics">
@@ -123,21 +123,19 @@
       <main class="workspace-content">
 
         <!-- =========================================================================
-             WORKSPACE 1: EXECUTIVE OVERVIEW
+             WORKSPACE 1: EXECUTIVE INTELLIGENCE
              ========================================================================= -->
         <section id="section-overview" class="content-section active">
-          <!-- Unified 5-Column Executive KPI Strip (No Icons on KPIs, Tabular Numbers) -->
+          <!-- Unified 5-Column Executive KPI Strip -->
           <div class="metrics-kpi-grid">
             <div class="kpi-panel">
               <div class="kpi-panel-header">
                 <span class="kpi-label">Total subscribers</span>
-                <span class="kpi-meta-badge">Verified Base</span>
+                <span class="kpi-meta-badge">Base</span>
               </div>
               <div class="kpi-metric-value num" id="kpi-total-cust">7,043</div>
               <div class="kpi-panel-footer">
                 <span class="indicator-positive">100% Unique Accounts</span>
-                <span class="meta-separator">•</span>
-                <span class="footer-meta">Full Portfolio</span>
               </div>
             </div>
 
@@ -181,25 +179,25 @@
             <div class="kpi-panel highlight-panel-amber">
               <div class="kpi-panel-header">
                 <span class="kpi-label">Monthly charges at risk</span>
-                <span class="status-pill pill-warning">18.76% of MRR</span>
+                <span class="status-pill pill-warning">High Risk</span>
               </div>
               <div class="kpi-metric-value value-amber num" id="kpi-revenue-risk">$85,546.25</div>
               <div class="kpi-panel-footer">
-                <span class="indicator-warning" id="kpi-revenue-share">18.76% Monthly Share</span>
+                <span class="indicator-warning" id="kpi-revenue-share">18.76% of MRR</span>
                 <span class="meta-separator">•</span>
                 <span class="footer-meta" id="kpi-annual-risk">$1.03M / yr</span>
               </div>
             </div>
           </div>
 
-          <!-- Verified Key Insights Strip -->
+          <!-- Key Insights Strip -->
           <div class="insights-summary-strip">
             <div class="insight-badge-card">
               <div class="insight-icon-box text-cyan">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
               </div>
               <div class="insight-body">
-                <strong>100% Contract Concentration:</strong> All $85,546.25 in high-risk monthly revenue resides in Month-to-month contracts.
+                <strong>Contract Concentration:</strong> All $85,546.25 in high-risk monthly revenue resides in Month-to-month contracts.
               </div>
             </div>
 
@@ -208,7 +206,7 @@
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
               </div>
               <div class="insight-body">
-                <strong>Fiber Optic Friction:</strong> Fiber optic subscribers account for $83,164.25 (97.2%) of high-risk charges (churn rate: 41.89%).
+                <strong>Fiber Optic Friction:</strong> Fiber accounts for $83,164.25 (97.2%) of high-risk charges (churn: 41.89%).
               </div>
             </div>
 
@@ -222,56 +220,68 @@
             </div>
           </div>
 
-          <!-- Overview Charts Row -->
-          <div class="grid-layout-3col mt-3">
+          <!-- Executive Intelligence Visual Grid -->
+          <div class="grid-layout-2col mt-3">
+            <!-- Executive Portfolio Health Dial Gauge -->
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Ground Truth Churn</h3>
-                  <span class="panel-subtitle">7,043 historical subscriber outcomes</span>
+                  <h3 class="panel-title">Portfolio Health Benchmark</h3>
+                  <span class="panel-subtitle">Current churn (26.54%) calibrated against corporate target (&lt;20%) and industry average (22%)</span>
                 </div>
+                <span class="status-pill pill-danger">Attrition Dial</span>
               </div>
-              <div class="chart-box-compact">
-                <canvas id="overviewChurnChart"></canvas>
-              </div>
-              <div class="custom-chart-legend">
-                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained: <strong>5,174</strong> (73.5%)</div>
-                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned: <strong>1,869</strong> (26.5%)</div>
+              <div class="gauge-card-body">
+                <div class="gauge-canvas-wrap">
+                  <canvas id="portfolioHealthGaugeChart"></canvas>
+                  <div class="gauge-center-stat">
+                    <div class="gauge-val-big" id="gauge-churn-num">26.54%</div>
+                    <div class="gauge-val-label">Actual Churn Rate</div>
+                  </div>
+                </div>
+                <div class="gauge-benchmarks-strip">
+                  <div class="benchmark-badge-item">
+                    <span class="bench-tag">Target Churn</span>
+                    <span class="bench-num text-success">&lt; 20.0%</span>
+                  </div>
+                  <div class="benchmark-badge-item">
+                    <span class="bench-tag">Industry Avg</span>
+                    <span class="bench-num text-amber">22.0%</span>
+                  </div>
+                  <div class="benchmark-badge-item">
+                    <span class="bench-tag">High-Risk Base</span>
+                    <span class="bench-num text-danger">14.75%</span>
+                  </div>
+                </div>
               </div>
             </div>
 
+            <!-- Retention Pipeline Progression Funnel -->
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Contract Churn Rate</h3>
-                  <span class="panel-subtitle">Churn rate comparison by commitment</span>
+                  <h3 class="panel-title">Retention Pipeline Funnel</h3>
+                  <span class="panel-subtitle">Subscriber progression from active portfolio to critical intervention accounts</span>
                 </div>
+                <span class="status-pill pill-cyan">Conversion Funnel</span>
               </div>
-              <div class="chart-box-compact">
-                <canvas id="overviewContractChart"></canvas>
-              </div>
-              <div class="custom-chart-legend">
-                <div class="legend-chip"><span class="chip-dot dot-cyan"></span> Month-to-month: <strong>42.7%</strong></div>
-                <div class="legend-chip"><span class="chip-dot dot-purple"></span> 1-Yr: <strong>11.3%</strong></div>
-                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> 2-Yr: <strong>2.8%</strong></div>
+              <div class="retention-funnel-container" id="retention-funnel-container">
+                <!-- Populated dynamically via JS -->
               </div>
             </div>
+          </div>
 
-            <div class="dashboard-panel">
-              <div class="panel-header">
-                <div>
-                  <h3 class="panel-title">Monthly Revenue Exposure</h3>
-                  <span class="panel-subtitle">Portfolio MRR allocated across risk tiers</span>
-                </div>
+          <!-- 2D Service Penetration x Contract Churn Rate Matrix Heatmap -->
+          <div class="dashboard-panel mt-3">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Infrastructure × Contract Churn Matrix</h3>
+                <span class="panel-subtitle">Observed churn rate and volume across 9 service combinations. Click any cell to filter Customer Explorer.</span>
               </div>
-              <div class="chart-box-compact">
-                <canvas id="overviewRevenueRiskChart"></canvas>
-              </div>
-              <div class="custom-chart-legend">
-                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Low: <strong>$250.4K</strong></div>
-                <div class="legend-chip"><span class="chip-dot dot-amber"></span> Med: <strong>$120.2K</strong></div>
-                <div class="legend-chip"><span class="chip-dot dot-rose"></span> High: <strong>$85.5K</strong></div>
-              </div>
+              <span class="status-pill pill-purple">2D Risk Heatmap</span>
+            </div>
+            <div class="matrix-2d-table-wrap" id="service-contract-matrix-container">
+              <!-- Populated dynamically via JS -->
             </div>
           </div>
         </section>
@@ -353,8 +363,8 @@
           <div class="dashboard-panel mt-3">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">Contract × Internet Service Ground Truth Churn Heatmap</h3>
-                <span class="panel-subtitle">Historical churn rate intensity across contract terms and internet infrastructure. Click any cell to drill down into Customer Explorer.</span>
+                <h3 class="panel-title">Contract × Internet Service Heatmap</h3>
+                <span class="panel-subtitle">Cross-sectional churn rate intensity across contract terms and internet infrastructure. Click any cell to filter Customer Explorer.</span>
               </div>
               <span class="status-pill pill-cyan">Interactive Heatmap</span>
             </div>
@@ -378,8 +388,8 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Customer Scatter: Tenure vs. Monthly Charges</h3>
-                  <span class="panel-subtitle">Stratified 700-account sample distinguishing historical churners from retained subscribers</span>
+                  <h3 class="panel-title">Tenure vs. Monthly Charges</h3>
+                  <span class="panel-subtitle">Stratified sample (n=700) comparing churned vs. retained subscribers</span>
                 </div>
                 <span class="status-pill pill-neutral">Stratified n=700</span>
               </div>
@@ -395,8 +405,8 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">100% Stacked Churn Proportion</h3>
-                  <span class="panel-subtitle">Observed historical outcomes normalized to 100% of cohort</span>
+                  <h3 class="panel-title">Outcome Share Proportion</h3>
+                  <span class="panel-subtitle">Normalized retention vs. churn outcomes across categorical dimensions</span>
                 </div>
                 <div class="btn-group-sm">
                   <button class="btn-metric-pill active" id="btn-stacked-contract" onclick="switchStackedDim('contract')">Contract</button>
@@ -414,49 +424,78 @@
             </div>
           </div>
 
-          <!-- 2-Column Row: Distribution Histograms (Tenure & Monthly Charges) -->
+          <!-- 2-Column Row: Distinctive Analytical Views (Lifecycle Retention & Statistical Box Plot) -->
           <div class="grid-layout-2col mt-3">
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Tenure Distribution Histogram</h3>
-                  <span class="panel-subtitle">Explicit 12-month tenure bins split by historical churn status</span>
+                  <h3 class="panel-title">Lifecycle Retention Curve</h3>
+                  <span class="panel-subtitle">Empirical retention rate and active subscriber volume across 72 tenure months</span>
                 </div>
-                <span class="status-pill pill-cyan">Numeric Bins</span>
+                <span class="status-pill pill-cyan">Survivor Curve</span>
               </div>
               <div class="chart-box-medium">
-                <canvas id="tenureHistogramChart"></canvas>
+                <canvas id="lifecycleRetentionChart"></canvas>
               </div>
               <div class="custom-chart-legend">
-                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained</div>
-                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned</div>
+                <div class="legend-chip"><span class="chip-dot dot-cyan"></span> Retention Rate (%)</div>
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Active Subscriber Base (Count)</div>
+              </div>
+              <div class="panel-footer-insight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Cross-Sectional Specification:</strong> Derived from the 7,043 subscriber tenure snapshot. Represents empirical cohort survival across account tenure stages, not longitudinal panel tracking.</span>
               </div>
             </div>
 
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Monthly Charges Distribution Histogram</h3>
-                  <span class="panel-subtitle">Explicit billing range bins ($) split by historical churn status</span>
+                  <h3 class="panel-title">Tenure & Billing Distribution</h3>
+                  <span class="panel-subtitle">Five-number quantile comparison for churned vs. retained subscribers</span>
                 </div>
-                <span class="status-pill pill-cyan">Numeric Bins</span>
+                <div class="btn-group-sm">
+                  <button class="btn-metric-pill active" id="btn-box-charges" onclick="switchBoxMetric('MonthlyCharges')">Monthly Charges ($)</button>
+                  <button class="btn-metric-pill" id="btn-box-tenure" onclick="switchBoxMetric('tenure')">Tenure (Months)</button>
+                </div>
               </div>
               <div class="chart-box-medium">
-                <canvas id="chargesHistogramChart"></canvas>
+                <canvas id="distributionBoxPlotChart"></canvas>
               </div>
-              <div class="custom-chart-legend">
-                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained</div>
-                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned</div>
+              <div class="custom-chart-legend" id="box-plot-legend-summary">
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Churned: Median <strong id="box-churn-med">$79.65</strong> (IQR: $38.05)</div>
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Retained: Median <strong id="box-retain-med">$64.43</strong> (IQR: $63.30)</div>
+              </div>
+              <div class="panel-footer-insight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span id="box-plot-insight-text">Churned subscribers display substantially higher monthly billing (median $79.65 vs $64.43) and sharp tenure vulnerability (median 10 mo vs 38 mo).</span>
               </div>
             </div>
           </div>
 
-          <!-- 6 Deep-Dive Analytical Charts -->
-          <div class="grid-layout-3col mt-3">
+          <!-- Multivariate Behavioral Correlation Matrix Heatmap -->
+          <div class="dashboard-panel mt-3">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Multivariate Correlation Matrix</h3>
+                <span class="panel-subtitle">Pairwise Pearson correlation coefficients (r &isin; [-1.0, +1.0]) across numeric and encoded attributes</span>
+              </div>
+              <span class="status-pill pill-purple">7&times;7 Correlation Heatmap</span>
+            </div>
+            <div class="correlation-table-wrap" id="correlation-matrix-container">
+              <!-- Rendered dynamically via JS -->
+            </div>
+            <div class="panel-footer-insight">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span><strong>Key Correlation Finding:</strong> <code>tenure</code> exhibits the strongest protective correlation against churn (r = -0.352), while <code>MonthlyCharges</code> correlates positively with attrition (r = +0.193). Higher total spend correlates with long tenure (r = +0.826), confirming that early tenure accounts require the highest onboarding stabilization.</span>
+            </div>
+          </div>
+
+          <!-- 4 Core Operational Categorical Drivers -->
+          <div class="grid-layout-2col mt-3">
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">1. Churn by Contract Term</h3>
+                  <h3 class="panel-title">Contract Term</h3>
                   <span class="panel-subtitle">Contract duration vs retention friction</span>
                 </div>
               </div>
@@ -468,7 +507,7 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">2. Churn by Tenure Cohort</h3>
+                  <h3 class="panel-title">Tenure Cohort</h3>
                   <span class="panel-subtitle">Account lifecycle vs subscriber attrition</span>
                 </div>
               </div>
@@ -480,7 +519,7 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">3. Churn by Internet Service</h3>
+                  <h3 class="panel-title">Internet Infrastructure</h3>
                   <span class="panel-subtitle">Fiber optic vs DSL vs No internet</span>
                 </div>
               </div>
@@ -492,36 +531,12 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">4. Churn by Payment Channel</h3>
+                  <h3 class="panel-title">Payment Channel</h3>
                   <span class="panel-subtitle">Electronic check vs automated payment channels</span>
                 </div>
               </div>
               <div class="chart-box-compact">
                 <canvas id="paymentChart"></canvas>
-              </div>
-            </div>
-
-            <div class="dashboard-panel">
-              <div class="panel-header">
-                <div>
-                  <h3 class="panel-title">5. Churn by Technical Support</h3>
-                  <span class="panel-subtitle">Impact of attached tech support service</span>
-                </div>
-              </div>
-              <div class="chart-box-compact">
-                <canvas id="techSupportChart"></canvas>
-              </div>
-            </div>
-
-            <div class="dashboard-panel">
-              <div class="panel-header">
-                <div>
-                  <h3 class="panel-title">6. Churn by Monthly Charges</h3>
-                  <span class="panel-subtitle">Distribution across billing tier ranges</span>
-                </div>
-              </div>
-              <div class="chart-box-compact">
-                <canvas id="chargesBinChart"></canvas>
               </div>
             </div>
           </div>
@@ -534,8 +549,8 @@
           <!-- Section Heading Bar -->
           <div class="workspace-header-bar">
             <div>
-              <h2 class="workspace-title">Customer Segment Matrix & Behavioral Cohorts</h2>
-              <p class="workspace-subtitle">Cross-tabulated segment comparisons derived from real subscriber attributes. Click any segment to drill down into Customer Explorer.</p>
+              <h2 class="workspace-title">Customer Segment Matrix</h2>
+              <p class="workspace-subtitle">Cross-tabulated segment metrics derived from subscriber attributes. Click any segment to filter Customer Explorer.</p>
             </div>
           </div>
 
@@ -543,8 +558,8 @@
           <div class="dashboard-panel">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">Segment Comparison Matrix: Contract × Internet Service</h3>
-                <span class="panel-subtitle">Quantified across Customer Count, Actual Churn Rate, Average Charges, and Predicted Risk</span>
+                <h3 class="panel-title">Segment Performance Matrix</h3>
+                <span class="panel-subtitle">Contract × Internet Service cohorts evaluated by volume, churn rate, charges, and risk</span>
               </div>
               <span class="status-pill pill-cyan">Interactive Matrix</span>
             </div>
@@ -553,15 +568,15 @@
               <table class="enterprise-table matrix-table" id="segment-matrix-table">
                 <thead>
                   <tr>
-                    <th>Contract Term</th>
-                    <th>Internet Service</th>
-                    <th>Subscribers</th>
-                    <th>Actual Churn Rate</th>
-                    <th>Avg Tenure</th>
-                    <th>Avg Monthly $</th>
-                    <th>Avg Churn Risk</th>
-                    <th>High-Risk Base</th>
-                    <th>Drilldown</th>
+                    <th class="text-left">Contract Term</th>
+                    <th class="text-left">Internet Service</th>
+                    <th class="text-right">Subscribers</th>
+                    <th class="text-right">Actual Churn Rate</th>
+                    <th class="text-right">Avg Tenure</th>
+                    <th class="text-right">Avg Monthly $</th>
+                    <th class="text-right">Avg Churn Risk</th>
+                    <th class="text-right">High-Risk Base</th>
+                    <th class="text-center">Drilldown</th>
                   </tr>
                 </thead>
                 <tbody id="segment-matrix-tbody">
@@ -571,13 +586,12 @@
             </div>
           </div>
 
-          
           <!-- Segment Bubble Chart: Charges vs Churn Rate (Size: Accounts) -->
           <div class="dashboard-panel mt-3">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">Multi-Segment Bubble Matrix: Charges vs Historical Churn</h3>
-                <span class="panel-subtitle">X: Avg Monthly Charges ($) • Y: Historical Churn Rate (%) • Bubble Radius: Subscriber Count. Click any bubble to explore.</span>
+                <h3 class="panel-title">Segment Landscape: Charges vs. Churn Rate</h3>
+                <span class="panel-subtitle">X: Avg Monthly Charges ($) • Y: Churn Rate (%) • Bubble Size: Subscriber Count. Click any bubble to explore.</span>
               </div>
               <span class="status-pill pill-cyan">9 Core Segments</span>
             </div>
@@ -590,8 +604,8 @@
           <div class="dashboard-panel mt-4">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">Interactive Segment Comparison Tool</h3>
-                <span class="panel-subtitle">Select any two customer segments to evaluate head-to-head operational metrics and risk disparities</span>
+                <h3 class="panel-title">Segment Comparison Tool</h3>
+                <span class="panel-subtitle">Head-to-head operational metrics and risk disparities between two selected cohorts</span>
               </div>
               <span class="status-pill pill-purple">Cohort Benchmarking</span>
             </div>
@@ -620,12 +634,231 @@
               <!-- Dynamically populated from /api/segments -->
             </div>
           </div>
+
+          <!-- Macro Telecom Market Intelligence Strip (TRAI Census & FCC Grievances) -->
+          <div class="workspace-header-bar mt-4">
+            <div>
+              <h2 class="workspace-title">Macro Market Intelligence</h2>
+              <p class="workspace-subtitle">Official national subscriber census from TRAI (1.36B subscribers) and federal complaint telemetry from FCC Open Data (5,000 records).</p>
+            </div>
+            <span class="status-pill pill-cyan">Public Feeds</span>
+          </div>
+
+          <!-- Market Intelligence 2-Column Grid -->
+          <div class="grid-layout-2col mt-3">
+            <!-- 1. TRAI Broadband Market Concentration -->
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">TRAI National Broadband Market Share</h3>
+                  <span class="panel-subtitle">Official national subscriber census: 1,101.21M broadband subscribers across operators (August 2026)</span>
+                </div>
+                <span class="status-pill pill-purple">1.10B Subscribers</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="traiMarketShareChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-cyan"></span> Jio: <strong>538.0M</strong> (48.9%)</div>
+                <div class="legend-chip"><span class="chip-dot dot-purple"></span> Airtel: <strong>386.4M</strong> (35.1%)</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Vi: <strong>130.9M</strong> (11.9%)</div>
+                <div class="legend-chip"><span class="chip-dot dot-amber"></span> BSNL: <strong>27.8M</strong> (2.5%)</div>
+              </div>
+              <div class="panel-footer-insight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Oligopoly Concentration:</strong> Top 2 private operators (Jio & Airtel) control <strong>83.95%</strong> of India's broadband base. Wireline fixed access accounts for 48.63M (4.4%) vs. 1,052.58M (95.6%) wireless broadband.</span>
+              </div>
+            </div>
+
+            <!-- 2. TRAI Mobile Number Portability (MNP) State Churn Volume -->
+            <div class="dashboard-panel">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">TRAI MNP Churn Volume by Circle</h3>
+                  <span class="panel-subtitle">Monthly subscriber churn requests (15.83 Million total in August 2026) across top licensed service areas (LSAs)</span>
+                </div>
+                <span class="status-pill pill-danger">15.83M Churners/Mo</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="traiMnpCircleChart"></canvas>
+              </div>
+              <div class="panel-footer-insight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Regional Porting Velocity:</strong> UP East (2.23M), MP (1.53M), and UP West (1.51M) experience the heaviest subscriber turnover. Total nationwide MNP volume reached 15.83 million in a single month.</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. FCC Consumer Complaints Delivery Method vs Issues -->
+          <div class="dashboard-panel mt-3">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">FCC Complaints by Delivery Method</h3>
+                <span class="panel-subtitle">5,000 verified FCC consumer complaint tickets categorized by connection method and friction driver</span>
+              </div>
+              <span class="status-pill pill-cyan">FCC Open Data</span>
+            </div>
+            <div class="chart-box-medium">
+              <canvas id="fccMethodIssueChart"></canvas>
+            </div>
+            <div class="custom-chart-legend">
+              <div class="legend-chip"><span class="chip-dot dot-rose"></span> Unwanted Calls / Robocalls</div>
+              <div class="legend-chip"><span class="chip-dot dot-amber"></span> Billing Disputes</div>
+              <div class="legend-chip"><span class="chip-dot dot-cyan"></span> Service Availability & Outages</div>
+            </div>
+            <div class="panel-footer-insight">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span><strong>US Friction Dynamics:</strong> Wireless accounts suffer predominantly from unwanted calls (1,305 tickets) and billing disputes (287 tickets). Cable accounts experience zero unwanted calls but severe billing (276 tickets) and availability outages (216 tickets), mirroring the Fiber Optic churn drivers identified in CCPRA.</span>
+            </div>
+          </div>
+
+          <!-- Dataset Expansion & External Validation Research -->
+          <div class="dashboard-panel mt-4" id="mendeley-research-panel">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">External Validation: Indian Telco Research Benchmark</h3>
+                <span class="panel-subtitle">Comparative audit: US Postpaid Broadband (n=7,043) vs. Indian Prepaid Cellular (n=2,026)</span>
+              </div>
+              <span class="status-pill pill-purple">Mendeley Data DOI: 10.17632/px3dt72xdw.1</span>
+            </div>
+
+            <!-- Scorecard Comparison -->
+            <div class="metrics-kpi-grid mt-2">
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">CCPRA Baseline Portfolio</span>
+                  <span class="status-pill pill-success">Production</span>
+                </div>
+                <div class="kpi-metric-value text-teal num">7,043</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-positive">26.54% Actual Churn</span>
+                  <span class="meta-separator">•</span>
+                  <span class="footer-meta">19 Model Features</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Indian Telco Candidate</span>
+                  <span class="status-pill pill-cyan">CC BY 4.0</span>
+                </div>
+                <div class="kpi-metric-value text-purple num">2,026</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-warning">19.40% Churn (393 Churned)</span>
+                  <span class="meta-separator">•</span>
+                  <span class="footer-meta">14 Attributes</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Temporal Period Coverage</span>
+                  <span class="kpi-meta-badge">Observation Window</span>
+                </div>
+                <div class="kpi-metric-value num" style="font-size: 1.25rem; font-weight: 600;">Jan 1 – Jan 11, 2020</div>
+                <div class="kpi-panel-footer">
+                  <span class="footer-meta">11-day registration cross-section</span>
+                </div>
+              </div>
+
+              <div class="kpi-panel highlight-panel-red">
+                <div class="kpi-panel-header">
+                  <span class="kpi-label">Data Quality Anomalies</span>
+                  <span class="status-pill pill-danger">Integrity Warning</span>
+                </div>
+                <div class="kpi-metric-value value-danger num">167</div>
+                <div class="kpi-panel-footer">
+                  <span class="indicator-danger">59 Neg Data, 52 Neg Calls, 62 Neg SMS (167 unique rows)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Operator Breakdown in India Dataset -->
+            <div class="mt-3">
+              <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.75rem;">Indian Cellular Operator Market Churn Benchmarks (n=2,026)</h4>
+              <div class="grid-layout-4col">
+                <div class="insight-badge-card">
+                  <div class="insight-body">
+                    <strong>Vodafone:</strong> 21.28% Churn (110 / 517 subscribers)
+                  </div>
+                </div>
+                <div class="insight-badge-card">
+                  <div class="insight-body">
+                    <strong>BSNL:</strong> 19.96% Churn (99 / 496 subscribers)
+                  </div>
+                </div>
+                <div class="insight-badge-card">
+                  <div class="insight-body">
+                    <strong>Reliance Jio:</strong> 19.17% Churn (97 / 506 subscribers)
+                  </div>
+                </div>
+                <div class="insight-badge-card">
+                  <div class="insight-body">
+                    <strong>Airtel:</strong> 17.16% Churn (87 / 507 subscribers)
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Schema & Methodological Comparison Table -->
+            <div class="table-responsive-box mt-3">
+              <table class="enterprise-table">
+                <thead>
+                  <tr>
+                    <th>Evaluation Dimension</th>
+                    <th>CCPRA Production Baseline (IBM Telco)</th>
+                    <th>Independent Mendeley Candidate (Indian Telco)</th>
+                    <th>Methodological & Data Science Impact</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Telecom Archetype</strong></td>
+                    <td>Postpaid broadband & fixed telephony (Lock-in contracts, automated credit billing).</td>
+                    <td>Prepaid mobile cellular accounts (SMS, voice minutes, quota data packages).</td>
+                    <td><span class="status-pill pill-danger">Disjoint Domain</span> Fundamentally different attrition triggers.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Feature Alignment</strong></td>
+                    <td>19 features: Contract, MonthlyCharges, TotalCharges, TechSupport, OnlineBackup, etc.</td>
+                    <td>14 features: telecom_partner, age, salary, calls_made, sms_sent, data_used.</td>
+                    <td><span class="status-pill pill-danger">Zero Feature Overlap</span> Beyond demographics (gender/dependents), features do not intersect.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Model Transferability</strong></td>
+                    <td>Production Logistic Regression expects exact 19 calibrated feature inputs.</td>
+                    <td>Lacks Contract type, tenure months, and monthly billing amounts.</td>
+                    <td><span class="status-pill pill-warning">Incompatible Inference</span> Direct scoring of Indian data on CCPRA pipeline is mathematically impossible.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Concatenation Validity</strong></td>
+                    <td>7,043 validated accounts, 0 missing values.</td>
+                    <td>2,026 accounts, 173 synthetic negative noise artifacts.</td>
+                    <td><span class="status-pill pill-danger">Target Leakage / Noise</span> Blind merging would create 90% missing values and dilute model fidelity.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="panel-footer-insight">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+              <span><strong>Research Conclusion:</strong> The Mendeley dataset provides genuine research value as an external comparative benchmark contrasting postpaid broadband retention vs. prepaid cellular usage churn. It is preserved as an independent comparative study without corrupting the production model.</span>
+            </div>
+          </div>
         </section>
 
         <!-- =========================================================================
-             WORKSPACE 4: REVENUE INTELLIGENCE
+             WORKSPACE 4: REVENUE STRATEGY
              ========================================================================= -->
         <section id="section-revenue" class="content-section">
+          <!-- Section Heading Bar -->
+          <div class="workspace-header-bar">
+            <div>
+              <h2 class="workspace-title">Revenue Strategy</h2>
+              <p class="workspace-subtitle">Financial exposure modeling, risk-tier revenue allocation, and operational threshold calibration</p>
+            </div>
+          </div>
+
           <div class="metrics-kpi-grid">
             <div class="kpi-panel">
               <div class="kpi-panel-header">
@@ -634,7 +867,7 @@
               </div>
               <div class="kpi-metric-value text-teal" id="rev-total-mrr">$456,116.60</div>
               <div class="kpi-panel-footer">
-                <span class="footer-meta">Sum of all 7,043 customer accounts</span>
+                <span class="footer-meta">Sum of all 7,043 subscriber accounts</span>
               </div>
             </div>
 
@@ -657,7 +890,7 @@
                   <div class="tooltip-box">
                     <strong>Probability-Weighted Formula:</strong><br>
                     E[Loss] = ∑ (P_i × MonthlyCharges_i)<br>
-                    Quantifies expected monthly revenue loss by weighting each subscriber's charges by their predicted churn probability.
+                    Quantifies expected monthly revenue loss by weighting subscriber charges by predicted churn probability.
                   </div>
                 </div>
               </div>
@@ -684,8 +917,8 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Monthly Revenue Allocation by Risk Category</h3>
-                  <span class="panel-subtitle">Total portfolio MRR concentration</span>
+                  <h3 class="panel-title">Revenue Allocation by Risk Tier</h3>
+                  <span class="panel-subtitle">Monthly revenue distribution across high, medium, and low risk cohorts</span>
                 </div>
               </div>
 
@@ -743,23 +976,23 @@
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">High-Risk MRR by Payment Method</h3>
-                  <span class="panel-subtitle">Where vulnerable revenue is billed</span>
+                  <h3 class="panel-title">Financial Exposure Treemap</h3>
+                  <span class="panel-subtitle">Portfolio MRR ($456,116.60) partitioned across risk tiers and contract duration</span>
                 </div>
+                <span class="status-pill pill-purple">MRR Treemap</span>
               </div>
-              <div class="chart-box-compact">
-                <canvas id="revPaymentRiskChart"></canvas>
+              <div class="treemap-wrap" id="financial-treemap-container">
+                <!-- Rendered dynamically via JS -->
               </div>
             </div>
           </div>
 
-          
           <!-- Revenue-Risk Pareto Analysis -->
           <div class="dashboard-panel mt-3">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">High-Risk Revenue Pareto Analysis (80/20 Rule)</h3>
-                <span class="panel-subtitle">Bars: High-Risk MRR Exposure by Billing Channel ($) • Line: Cumulative Percentage of Exposure (%) with 80% Threshold</span>
+                <h3 class="panel-title">High-Risk Revenue Pareto Analysis</h3>
+                <span class="panel-subtitle">Monthly charge exposure by billing channel and cumulative share with 80% threshold</span>
               </div>
               <span class="status-pill pill-amber">Pareto Exposure</span>
             </div>
@@ -767,7 +1000,7 @@
               <canvas id="revenueParetoChart"></canvas>
             </div>
             <div class="pareto-methodology-note">
-              <strong>Calculation Methodology:</strong> High-risk monthly charges are summed per payment channel for accounts with predicted churn probability &ge; 60% ($85,546.25 total). Channels are sorted descending, and cumulative exposure share is computed. Note: Electronic check billing alone accounts for <strong>$70,566.90 (82.49%)</strong> of total high-risk exposure.
+              <strong>Exposure Concentration:</strong> Electronic check billing represents <strong>$70,566.90 (82.49%)</strong> of total high-risk exposure ($85,546.25), exceeding the 80% Pareto concentration line.
             </div>
           </div>
 
@@ -775,8 +1008,8 @@
           <div class="dashboard-panel mt-4">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">Operational Risk Threshold Simulator</h3>
-                <span class="panel-subtitle">Simulate shifting the triage decision boundary to calibrate retention team workload and flagged revenue coverage</span>
+                <h3 class="panel-title">Risk Threshold Simulator</h3>
+                <span class="panel-subtitle">Calibrate triage decision boundary against intervention workload and revenue coverage</span>
               </div>
               <span class="status-pill pill-cyan">Interactive Simulation</span>
             </div>
@@ -822,11 +1055,23 @@
                   <div class="sim-metric-num text-teal" id="sim-delta-count">0 accounts</div>
                   <span class="sim-metric-sub" id="sim-delta-mrr">$0.00 / mo vs 0.60 threshold</span>
                 </div>
+
+                <div class="sim-metric-card">
+                  <span class="sim-metric-label">Precision at Cutoff (Purity)</span>
+                  <div class="sim-metric-num text-success" id="sim-precision">72.1%</div>
+                  <span class="sim-metric-sub" id="sim-precision-sub">749 of 1,039 flagged accounts churn</span>
+                </div>
+
+                <div class="sim-metric-card">
+                  <span class="sim-metric-label">Recall at Cutoff (Catch Rate)</span>
+                  <div class="sim-metric-num text-amber" id="sim-recall">40.1%</div>
+                  <span class="sim-metric-sub" id="sim-recall-sub">Of total 1,869 base churners caught</span>
+                </div>
               </div>
 
               <div class="simulator-guidance-alert">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                <span><strong>Data Science Rigor Notice:</strong> Adjusting this operational cutoff reallocates campaign intervention resources across the subscriber base. It does <em>not</em> retrain or alter the underlying statistical model weights or change its intrinsic holdout discrimination metrics.</span>
+                <span><strong>Operational Note:</strong> Adjusting this cutoff redistributes retention outreach volume across subscribers without modifying trained model weights or intrinsic holdout metrics.</span>
               </div>
             </div>
           </div>
@@ -835,10 +1080,10 @@
           <div class="retention-calc-showcase mt-4">
             <div class="panel-header">
               <div>
-                <h3 class="panel-title">Verified Retention Scenario: 25% High-Risk Retention</h3>
-                <span class="panel-subtitle">Quantifying protected monthly revenue if proactive outreach successfully retains 25% of high-risk customers</span>
+                <h3 class="panel-title">Retention Scenario: 25% High-Risk Retention</h3>
+                <span class="panel-subtitle">Projected monthly and annualized revenue protected at 25% retention success</span>
               </div>
-              <span class="status-pill pill-cyan">Transparent Math</span>
+              <span class="status-pill pill-cyan">Standard Scenario</span>
             </div>
 
             <div class="calc-steps-grid">
@@ -866,14 +1111,18 @@
                 <li>Assumes retained subscribers maintain their prevailing monthly charge tiers across the intervention period.</li>
                 <li>Net ROI depends on specific campaign outreach costs (e.g. discount vouchers, agent call center overhead) which vary by operator.</li>
               </ul>
-            </details>
-          </div>
-        </section>
-
-        <!-- =========================================================================
-             WORKSPACE 5: CUSTOMER EXPLORER
+         <!-- =========================================================================
+             WORKSPACE 5: CUSTOMER OPERATIONS
              ========================================================================= -->
         <section id="section-explorer" class="content-section">
+          <!-- Section Heading Bar -->
+          <div class="workspace-header-bar">
+            <div>
+              <h2 class="workspace-title">Customer Operations</h2>
+              <p class="workspace-subtitle">Portfolio subscriber registry, customer profile inspector, and multi-source data provenance</p>
+            </div>
+          </div>
+
           <!-- Explorer Main Panel -->
           <div class="dashboard-panel">
             <!-- Filter Toolbar -->
@@ -932,6 +1181,16 @@
               </div>
             </div>
 
+            <!-- Active Drill-Down Filter Indicator Banner -->
+            <div class="active-drilldown-banner hidden" id="explorer-active-filter-banner">
+              <div class="drilldown-banner-left">
+                <span class="drilldown-icon">⚡</span>
+                <span class="drilldown-tag-label">Active Drill-Down Filters:</span>
+                <div class="active-filter-chips" id="explorer-filter-chips"></div>
+              </div>
+              <button type="button" class="btn-clear-drilldown" id="btn-clear-drilldown">Clear All Filters ✕</button>
+            </div>
+
             <!-- Table Legend Strip -->
             <div class="table-legend-strip">
               <span class="legend-strip-label">Risk Thresholds:</span>
@@ -939,7 +1198,6 @@
               <span class="legend-badge badge-pill-warning">● Medium Risk (30%–60%)</span>
               <span class="legend-badge badge-pill-success">● Low Risk (&lt; 30%)</span>
               <span class="legend-badge badge-pill-critical">★ Critical Triage (≥ 80%)</span>
-              <span class="legend-strip-hint">Tip: Click any customer row to inspect complete account profile</span>
             </div>
 
             <!-- Scrollable Table -->
@@ -947,20 +1205,20 @@
               <table class="enterprise-table" id="customers-table">
                 <thead>
                   <tr>
-                    <th class="sortable-th active-sort" data-sort="customerID">Customer ID <span class="sort-icon">▲</span></th>
-                    <th class="sortable-th" data-sort="tenure">Tenure <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="Contract">Contract <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="InternetService">Internet <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="PaymentMethod">Payment Channel <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="MonthlyCharges">Monthly ($) <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="Churn">Actual Churn <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="Predicted_Churn_Probability">Predicted Risk <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="Churn_Risk_Category">Risk Tier <span class="sort-icon">↕</span></th>
-                    <th class="sortable-th" data-sort="Retention_Priority">Retention Priority <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th active-sort text-left" data-sort="customerID">Customer ID <span class="sort-icon">▲</span></th>
+                    <th class="sortable-th text-right" data-sort="tenure">Tenure <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-left" data-sort="Contract">Contract <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-left" data-sort="InternetService">Internet <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-left" data-sort="PaymentMethod">Payment Channel <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-right" data-sort="MonthlyCharges">Monthly ($) <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-center" data-sort="Churn">Actual Churn <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-right" data-sort="Predicted_Churn_Probability">Predicted Risk <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-left" data-sort="Churn_Risk_Category">Risk Tier <span class="sort-icon">↕</span></th>
+                    <th class="sortable-th text-left" data-sort="Retention_Priority">Retention Priority <span class="sort-icon">↕</span></th>
                   </tr>
                 </thead>
                 <tbody id="customers-table-body">
-                  <tr><td colspan="10" class="table-loading-cell">Loading verified customer intelligence records...</td></tr>
+                  <tr><td colspan="10" class="table-loading-cell">Loading customer records...</td></tr>
                 </tbody>
               </table>
             </div>
@@ -973,6 +1231,21 @@
                 <span id="page-num" class="page-current-display">Page 1 / 470</span>
                 <button id="btn-next" class="btn-page-ctrl">Next</button>
               </div>
+            </div>
+          </div>
+
+          <!-- Comprehensive Data Provenance & Verification Audit Registry -->
+          <div class="dashboard-panel mt-4">
+            <div class="panel-header">
+              <div>
+                <h3 class="panel-title">Data Provenance & Governance Registry</h3>
+                <span class="panel-subtitle">Verified sources, publisher metadata, coverage periods, and license terms across all integrated datasets</span>
+              </div>
+              <span class="status-pill pill-cyan">5 Verified Sources</span>
+            </div>
+
+            <div class="provenance-card-grid" id="provenance-cards-container">
+              <!-- Dynamically populated via /api/provenance -->
             </div>
           </div>
 
@@ -994,14 +1267,22 @@
         </section>
 
         <!-- =========================================================================
-             WORKSPACE 6: PREDICTION LAB & MODEL EVALUATION
+             WORKSPACE 6: MODEL SCIENCE LAB
              ========================================================================= -->
         <section id="section-predict" class="content-section">
+          <!-- Section Heading Bar -->
+          <div class="workspace-header-bar">
+            <div>
+              <h2 class="workspace-title">Model Science Lab</h2>
+              <p class="workspace-subtitle">Real-time inference, batch CSV scoring, benchmark diagnostics, and external validation</p>
+            </div>
+          </div>
+
           <!-- Tab Navigation for Prediction Lab -->
           <div class="predict-tab-bar">
-            <button class="btn-predict-tab active" data-subtab="live-predictor">Real-Time Churn Predictor</button>
-            <button class="btn-predict-tab" data-subtab="batch-predictor">Batch Customer Prediction (CSV)</button>
-            <button class="btn-predict-tab" data-subtab="model-evaluation">Model Performance & Evaluation</button>
+            <button class="btn-predict-tab active" data-subtab="live-predictor">Real-Time Predictor</button>
+            <button class="btn-predict-tab" data-subtab="batch-predictor">Batch CSV Scoring</button>
+            <button class="btn-predict-tab" data-subtab="model-evaluation">Model Evaluation & Benchmarks</button>
           </div>
 
           <!-- Subtab 1: Live Churn Predictor -->
@@ -1012,7 +1293,7 @@
                 <div class="panel-header">
                   <div>
                     <h3 class="panel-title">Customer Feature Intake</h3>
-                    <span class="panel-subtitle">Score individual subscriber parameters using the genuine trained pipeline</span>
+                    <span class="panel-subtitle">Input subscriber attributes to score churn likelihood</span>
                   </div>
                   <div class="preset-buttons-row">
                     <span class="preset-intro">Demo Presets:</span>
@@ -1202,8 +1483,8 @@
               <div class="dashboard-panel result-panel" id="result-container">
                 <div class="panel-header">
                   <div>
-                    <h3 class="panel-title">Model Risk Assessment</h3>
-                    <span class="panel-subtitle">Real-time inference output from pre-trained pipeline</span>
+                    <h3 class="panel-title">Risk Assessment</h3>
+                    <span class="panel-subtitle">Inference output from trained Logistic Regression pipeline</span>
                   </div>
                   <span class="status-pill pill-neutral" id="res-badge">Awaiting Input</span>
                 </div>
@@ -1214,7 +1495,7 @@
                     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
                   </div>
                   <h4>Ready for Inference</h4>
-                  <p>Select a demo preset or customize attributes, then click <strong>Execute Predictive Inference</strong> to score churn likelihood.</p>
+                  <p>Select a preset or customize customer attributes, then execute inference.</p>
                 </div>
 
                 <!-- Active Result View -->
@@ -1261,8 +1542,54 @@
                     </div>
                   </div>
 
+                  <!-- Local Prediction Explanation (Model Feature Attribution) -->
+                  <div class="local-explanation-card mt-3" id="res-explanation-block">
+                    <div class="explanation-header">
+                      <div class="explanation-title-group">
+                        <span class="status-pill pill-cyan">Local Model Attribution</span>
+                        <h4 class="explanation-title">Top Prediction Risk Drivers</h4>
+                      </div>
+                      <div class="explanation-subscore" id="res-decision-score">
+                        Decision Score (z): <strong class="num" id="res-score-val">+0.00</strong>
+                      </div>
+                    </div>
+                    <p class="explanation-desc">
+                      Linear model log-odds contributions (&beta;<sub>i</sub> &times; x<sub>i</sub>) determining this individual prediction.
+                    </p>
+
+                    <!-- Diverging Feature Contribution Visualizer -->
+                    <div class="feature-contributions-container">
+                      <!-- Risk-Increasing Drivers (Positive Contribution) -->
+                      <div class="contrib-subgroup">
+                        <div class="contrib-subgroup-title text-rose">
+                          <span class="badge-dot dot-rose"></span>
+                          <span>Strongest Risk Elevators (+ Log-Odds)</span>
+                        </div>
+                        <div class="contrib-bars-list" id="res-pos-contribs">
+                          <!-- Injected dynamically via JS -->
+                        </div>
+                      </div>
+
+                      <!-- Protective Drivers (Negative Contribution) -->
+                      <div class="contrib-subgroup mt-3">
+                        <div class="contrib-subgroup-title text-teal">
+                          <span class="badge-dot dot-teal"></span>
+                          <span>Strongest Protective Factors (&minus; Log-Odds)</span>
+                        </div>
+                        <div class="contrib-bars-list" id="res-neg-contribs">
+                          <!-- Injected dynamically via JS -->
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="explanation-disclaimer">
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                      <span>Linear model feature contributions derived from genuine logistic regression pipeline parameters; reflects statistical associations, not causal proof.</span>
+                    </div>
+                  </div>
+
                   <!-- Probability Balance Readout -->
-                  <div class="prob-balance-row">
+                  <div class="prob-balance-row mt-3">
                     <div class="balance-item">
                       <span>Retention Probability:</span>
                       <strong id="res-retain-pct">21.3%</strong>
@@ -1277,14 +1604,13 @@
             </div>
           </div>
 
-          
           <!-- Subtab 2: Batch Customer Prediction (CSV Engine) -->
           <div id="subtab-batch-predictor" class="predict-subtab-view hidden">
             <div class="dashboard-panel">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Batch Customer Inference Engine</h3>
-                  <span class="panel-subtitle">Upload subscriber CSV files for automated feature validation, pipeline inference, and prescriptive action tagging</span>
+                  <h3 class="panel-title">Batch Inference Engine</h3>
+                  <span class="panel-subtitle">Upload subscriber CSV files for automated feature validation and churn risk scoring</span>
                 </div>
                 <div class="batch-header-actions">
                   <a href="/api/predict-batch/template" class="btn-action-secondary" download="sample_churn_batch_template.csv">
@@ -1301,8 +1627,8 @@
                   <div class="dropzone-icon">
                     <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                   </div>
-                  <h4>Drag & Drop Customer CSV or Click to Browse</h4>
-                  <p>Requires standard subscriber features. Target label <code>Churn</code> is strictly excluded from inference inputs.</p>
+                  <h4>Upload Customer CSV</h4>
+                  <p>Requires standard subscriber attributes. Target label <code>Churn</code> is excluded from inputs.</p>
                   <button type="button" class="btn-upload-browse" onclick="document.getElementById('batch-file-input').click()">Select CSV File</button>
                 </div>
               </div>
@@ -1369,7 +1695,7 @@
             </div>
           </div>
 
-          <!-- Subtab 2: Model Performance & Evaluation -->
+          <!-- Subtab 3: Model Performance & Evaluation -->
           <div id="subtab-model-evaluation" class="predict-subtab-view hidden">
             <!-- Scorecards Grid -->
             <div class="metrics-kpi-grid">
@@ -1434,8 +1760,8 @@
               <div class="dashboard-panel">
                 <div class="panel-header">
                   <div>
-                    <h3 class="panel-title">Holdout Test Set Benchmark (n = 1,409)</h3>
-                    <span class="panel-subtitle">Untouched evaluation set comparison</span>
+                    <h3 class="panel-title">Holdout Test Benchmark (n = 1,409)</h3>
+                    <span class="panel-subtitle">Stratified test split evaluation (20% holdout)</span>
                   </div>
                   <span class="status-pill pill-success">Verified</span>
                 </div>
@@ -1496,13 +1822,158 @@
               </div>
             </div>
 
-            
+            <!-- Distinctive ML Diagnostic Views: Cumulative Gains & Probability Calibration -->
+            <div class="grid-layout-2col mt-3">
+              <!-- Cumulative Gains & Lift Chart -->
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3 class="panel-title">Cumulative Gains & Lift Analysis</h3>
+                    <span class="panel-subtitle">Decile-by-decile churner capture on untouched test set (n=1,409)</span>
+                  </div>
+                  <span class="status-pill pill-success">Decile 1: 2.81× Lift</span>
+                </div>
+                <div class="chart-box-medium">
+                  <canvas id="cumulativeGainsChart"></canvas>
+                </div>
+                <div class="custom-chart-legend">
+                  <div class="legend-chip"><span class="chip-dot dot-cyan"></span> Cumulative Churners Captured (%)</div>
+                  <div class="legend-chip"><span class="chip-dot dot-neutral"></span> Baseline Random Selection (1:1)</div>
+                  <div class="legend-chip"><span class="chip-dot dot-purple"></span> Cumulative Lift Factor</div>
+                </div>
+                <div class="panel-footer-insight">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <span><strong>Business Application:</strong> Targeting the top <strong>20% of accounts</strong> captures <strong>49.73% of all churners</strong> (2.48× lift). Targeting the top <strong>30%</strong> reaches <strong>64.97% of churners</strong>, drastically cutting wasted retention spend.</span>
+                </div>
+              </div>
+
+              <!-- Probability Calibration / Reliability Diagram -->
+              <div class="dashboard-panel">
+                <div class="panel-header">
+                  <div>
+                    <h3 class="panel-title">Probability Calibration & Reliability Diagram</h3>
+                    <span class="panel-subtitle">Empirical truth vs. model predicted probability bins (Brier Score: 0.138)</span>
+                  </div>
+                  <span class="status-pill pill-cyan">Brier Score = 0.138</span>
+                </div>
+                <div class="chart-box-medium">
+                  <canvas id="calibrationCurveChart"></canvas>
+                </div>
+                <div class="custom-chart-legend">
+                  <div class="legend-chip"><span class="chip-dot dot-teal"></span> Calibrated Model Probabilities</div>
+                  <div class="legend-chip"><span class="chip-dot dot-neutral"></span> Perfect Reliability (45° Diagonal)</div>
+                </div>
+                <div class="panel-footer-insight">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                  <span><strong>Calibration Quality:</strong> Points closely tracking the 45° line validate that model scores behave as true expected economic loss probabilities for revenue exposure modeling.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Precision-Recall Curve Linked to Threshold Simulator -->
+            <div class="dashboard-panel mt-3">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">Precision–Recall Curve Across Decision Thresholds</h3>
+                  <span class="panel-subtitle">Trade-off between False Alarm rate (Precision) and Attrition Catch Rate (Recall) on holdout test set</span>
+                </div>
+                <span class="status-pill pill-amber">Threshold Continuum</span>
+              </div>
+              <div class="chart-box-medium">
+                <canvas id="precisionRecallChart"></canvas>
+              </div>
+              <div class="custom-chart-legend">
+                <div class="legend-chip"><span class="chip-dot dot-emerald"></span> Precision (%) [Purity of Churn Alert]</div>
+                <div class="legend-chip"><span class="chip-dot dot-rose"></span> Recall (%) [True Churners Captured]</div>
+                <div class="legend-chip"><span class="chip-dot dot-purple"></span> F1-Score (%) [Optimal Trade-off]</div>
+              </div>
+              <div class="panel-footer-insight">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Operational Decision Boundaries:</strong> At &tau; = 0.50 (Standard): Precision is 65.72%, Recall is 55.88% (F1 = 60.40%). At &tau; = 0.60 (High-Risk Base): Precision elevates to 71.77% while Recall is 40.11%, focusing retention budgets on high-certainty attrition accounts.</span>
+              </div>
+            </div>
+
+            <!-- Independent UCI Iranian Telecom Churn Benchmark Experiment -->
+            <div class="dashboard-panel mt-4">
+              <div class="panel-header">
+                <div>
+                  <h3 class="panel-title">External Benchmark: UCI Telecom Churn (n=3,150)</h3>
+                  <span class="panel-subtitle">Evaluating algorithmic transfer on 3,150 customer records with operational support telemetry</span>
+                </div>
+                <span class="status-pill pill-purple">UCI Benchmark</span>
+              </div>
+
+              <!-- Metrics Summary Cards -->
+              <div class="metrics-kpi-grid mt-2">
+                <div class="kpi-panel">
+                  <div class="kpi-panel-header">
+                    <span class="kpi-label">UCI Dataset Size</span>
+                    <span class="status-pill pill-cyan">Independent</span>
+                  </div>
+                  <div class="kpi-metric-value num text-teal">3,150</div>
+                  <div class="kpi-panel-footer">
+                    <span class="indicator-warning">15.71% Churn Rate</span>
+                    <span class="meta-separator">•</span>
+                    <span class="footer-meta">14 Telemetry Features</span>
+                  </div>
+                </div>
+
+                <div class="kpi-panel">
+                  <div class="kpi-panel-header">
+                    <span class="kpi-label">Random Forest Test AUC</span>
+                    <span class="status-pill pill-success">Top Model</span>
+                  </div>
+                  <div class="kpi-metric-value num text-purple">98.38%</div>
+                  <div class="kpi-panel-footer">
+                    <span class="indicator-positive">94.92% Accuracy</span>
+                    <span class="meta-separator">•</span>
+                    <span class="indicator-positive">82.61% F1-Score</span>
+                  </div>
+                </div>
+
+                <div class="kpi-panel">
+                  <div class="kpi-panel-header">
+                    <span class="kpi-label">Random Forest Precision</span>
+                    <span class="status-pill pill-success">Purity</span>
+                  </div>
+                  <div class="kpi-metric-value num value-rose">89.41%</div>
+                  <div class="kpi-panel-footer">
+                    <span class="footer-meta">76.77% Recall (Held-Out Test)</span>
+                  </div>
+                </div>
+
+                <div class="kpi-panel">
+                  <div class="kpi-panel-header">
+                    <span class="kpi-label">Brier Reliability Score</span>
+                    <span class="status-pill pill-cyan">Calibrated</span>
+                  </div>
+                  <div class="kpi-metric-value num text-teal">0.0388</div>
+                  <div class="kpi-panel-footer">
+                    <span class="indicator-positive">Near-Zero Error</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Comparative Grouped Bar Chart -->
+              <div class="mt-3">
+                <h4 style="font-size: 0.92rem; font-weight: 600; color: var(--text-secondary); margin-bottom: 0.75rem;">UCI Iranian Churn: Logistic Regression vs Random Forest (Held-Out Test Set, n=630)</h4>
+                <div class="chart-box-medium">
+                  <canvas id="uciBenchmarkChart"></canvas>
+                </div>
+              </div>
+
+              <div class="panel-footer-insight mt-3">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                <span><strong>Scientific Telemetry Finding:</strong> On the UCI Iranian dataset, models achieve <strong>98.38% ROC-AUC and 94.92% Accuracy</strong> because features include real behavioral telemetry: <code>Complains</code> (23.86% importance), <code>Status</code> (14.97%), and <code>Frequency of use</code> (11.36%). In contrast, CCPRA (US Telco) relies primarily on static account features (Contracts, Fiber Optic, Tenure), proving that ingesting operational customer support telemetry is the single most valuable data science upgrade for telecom retention pipelines.</span>
+              </div>
+            </div>
+
             <!-- Predicted-Risk Distribution Histogram -->
             <div class="dashboard-panel mt-3">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Model Predicted-Risk Distribution & Operational Risk Tiers</h3>
-                  <span class="panel-subtitle">Frequency distribution of continuous churn probabilities across the full subscriber portfolio with decision boundaries marked</span>
+                  <h3 class="panel-title">Predicted Risk Distribution</h3>
+                  <span class="panel-subtitle">Frequency distribution of continuous churn probabilities across the full subscriber portfolio</span>
                 </div>
                 <span class="status-pill pill-cyan">Full Portfolio (n=7,043)</span>
               </div>
@@ -1519,8 +1990,8 @@
             <div class="dashboard-panel mt-3">
               <div class="panel-header">
                 <div>
-                  <h3 class="panel-title">Holdout Confusion Matrix Diagnostics (n = 1,409)</h3>
-                  <span class="panel-subtitle">Verified test outcomes: TN + FP + FN + TP = 1,409</span>
+                  <h3 class="panel-title">Confusion Matrix Diagnostics (n = 1,409)</h3>
+                  <span class="panel-subtitle">Verified test outcomes across stratified test split</span>
                 </div>
                 <span class="status-pill pill-cyan">Stratified Test Split</span>
               </div>
@@ -1575,9 +2046,9 @@
               </div>
             </div>
 
-            <!-- Collapsible Academic Formulas Reference (Clean & compact for university demonstration) -->
+            <!-- Mathematical Formulations Reference -->
             <details class="calc-assumptions-details mt-3">
-              <summary>Academic Formulations & Step-by-Step Derivations Reference (College Demonstration)</summary>
+              <summary>Mathematical Formulations & Derivations Reference</summary>
               <div class="academic-accordion-content">
                 <div class="academic-formula-grid">
                   <div class="academic-formula-card">
